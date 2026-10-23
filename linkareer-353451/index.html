@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#205845">
+  <meta name="description" content="보호가 끝나는 날부터, 놓치는 돈이 없게. 내 지원과 신청 마감을 챙기는 먼저살기 달력.">
+  <title>먼저살기 달력 | 내 달력</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="data.js" defer></script>
+  <script src="engine.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#screen">본문으로 건너뛰기</a>
+  <div id="tour" class="tour"></div>
+  <div id="app-view">
+  <div class="workspace">
+    <div class="phone">
+      <header class="appbar"><a class="brand" href="#scene-1"><span class="brand-icon" aria-hidden="true"></span>먼저살기 <span>달력</span></a><button class="icon-button" data-action="notifications" aria-label="알림 확인"></button></header>
+      <div id="connection" class="connection"></div>
+      <main id="screen" tabindex="-1"></main>
+      <footer class="disclaimer">시연용 모의 데이터 · AI 처리 결과는 미리 계산해 실음 · 실제 지급 여부는 주민센터가 정합니다</footer>
+      <nav id="tabs" class="tabs" aria-label="주 메뉴"></nav>
+    </div>
+    <aside id="scene-panel" class="scene-panel" aria-label="장면 안내"></aside>
+  </div>
+  </div>
+  <dialog id="sheet" aria-labelledby="sheet-title"><div class="sheet-head"><h2 id="sheet-title"></h2><button class="icon-button" data-action="close" autofocus aria-label="닫기">×</button></div><div id="sheet-content"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
