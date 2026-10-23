@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>감빛 페달 운영판 · 전체 화면</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-mode="full">
+<header class="guide" id="guide" aria-live="polite">
+  <div class="guide-in">
+    <p class="guide-step"><span id="g-step">장면 1/6</span> · <span id="g-story"></span></p>
+    <p class="guide-do"><b>지금 할 일</b> <span id="g-do"></span></p>
+    <p class="guide-ok" id="g-ok" hidden><b>성공</b> <span id="g-ok-text"></span></p>
+  </div>
+  <div class="guide-nav">
+    <button class="btn ghost" data-action="prev" type="button">이전</button>
+    <button class="btn primary" data-action="next" type="button">다음</button>
+  </div>
+</header>
+
+<div class="tabs" role="tablist" aria-label="화면 고르기">
+  <button role="tab" id="tab-phone" data-tab="phone" type="button">참가자 휴대폰</button>
+  <button role="tab" id="tab-ops" data-tab="ops" type="button">운영판</button>
+</div>
+
+<main id="main" class="stage">
+  <section class="phone" id="phone" aria-label="참가자 휴대폰 화면">
+    <div class="device">
+      <div class="app-bar"><span class="logo" aria-hidden="true"></span><b>감빛 페달</b><span class="app-sub">상주 감빛페달 축제</span></div>
+      <div class="app-body" id="phone-body"></div>
+    </div>
+  </section>
+
+  <section class="ops" id="ops" aria-label="운영판">
+    <div class="ops-head">
+      <div><h2>감빛 페달 운영판</h2><p class="muted">롤러 광장 종합상황실 · <span id="o-time">10월 29일(금) 19:10</span></p></div>
+      <div class="ops-ctl">
+        <button class="btn" data-action="rain" type="button" aria-pressed="false" id="rain-btn">비 모드</button>
+      </div>
+    </div>
+    <div class="rain-band" id="rain-band" hidden>비 모드 · 빗물이 들이치는 바깥쪽 구역은 쉬고 안쪽 180대만 운영해요. 목표 기준도 180대로 낮췄어요.</div>
+    <div class="kpis">
+      <div class="kpi"><span>감 벽 밝기</span><b id="k-bright">0%</b></div>
+      <div class="kpi"><span>분당 회전수 합</span><b id="k-rpm">0</b></div>
+      <div class="kpi"><span>밟는 자리</span><b id="k-riding">0 / 300</b></div>
+      <div class="kpi"><span>대기 줄</span><b id="k-queue">0명</b></div>
+    </div>
+    <div class="wall-wrap">
+      <div class="wall-title"><b>감 벽</b><span class="muted">12구역 × 25자리 = 300칸 · 칸마다 그 자리의 회전수</span></div>
+      <div class="wall" id="wall" role="img" aria-label="감 벽 밝기"></div>
+      <div class="meter" aria-hidden="true"><i id="meter-bar"></i></div>
+      <p class="formula">밝기 = 회전수 합(자리마다 90까지) ÷ (운영 대수 <b id="f-cap">300</b>대 × 기준 60) · 지금 <b id="f-val">0 ÷ 18,000</b></p>
+    </div>
+    <div class="zones" id="zones"></div>
+    <div class="ops-row">
+      <div class="card" id="turn-card">
+        <h3>교대</h3>
+        <p class="big" id="turn-left">10:00</p>
+        <p class="muted">10분 밟고 1분 교대 · 시간당 300대 × 6회 = <b>1,800명</b>(가정)</p>
+      </div>
+      <div class="card" id="queue-card">
+        <h3>다음 회차 번호표</h3>
+        <p class="big" id="ticket">—</p>
+        <p class="muted" id="queue-note">대기 줄이 300명을 넘으면 다음 회차 번호표를 나눠 드려요.</p>
+      </div>
+    </div>
+    <div class="sheet" id="sheet" hidden role="dialog" aria-modal="false" aria-labelledby="sheet-title">
+      <h3 id="sheet-title"></h3>
+      <div id="sheet-body"></div>
+      <button class="btn" data-action="sheet-close" type="button">닫기</button>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <p>밟는 만큼 켜져요. 조명 전기는 발전차와 전력망에서 오고, 페달은 밝기 신호만 보내요.</p>
+  <p class="muted">시연용 모의 데이터 · 실제 센서를 연결하기 전 화면이에요. 글꼴 Pretendard(SIL OFL 1.1).</p>
+</footer>
+<div class="toast" id="toast" role="status" hidden></div>
+<script src="app.js"></script>
+</body>
+</html>
