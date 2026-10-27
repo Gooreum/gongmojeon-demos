@@ -1,0 +1,318 @@
+[
+  {
+    "id": "retinol",
+    "name": {
+      "ko": "리뉴 레티놀 세럼",
+      "en": "Renew Retinol Serum"
+    },
+    "type": "serum",
+    "price": 32,
+    "inci": [
+      "Aqua",
+      "Glycerin",
+      "Squalane",
+      "Retinol",
+      "Tocopherol"
+    ],
+    "texture": "light",
+    "fragrance": false,
+    "acid": 0,
+    "alcoholHigh": false,
+    "size": "30 mL",
+    "code": "01"
+  },
+  {
+    "id": "aha",
+    "name": {
+      "ko": "글로우 각질 토너",
+      "en": "Glow AHA Toner"
+    },
+    "type": "toner",
+    "price": 24,
+    "inci": [
+      "Aqua",
+      "Glycolic Acid",
+      "Glycerin",
+      "Sodium Hydroxide",
+      "Parfum"
+    ],
+    "texture": "light",
+    "fragrance": true,
+    "acid": 10,
+    "alcoholHigh": false,
+    "size": "120 mL",
+    "code": "02"
+  },
+  {
+    "id": "rich-cream",
+    "name": {
+      "ko": "세라마이드 리치 크림",
+      "en": "Ceramide Comfort Cream"
+    },
+    "type": "moisturizer",
+    "price": 36,
+    "inci": [
+      "Aqua",
+      "Glycerin",
+      "Petrolatum",
+      "Butyrospermum Parkii Butter",
+      "Ceramide NP"
+    ],
+    "texture": "rich",
+    "fragrance": false,
+    "acid": 0,
+    "alcoholHigh": false,
+    "size": "50 mL",
+    "code": "03"
+  },
+  {
+    "id": "ivory",
+    "name": {
+      "ko": "스킨 베일 파운데이션",
+      "en": "Skin Veil Foundation"
+    },
+    "type": "foundation",
+    "price": 38,
+    "inci": [
+      "Aqua",
+      "Dimethicone",
+      "Titanium Dioxide",
+      "Iron Oxides"
+    ],
+    "texture": "light",
+    "fragrance": false,
+    "acid": 0,
+    "alcoholHigh": false,
+    "size": "30 mL",
+    "hex": "#E6C7A4",
+    "shade": {
+      "ko": "웜 아이보리 120",
+      "en": "Warm Ivory 120"
+    },
+    "code": "04"
+  },
+  {
+    "id": "gel-cream",
+    "name": {
+      "ko": "듀 수분 젤 크림",
+      "en": "Dew Gel Cream"
+    },
+    "type": "moisturizer",
+    "price": 28,
+    "inci": [
+      "Aqua",
+      "Glycerin",
+      "Sodium Hyaluronate",
+      "Panthenol"
+    ],
+    "texture": "light",
+    "fragrance": false,
+    "acid": 0,
+    "alcoholHigh": false,
+    "size": "50 mL",
+    "code": "05"
+  },
+  {
+    "id": "hydra-toner",
+    "name": {
+      "ko": "소프트 수분 토너",
+      "en": "Soft Hydrating Toner"
+    },
+    "type": "toner",
+    "price": 22,
+    "inci": [
+      "Aqua",
+      "Glycerin",
+      "Panthenol",
+      "Allantoin"
+    ],
+    "texture": "light",
+    "fragrance": false,
+    "acid": 0,
+    "alcoholHigh": false,
+    "size": "120 mL",
+    "code": "06"
+  },
+  {
+    "id": "calm-serum",
+    "name": {
+      "ko": "캄 진정 세럼",
+      "en": "Calm Barrier Serum"
+    },
+    "type": "serum",
+    "price": 30,
+    "inci": [
+      "Aqua",
+      "Glycerin",
+      "Panthenol",
+      "Allantoin"
+    ],
+    "texture": "light",
+    "fragrance": false,
+    "acid": 0,
+    "alcoholHigh": false,
+    "size": "30 mL",
+    "code": "07"
+  },
+  {
+    "id": "gentle-cream",
+    "name": {
+      "ko": "베리어 보습 크림",
+      "en": "Barrier Cream"
+    },
+    "type": "moisturizer",
+    "price": 34,
+    "inci": [
+      "Aqua",
+      "Glycerin",
+      "Squalane",
+      "Ceramide NP"
+    ],
+    "texture": "rich",
+    "fragrance": false,
+    "acid": 0,
+    "alcoholHigh": false,
+    "size": "50 mL",
+    "code": "08"
+  },
+  {
+    "id": "cleanser",
+    "name": {
+      "ko": "소프트 젤 세안제",
+      "en": "Soft Gel Cleanser"
+    },
+    "type": "cleanser",
+    "price": 18,
+    "inci": [
+      "Aqua",
+      "Coco Glucoside",
+      "Glycerin"
+    ],
+    "texture": "light",
+    "fragrance": false,
+    "acid": 0,
+    "alcoholHigh": false,
+    "size": "150 mL",
+    "code": "09"
+  },
+  {
+    "id": "sunscreen",
+    "name": {
+      "ko": "데일리 선크림",
+      "en": "Daily Mineral SPF 30"
+    },
+    "type": "sunscreen",
+    "price": 26,
+    "inci": [
+      "Aqua",
+      "Zinc Oxide",
+      "Glycerin",
+      "Dimethicone"
+    ],
+    "texture": "light",
+    "fragrance": false,
+    "acid": 0,
+    "alcoholHigh": false,
+    "size": "50 mL",
+    "code": "10"
+  },
+  {
+    "id": "sand",
+    "name": {
+      "ko": "스킨 베일 파운데이션",
+      "en": "Skin Veil Foundation"
+    },
+    "type": "foundation",
+    "price": 38,
+    "inci": [
+      "Aqua",
+      "Dimethicone",
+      "Titanium Dioxide",
+      "Iron Oxides"
+    ],
+    "texture": "light",
+    "fragrance": false,
+    "acid": 0,
+    "alcoholHigh": false,
+    "size": "30 mL",
+    "hex": "#BE906F",
+    "shade": {
+      "ko": "내추럴 샌드 230",
+      "en": "Natural Sand 230"
+    },
+    "code": "11"
+  },
+  {
+    "id": "honey",
+    "name": {
+      "ko": "스킨 베일 파운데이션",
+      "en": "Skin Veil Foundation"
+    },
+    "type": "foundation",
+    "price": 38,
+    "inci": [
+      "Aqua",
+      "Dimethicone",
+      "Titanium Dioxide",
+      "Iron Oxides"
+    ],
+    "texture": "light",
+    "fragrance": false,
+    "acid": 0,
+    "alcoholHigh": false,
+    "size": "30 mL",
+    "hex": "#C79978",
+    "shade": {
+      "ko": "소프트 허니 240",
+      "en": "Soft Honey 240"
+    },
+    "code": "12"
+  },
+  {
+    "id": "deep",
+    "name": {
+      "ko": "스킨 베일 파운데이션",
+      "en": "Skin Veil Foundation"
+    },
+    "type": "foundation",
+    "price": 38,
+    "inci": [
+      "Aqua",
+      "Dimethicone",
+      "Titanium Dioxide",
+      "Iron Oxides"
+    ],
+    "texture": "light",
+    "fragrance": false,
+    "acid": 0,
+    "alcoholHigh": false,
+    "size": "30 mL",
+    "hex": "#80563D",
+    "shade": {
+      "ko": "딥 앰버 420",
+      "en": "Deep Amber 420"
+    },
+    "code": "13"
+  },
+  {
+    "id": "astringent",
+    "name": {
+      "ko": "클리어 토너",
+      "en": "Clear Astringent Toner"
+    },
+    "type": "toner",
+    "price": 20,
+    "inci": [
+      "Aqua",
+      "Alcohol Denat.",
+      "Glycerin",
+      "Parfum"
+    ],
+    "texture": "light",
+    "fragrance": true,
+    "acid": 0,
+    "alcoholHigh": true,
+    "size": "100 mL",
+    "code": "14"
+  }
+]

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#264e43">
+  <meta name="description" content="담은 화장품의 성분 조합과 파운데이션 색을 결제 전에 확인하세요.">
+  <title>카트 체크 | 루멘 앤 리프</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="config.js"></script>
+  <script defer src="data.js"></script>
+  <script defer src="js/color.js"></script>
+  <script defer src="js/rules.js"></script>
+  <script defer src="js/routine.js"></script>
+  <script defer src="js/precheck.js"></script>
+  <script defer src="js/youcam.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">본문으로 이동</a>
+  <header id="tour" class="tour" aria-label="시연 안내"></header>
+  <div class="workspace">
+    <div class="phone">
+      <header id="appbar" class="appbar"></header>
+      <div id="connection" role="status" hidden></div>
+      <main id="main" tabindex="-1"></main>
+      <nav id="tabs" class="tabs" aria-label="주요 메뉴"></nav>
+      <footer id="disclosure"></footer>
+    </div>
+    <aside id="scene-panel" class="scene-panel"></aside>
+  </div>
+  <dialog id="sheet" aria-labelledby="sheet-title"></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <input id="selfie-file" type="file" accept="image/jpeg,image/png" hidden>
+  <noscript>사용하려면 자바스크립트를 켜 주세요.</noscript>
+</body>
+</html>

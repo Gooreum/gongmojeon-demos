@@ -1,0 +1,38 @@
+[
+  {
+    "id": "retinol-acid",
+    "source": "https://www.aad.org/public/everyday-care/skin-care-secrets/prevent-skin-problems/test-skin-care-products/",
+    "summary": "Retinol and glycolic acid can irritate skin, especially sensitive skin.",
+    "policy": "Removing the acid or alternating nights is our conservative product policy, not a clinically validated universal incompatibility."
+  },
+  {
+    "id": "bp-tretinoin",
+    "source": "https://medlineplus.gov/druginfo/meds/a682437.html",
+    "summary": "Benzoyl peroxide may interact with tretinoin; consult the prescribing clinician.",
+    "policy": "Flag only tretinoin, not every retinoid. Do not replace prescription instructions."
+  },
+  {
+    "id": "gentle",
+    "source": "https://www.aad.org/public/diseases/rosacea/triggers/tips",
+    "summary": "For people with rosacea, fragrance and glycolic/lactic acids can irritate skin.",
+    "policy": "Cautious extrapolation to a low redness score; a redness score does not diagnose rosacea."
+  },
+  {
+    "id": "light",
+    "source": "https://www.aad.org/public/everyday-care/skin-care-basics/dry/pick-moisturizer",
+    "summary": "Moisturizer texture should suit skin type; creams are richer than gels.",
+    "policy": "Lightweight preference for low oiliness score, rich cream for low moisture score. Not a claim that petrolatum causes acne."
+  },
+  {
+    "id": "dry-alcohol",
+    "source": "https://www.aad.org/public/everyday-care/skin-care-basics/dry/dermatologists-tips-relieve-dry-skin",
+    "summary": "Avoid irritating alcohol/fragrance products when skin is dry.",
+    "policy": "High denatured alcohol only; fatty alcohols are not included."
+  },
+  {
+    "id": "sun",
+    "source": "https://www.fda.gov/cosmetics/cosmetic-ingredients/alpha-hydroxy-acids",
+    "summary": "AHAs may increase sun sensitivity; sunscreen and sun protection are advised.",
+    "policy": "Remind about sunscreen without adding a purchase automatically."
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "id": "mina",
+    "name": {
+      "ko": "미나",
+      "en": "Mina"
+    },
+    "trait": {
+      "ko": "비교 기준 피부",
+      "en": "Reference readings"
+    },
+    "tone": "#b59276",
+    "scores": {
+      "redness": 92.61321258544922,
+      "acne": 93.78591999999999,
+      "oiliness": 69.07575988769531,
+      "moisture": 57.319819927215576
+    }
+  },
+  {
+    "id": "jules",
+    "name": {
+      "ko": "줄스",
+      "en": "Jules"
+    },
+    "trait": {
+      "ko": "유분이 많고 건조한 피부",
+      "en": "Oilier and drier readings"
+    },
+    "tone": "#9d6f54",
+    "scores": {
+      "oiliness": 47.012596130371094,
+      "redness": 100,
+      "acne": 82.37751,
+      "moisture": 39.16046917438507
+    }
+  },
+  {
+    "id": "ari",
+    "name": {
+      "ko": "아리",
+      "en": "Ari"
+    },
+    "trait": {
+      "ko": "붉은기가 높은 피부",
+      "en": "Higher redness reading"
+    },
+    "tone": "#b89880",
+    "scores": {
+      "redness": 56.652469635009766,
+      "oiliness": 75.05671691894531,
+      "acne": 96.89296,
+      "moisture": 53.93761992454529
+    }
+  }
+]

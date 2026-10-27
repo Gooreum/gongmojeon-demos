@@ -1,0 +1,19 @@
+name = "cart-check-youcam"
+main = "worker.js"
+compatibility_date = "2026-10-23"
+
+[vars]
+DAILY_CAP = "5"
+TOTAL_CAP = "22"
+
+[[kv_namespaces]]
+binding = "DAILY_COUNTS"
+id = "c1d9e1ef0cc34190882ba6b449405a82"
+
+[[durable_objects.bindings]]
+name = "CHECK_GATE"
+class_name = "CheckGate"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["CheckGate"]

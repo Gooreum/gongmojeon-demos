@@ -1,0 +1,54 @@
+{
+  "status": 200,
+  "data": {
+    "error": null,
+    "results": {
+      "output": [
+        {
+          "ui_score": 89,
+          "mask_urls": [],
+          "raw_score": 92.61321258544922,
+          "type": "redness",
+          "url": null
+        },
+        {
+          "ui_score": 90,
+          "mask_urls": [],
+          "raw_score": 93.78591999999999,
+          "type": "acne",
+          "url": null
+        },
+        {
+          "ui_score": 76,
+          "mask_urls": [],
+          "raw_score": 69.07575988769531,
+          "type": "oiliness",
+          "url": null
+        },
+        {
+          "ui_score": 73,
+          "mask_urls": [],
+          "raw_score": 57.319819927215576,
+          "type": "moisture",
+          "url": null
+        },
+        {
+          "score": 82,
+          "type": "all",
+          "url": null
+        },
+        {
+          "score": 32,
+          "type": "skin_age",
+          "url": null
+        },
+        {
+          "mask_urls": [],
+          "type": "resize_image",
+          "url": null
+        }
+      ]
+    },
+    "task_status": "success"
+  }
+}
