@@ -1,0 +1,1178 @@
+{
+  "city": "Seattle",
+  "generated_at": "2026-10-22T23:45:56.003151+00:00",
+  "week_of": "2026-10-19",
+  "offline": true,
+  "profiles": [
+    {
+      "id": "aurora",
+      "label": "Near Bitter Lake Playfield (District 5)",
+      "interests": [
+        "housing",
+        "transportation"
+      ],
+      "radius_mi": 0.5
+    },
+    {
+      "id": "rainier-beach",
+      "label": "Near Rainier Beach (District 2)",
+      "interests": [
+        "housing",
+        "transportation"
+      ],
+      "radius_mi": 0.5
+    }
+  ],
+  "items": [
+    {
+      "id": "126449",
+      "matter_file": "CB 121299",
+      "matter_type": "Council Bill (CB)",
+      "title": "An ordinance relating to the Seattle Department of Transportation; authorizing the Director of the Department of Transportation to execute an interlocal agreement with Seattle Public Schools for bicycle and pedestrian safety education and training services.",
+      "body": "City Council",
+      "meeting_at": "2026-10-20T14:00:00-07:00",
+      "meeting_location": "Council Chamber, City Hall\r\n600 4th Avenue\r\nSeattle, WA 98104",
+      "agenda_url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6910_A_City_Council_26-10-20_Full_Council_Meeting_Agenda.pdf",
+      "legistar_url": "https://seattle.legistar.com/MeetingDetail.aspx?LEGID=6910&GID=393&G=FFE3B678-CEF6-4197-84AC-5204EA4CFC0C",
+      "action": "passed",
+      "topics": [
+        "housing",
+        "transportation",
+        "schools",
+        "budget & taxes",
+        "utilities"
+      ],
+      "citywide": true,
+      "locations": [],
+      "card": null,
+      "source_pages": [
+        {
+          "file": "Agenda",
+          "page": 11,
+          "url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6910_A_City_Council_26-10-20_Full_Council_Meeting_Agenda.pdf"
+        },
+        {
+          "file": "Summary and Fiscal Note",
+          "page": null,
+          "url": "https://legistar2.granicus.com/seattle/attachments/1d4931a3-f142-4398-b48d-c000559a1e69.docx"
+        }
+      ],
+      "news": [],
+      "deadlines": {
+        "written": "2026-10-20T14:00:00-07:00",
+        "remote_signup_opens": "2026-10-20T13:00:00-07:00",
+        "in_person_signup": "2026-10-20T13:45:00-07:00"
+      },
+      "drafts": null,
+      "needs_review": false,
+      "model": null,
+      "editorial": {
+        "title": "Bike and walking safety at school",
+        "what": "The bill authorizes an agreement with Seattle Public Schools for bicycle and pedestrian safety education.",
+        "why": "This citywide item concerns safety education in schools."
+      }
+    },
+    {
+      "id": "126453",
+      "matter_file": "CB 121292",
+      "matter_type": "Council Bill (CB)",
+      "title": "An ordinance relating to Seattle Public Utilities; authorizing the acquisition by negotiation or eminent domain (condemnation) of three parcels of land in Seattle for utility purposes identified as King County Parcel Numbers 302604-9100 (11762 Aurora Ave N), 302604-9116 (12004 Aurora Ave N), and 302604-9124 (12020 Aurora Ave N), authorizing the General Manager and Chief Executive Officer of Seattle Public Utilities (General Manager/CEO) or their designee to execute all documents and take other actions deemed by the General Manager/CEO or designee as necessary to complete the acquisitions; placing the real properties conveyed to the City under the jurisdiction of Seattle Public Utilities; and ratifying and confirming certain prior acts.",
+      "body": "City Council",
+      "meeting_at": "2026-10-20T14:00:00-07:00",
+      "meeting_location": "Council Chamber, City Hall\r\n600 4th Avenue\r\nSeattle, WA 98104",
+      "agenda_url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6910_A_City_Council_26-10-20_Full_Council_Meeting_Agenda.pdf",
+      "legistar_url": "https://seattle.legistar.com/MeetingDetail.aspx?LEGID=6910&GID=393&G=FFE3B678-CEF6-4197-84AC-5204EA4CFC0C",
+      "action": "passed",
+      "topics": [
+        "housing",
+        "transportation",
+        "public safety",
+        "budget & taxes",
+        "utilities"
+      ],
+      "citywide": false,
+      "locations": [
+        {
+          "label": "11762 Aurora Ave N",
+          "lat": 47.715994964157,
+          "lng": -122.344791820301
+        },
+        {
+          "label": "12004 Aurora Ave N",
+          "lat": 47.717151824205,
+          "lng": -122.344811571223
+        },
+        {
+          "label": "12020 Aurora Ave N",
+          "lat": 47.71722831082,
+          "lng": -122.344812877069
+        }
+      ],
+      "card": null,
+      "source_pages": [
+        {
+          "file": "Agenda",
+          "page": 5,
+          "url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6910_A_City_Council_26-10-20_Full_Council_Meeting_Agenda.pdf"
+        },
+        {
+          "file": "Summary Ex A \u2013 Area Map",
+          "page": null,
+          "url": "https://legistar2.granicus.com/seattle/attachments/021d6e34-34db-4b77-944b-4b8f6e7f5c17.docx"
+        },
+        {
+          "file": "Summary and Fiscal Note",
+          "page": null,
+          "url": "https://legistar2.granicus.com/seattle/attachments/e496854d-6dfa-4d03-88c5-9d5e66ae9c28.docx"
+        }
+      ],
+      "news": [],
+      "deadlines": {
+        "written": "2026-10-20T14:00:00-07:00",
+        "remote_signup_opens": "2026-10-20T13:00:00-07:00",
+        "in_person_signup": "2026-10-20T13:45:00-07:00"
+      },
+      "drafts": null,
+      "needs_review": false,
+      "model": null,
+      "editorial": {
+        "title": "Three Aurora Avenue parcels for city utilities",
+        "what": "The bill authorizes Seattle Public Utilities to acquire three parcels for utility purposes.",
+        "why": "The parcels are at 11762, 12004 and 12020 Aurora Ave N. The title does not establish a construction schedule."
+      }
+    },
+    {
+      "id": "126454",
+      "matter_file": "CB 121293",
+      "matter_type": "Council Bill (CB)",
+      "title": "An ordinance relating to Seattle Public Utilities; authorizing the General Manager and Chief Executive Officer of Seattle Public Utilities to accept an easement granted to The City of Seattle under King County Recording Number 20250210000669 for the installation and operation of a drainage facility on property located at 13709 41st Ave NE and identified as King County Parcel Number 1455100035; placing the property rights under the jurisdiction of Seattle Public Utilities; and ratifying and confirming certain prior acts.",
+      "body": "City Council",
+      "meeting_at": "2026-10-20T14:00:00-07:00",
+      "meeting_location": "Council Chamber, City Hall\r\n600 4th Avenue\r\nSeattle, WA 98104",
+      "agenda_url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6910_A_City_Council_26-10-20_Full_Council_Meeting_Agenda.pdf",
+      "legistar_url": "https://seattle.legistar.com/MeetingDetail.aspx?LEGID=6910&GID=393&G=FFE3B678-CEF6-4197-84AC-5204EA4CFC0C",
+      "action": "passed",
+      "topics": [
+        "housing",
+        "budget & taxes",
+        "utilities"
+      ],
+      "citywide": false,
+      "locations": [
+        {
+          "label": "13709 41st Ave NE",
+          "lat": 47.72850683075,
+          "lng": -122.284779489923
+        }
+      ],
+      "card": null,
+      "source_pages": [
+        {
+          "file": "Agenda",
+          "page": 6,
+          "url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6910_A_City_Council_26-10-20_Full_Council_Meeting_Agenda.pdf"
+        },
+        {
+          "file": "Summary and Fiscal Note",
+          "page": null,
+          "url": "https://legistar2.granicus.com/seattle/attachments/049f7498-f4d7-408e-a706-e35e9aeb72f7.docx"
+        },
+        {
+          "file": "Summary Ex 1 \u2013 Vicinity Map",
+          "page": null,
+          "url": "https://legistar2.granicus.com/seattle/attachments/ec3a59c4-94df-4456-bea4-1b40f3bf9170.docx"
+        },
+        {
+          "file": "Summary Ex 2 \u2013 Map of Easement Location",
+          "page": null,
+          "url": "https://legistar2.granicus.com/seattle/attachments/de952dc1-7ca5-4e00-85c0-9d3c8c1fbf44.docx"
+        }
+      ],
+      "news": [],
+      "deadlines": {
+        "written": "2026-10-20T14:00:00-07:00",
+        "remote_signup_opens": "2026-10-20T13:00:00-07:00",
+        "in_person_signup": "2026-10-20T13:45:00-07:00"
+      },
+      "drafts": null,
+      "needs_review": true,
+      "model": null
+    },
+    {
+      "id": "126469",
+      "matter_file": "CB 121276",
+      "matter_type": "Council Bill (CB)",
+      "title": "An ordinance relating to land use and zoning; amending Sections 23.45.506, 23.45.570, and 23.51.A.004 of the Seattle Municipal Code to modify development standards for institutions in multifamily zones.",
+      "body": "City Council",
+      "meeting_at": "2026-10-20T14:00:00-07:00",
+      "meeting_location": "Council Chamber, City Hall\r\n600 4th Avenue\r\nSeattle, WA 98104",
+      "agenda_url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6910_A_City_Council_26-10-20_Full_Council_Meeting_Agenda.pdf",
+      "legistar_url": "https://seattle.legistar.com/MeetingDetail.aspx?LEGID=6910&GID=393&G=FFE3B678-CEF6-4197-84AC-5204EA4CFC0C",
+      "action": null,
+      "topics": [
+        "housing",
+        "budget & taxes",
+        "utilities",
+        "land use & zoning"
+      ],
+      "citywide": true,
+      "locations": [],
+      "card": null,
+      "source_pages": [
+        {
+          "file": "Agenda",
+          "page": 8,
+          "url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6910_A_City_Council_26-10-20_Full_Council_Meeting_Agenda.pdf"
+        },
+        {
+          "file": "Summary and Fiscal Note",
+          "page": null,
+          "url": "https://legistar2.granicus.com/seattle/attachments/a5cd0fac-631a-48e9-a2e9-54856d679dfd.docx"
+        }
+      ],
+      "news": [],
+      "deadlines": {
+        "written": "2026-10-20T14:00:00-07:00",
+        "remote_signup_opens": "2026-10-20T13:00:00-07:00",
+        "in_person_signup": "2026-10-20T13:45:00-07:00"
+      },
+      "drafts": null,
+      "needs_review": true,
+      "model": null
+    },
+    {
+      "id": "126471",
+      "matter_file": "CB 121279",
+      "matter_type": "Council Bill (CB)",
+      "title": "An ordinance relating to leases; updating the Director of Finance and Administrative Services\u2019 authority to execute leases when the land is used for transitional encampments, outdoor storage for any vehicle, or overnight respite areas for drivers; amending Section 3.127.020 of the Seattle Municipal Code.",
+      "body": "City Council",
+      "meeting_at": "2026-10-20T14:00:00-07:00",
+      "meeting_location": "Council Chamber, City Hall\r\n600 4th Avenue\r\nSeattle, WA 98104",
+      "agenda_url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6910_A_City_Council_26-10-20_Full_Council_Meeting_Agenda.pdf",
+      "legistar_url": "https://seattle.legistar.com/MeetingDetail.aspx?LEGID=6910&GID=393&G=FFE3B678-CEF6-4197-84AC-5204EA4CFC0C",
+      "action": "passed",
+      "topics": [
+        "housing",
+        "transportation",
+        "parks",
+        "budget & taxes",
+        "utilities"
+      ],
+      "citywide": true,
+      "locations": [],
+      "card": null,
+      "source_pages": [
+        {
+          "file": "Agenda",
+          "page": 12,
+          "url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6910_A_City_Council_26-10-20_Full_Council_Meeting_Agenda.pdf"
+        },
+        {
+          "file": "Summary and Fiscal Note",
+          "page": null,
+          "url": "https://legistar2.granicus.com/seattle/attachments/f0683884-79d3-437c-a4f4-3e22c1b64e83.docx"
+        }
+      ],
+      "news": [],
+      "deadlines": {
+        "written": "2026-10-20T14:00:00-07:00",
+        "remote_signup_opens": "2026-10-20T13:00:00-07:00",
+        "in_person_signup": "2026-10-20T13:45:00-07:00"
+      },
+      "drafts": null,
+      "needs_review": true,
+      "model": null
+    },
+    {
+      "id": "126472",
+      "matter_file": "CB 121280",
+      "matter_type": "Council Bill (CB)",
+      "title": "An ordinance relating to the Traffic Code; revising the definition of \"junk motor vehicle\"; and amending Section 11.14.268 of the Seattle Municipal Code.",
+      "body": "City Council",
+      "meeting_at": "2026-10-20T14:00:00-07:00",
+      "meeting_location": "Council Chamber, City Hall\r\n600 4th Avenue\r\nSeattle, WA 98104",
+      "agenda_url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6910_A_City_Council_26-10-20_Full_Council_Meeting_Agenda.pdf",
+      "legistar_url": "https://seattle.legistar.com/MeetingDetail.aspx?LEGID=6910&GID=393&G=FFE3B678-CEF6-4197-84AC-5204EA4CFC0C",
+      "action": "passed",
+      "topics": [
+        "housing",
+        "transportation",
+        "parks",
+        "public safety",
+        "budget & taxes",
+        "utilities"
+      ],
+      "citywide": true,
+      "locations": [],
+      "card": null,
+      "source_pages": [
+        {
+          "file": "Agenda",
+          "page": 12,
+          "url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6910_A_City_Council_26-10-20_Full_Council_Meeting_Agenda.pdf"
+        },
+        {
+          "file": "Summary and Fiscal Note",
+          "page": null,
+          "url": "https://legistar2.granicus.com/seattle/attachments/db2c7acf-4ac9-40f3-8029-f81c83cd286e.docx"
+        }
+      ],
+      "news": [],
+      "deadlines": {
+        "written": "2026-10-20T14:00:00-07:00",
+        "remote_signup_opens": "2026-10-20T13:00:00-07:00",
+        "in_person_signup": "2026-10-20T13:45:00-07:00"
+      },
+      "drafts": null,
+      "needs_review": true,
+      "model": null
+    },
+    {
+      "id": "126473",
+      "matter_file": "CB 121281",
+      "matter_type": "Council Bill (CB)",
+      "title": "An ordinance relating to land use and zoning; adjusting the definition of recreational vehicle; adjusting the definition of outdoor storage to include outdoor storage areas for certain unoccupied vehicles, including recreational vehicles; adjusting the definition of flexible-use parking to exclude storage of recreational vehicles; and amending Sections 23.84A.032, 23.84A.036, and 23.84A.038 of the Seattle Municipal Code.",
+      "body": "City Council",
+      "meeting_at": "2026-10-20T14:00:00-07:00",
+      "meeting_location": "Council Chamber, City Hall\r\n600 4th Avenue\r\nSeattle, WA 98104",
+      "agenda_url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6910_A_City_Council_26-10-20_Full_Council_Meeting_Agenda.pdf",
+      "legistar_url": "https://seattle.legistar.com/MeetingDetail.aspx?LEGID=6910&GID=393&G=FFE3B678-CEF6-4197-84AC-5204EA4CFC0C",
+      "action": "passed",
+      "topics": [
+        "housing",
+        "transportation",
+        "parks",
+        "budget & taxes",
+        "utilities",
+        "land use & zoning"
+      ],
+      "citywide": true,
+      "locations": [],
+      "card": null,
+      "source_pages": [
+        {
+          "file": "Agenda",
+          "page": 12,
+          "url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6910_A_City_Council_26-10-20_Full_Council_Meeting_Agenda.pdf"
+        },
+        {
+          "file": "Summary and Fiscal Note",
+          "page": null,
+          "url": "https://legistar2.granicus.com/seattle/attachments/2e8fe151-55da-4ef0-b1f5-6908f4d607ab.docx"
+        }
+      ],
+      "news": [],
+      "deadlines": {
+        "written": "2026-10-20T14:00:00-07:00",
+        "remote_signup_opens": "2026-10-20T13:00:00-07:00",
+        "in_person_signup": "2026-10-20T13:45:00-07:00"
+      },
+      "drafts": null,
+      "needs_review": true,
+      "model": null
+    },
+    {
+      "id": "126474",
+      "matter_file": "CB 121282",
+      "matter_type": "Council Bill (CB)",
+      "title": "An ordinance relating to vehicle residency permitting and outreach; amending Ordinance 127362, which adopted the 2026 budget, including the 2026-2031 Capital Improvement Program (CIP); changing appropriations to various departments and budget control levels, and from various funds in the Budget; creating positions; modifying a proviso; and imposing a proviso.",
+      "body": "City Council",
+      "meeting_at": "2026-10-20T14:00:00-07:00",
+      "meeting_location": "Council Chamber, City Hall\r\n600 4th Avenue\r\nSeattle, WA 98104",
+      "agenda_url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6910_A_City_Council_26-10-20_Full_Council_Meeting_Agenda.pdf",
+      "legistar_url": "https://seattle.legistar.com/MeetingDetail.aspx?LEGID=6910&GID=393&G=FFE3B678-CEF6-4197-84AC-5204EA4CFC0C",
+      "action": "passed",
+      "topics": [
+        "housing",
+        "transportation",
+        "budget & taxes",
+        "utilities",
+        "land use & zoning"
+      ],
+      "citywide": true,
+      "locations": [],
+      "card": null,
+      "source_pages": [
+        {
+          "file": "Agenda",
+          "page": 13,
+          "url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6910_A_City_Council_26-10-20_Full_Council_Meeting_Agenda.pdf"
+        },
+        {
+          "file": "Summary and Fiscal Note",
+          "page": null,
+          "url": "https://legistar2.granicus.com/seattle/attachments/aa2de5df-9b1d-411b-84e0-93a9bc9c427c.docx"
+        }
+      ],
+      "news": [],
+      "deadlines": {
+        "written": "2026-10-20T14:00:00-07:00",
+        "remote_signup_opens": "2026-10-20T13:00:00-07:00",
+        "in_person_signup": "2026-10-20T13:45:00-07:00"
+      },
+      "drafts": null,
+      "needs_review": false,
+      "model": null,
+      "editorial": {
+        "title": "Adjusting funds for vehicle residents",
+        "what": "The bill changes 2026 appropriations and positions for vehicle residency permitting and outreach.",
+        "why": "Read the original for amounts and conditions."
+      }
+    },
+    {
+      "id": "126475",
+      "matter_file": "CB 121283",
+      "matter_type": "Council Bill (CB)",
+      "title": "An ordinance relating to the Traffic Code; creating a new permitting program for owners of motor homes and travel trailers to support a structured pathway to shelter; amending Sections 11.14.350, 11.14.660, 11.16.120, 11.23.440, 11.30.040, and 11.72.070 of, and adding Sections 11.14.672, 11.72.071, and 11.23.170 to, the Seattle Municipal Code.",
+      "body": "City Council",
+      "meeting_at": "2026-10-20T14:00:00-07:00",
+      "meeting_location": "Council Chamber, City Hall\r\n600 4th Avenue\r\nSeattle, WA 98104",
+      "agenda_url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6910_A_City_Council_26-10-20_Full_Council_Meeting_Agenda.pdf",
+      "legistar_url": "https://seattle.legistar.com/MeetingDetail.aspx?LEGID=6910&GID=393&G=FFE3B678-CEF6-4197-84AC-5204EA4CFC0C",
+      "action": "passed as amended",
+      "topics": [
+        "housing",
+        "transportation",
+        "parks",
+        "public safety",
+        "budget & taxes",
+        "utilities",
+        "land use & zoning"
+      ],
+      "citywide": true,
+      "locations": [],
+      "card": null,
+      "source_pages": [
+        {
+          "file": "Agenda",
+          "page": 13,
+          "url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6910_A_City_Council_26-10-20_Full_Council_Meeting_Agenda.pdf"
+        },
+        {
+          "file": "Summary and Fiscal Note",
+          "page": null,
+          "url": "https://legistar2.granicus.com/seattle/attachments/08fbf9f6-69aa-4daa-b1f9-61a3fb5bf63d.docx"
+        }
+      ],
+      "news": [],
+      "deadlines": {
+        "written": "2026-10-20T14:00:00-07:00",
+        "remote_signup_opens": "2026-10-20T13:00:00-07:00",
+        "in_person_signup": "2026-10-20T13:45:00-07:00"
+      },
+      "drafts": null,
+      "needs_review": true,
+      "model": null
+    },
+    {
+      "id": "126476",
+      "matter_file": "Res 32216",
+      "matter_type": "Resolution (Res)",
+      "title": "A resolution relating to persons living in vehicles and establishing the Vehicle Resident Assistance Program; accompanying legislation to provide a structured pathway to shelter.",
+      "body": "City Council",
+      "meeting_at": "2026-10-20T14:00:00-07:00",
+      "meeting_location": "Council Chamber, City Hall\r\n600 4th Avenue\r\nSeattle, WA 98104",
+      "agenda_url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6910_A_City_Council_26-10-20_Full_Council_Meeting_Agenda.pdf",
+      "legistar_url": "https://seattle.legistar.com/MeetingDetail.aspx?LEGID=6910&GID=393&G=FFE3B678-CEF6-4197-84AC-5204EA4CFC0C",
+      "action": "adopted",
+      "topics": [
+        "housing",
+        "transportation",
+        "parks",
+        "budget & taxes",
+        "utilities",
+        "land use & zoning"
+      ],
+      "citywide": true,
+      "locations": [],
+      "card": null,
+      "source_pages": [
+        {
+          "file": "Agenda",
+          "page": 14,
+          "url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6910_A_City_Council_26-10-20_Full_Council_Meeting_Agenda.pdf"
+        },
+        {
+          "file": "Summary and Fiscal Note",
+          "page": null,
+          "url": "https://legistar2.granicus.com/seattle/attachments/7cb7e1a5-4904-4c26-a3dc-dd251a718b76.docx"
+        }
+      ],
+      "news": [],
+      "deadlines": {
+        "written": "2026-10-20T14:00:00-07:00",
+        "remote_signup_opens": "2026-10-20T13:00:00-07:00",
+        "in_person_signup": "2026-10-20T13:45:00-07:00"
+      },
+      "drafts": null,
+      "needs_review": true,
+      "model": null
+    },
+    {
+      "id": "126478",
+      "matter_file": "CB 121219",
+      "matter_type": "Council Bill (CB)",
+      "title": "An ordinance relating to City employment; correcting pay compression and inversion for certain non-represented classifications, and adjusting rates of pay for affected titles.",
+      "body": "City Council",
+      "meeting_at": "2026-10-20T14:00:00-07:00",
+      "meeting_location": "Council Chamber, City Hall\r\n600 4th Avenue\r\nSeattle, WA 98104",
+      "agenda_url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6910_A_City_Council_26-10-20_Full_Council_Meeting_Agenda.pdf",
+      "legistar_url": "https://seattle.legistar.com/MeetingDetail.aspx?LEGID=6910&GID=393&G=FFE3B678-CEF6-4197-84AC-5204EA4CFC0C",
+      "action": "passed",
+      "topics": [
+        "housing",
+        "transportation",
+        "parks",
+        "budget & taxes",
+        "utilities"
+      ],
+      "citywide": true,
+      "locations": [],
+      "card": null,
+      "source_pages": [
+        {
+          "file": "Agenda",
+          "page": 6,
+          "url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6910_A_City_Council_26-10-20_Full_Council_Meeting_Agenda.pdf"
+        },
+        {
+          "file": "Summary and Fiscal Note",
+          "page": null,
+          "url": "https://legistar2.granicus.com/seattle/attachments/646c687b-c162-4f91-8675-9b3cb928408c.docx"
+        },
+        {
+          "file": "Summary and Fiscal Note v2",
+          "page": null,
+          "url": "https://legistar2.granicus.com/seattle/attachments/48b7350f-40a1-44ad-95cc-8c4e86406fc4.docx"
+        }
+      ],
+      "news": [],
+      "deadlines": {
+        "written": "2026-10-20T14:00:00-07:00",
+        "remote_signup_opens": "2026-10-20T13:00:00-07:00",
+        "in_person_signup": "2026-10-20T13:45:00-07:00"
+      },
+      "drafts": null,
+      "needs_review": true,
+      "model": null
+    },
+    {
+      "id": "126479",
+      "matter_file": "CB 121284",
+      "matter_type": "Council Bill (CB)",
+      "title": "An ordinance relating to City employment; exempting positions from the civil service system; and returning positions to the civil service system; all by a 2/3 vote of the City Council.",
+      "body": "City Council",
+      "meeting_at": "2026-10-20T14:00:00-07:00",
+      "meeting_location": "Council Chamber, City Hall\r\n600 4th Avenue\r\nSeattle, WA 98104",
+      "agenda_url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6910_A_City_Council_26-10-20_Full_Council_Meeting_Agenda.pdf",
+      "legistar_url": "https://seattle.legistar.com/MeetingDetail.aspx?LEGID=6910&GID=393&G=FFE3B678-CEF6-4197-84AC-5204EA4CFC0C",
+      "action": "passed",
+      "topics": [
+        "housing",
+        "budget & taxes",
+        "utilities"
+      ],
+      "citywide": true,
+      "locations": [],
+      "card": null,
+      "source_pages": [
+        {
+          "file": "Agenda",
+          "page": 7,
+          "url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6910_A_City_Council_26-10-20_Full_Council_Meeting_Agenda.pdf"
+        },
+        {
+          "file": "Summary Att 1 \u2013 Difference in Mid-Point Salary and Benefits Between Initial and Final Classification",
+          "page": null,
+          "url": "https://legistar2.granicus.com/seattle/attachments/a159a39f-9c42-495e-9eb8-87e4b79b6e17.docx"
+        },
+        {
+          "file": "Summary and Fiscal Note",
+          "page": null,
+          "url": "https://legistar2.granicus.com/seattle/attachments/48d677f7-1cae-4efd-a08f-cd30685e3392.docx"
+        }
+      ],
+      "news": [],
+      "deadlines": {
+        "written": "2026-10-20T14:00:00-07:00",
+        "remote_signup_opens": "2026-10-20T13:00:00-07:00",
+        "in_person_signup": "2026-10-20T13:45:00-07:00"
+      },
+      "drafts": null,
+      "needs_review": true,
+      "model": null
+    },
+    {
+      "id": "126480",
+      "matter_file": "CB 121285",
+      "matter_type": "Council Bill (CB)",
+      "title": "An ordinance relating to City employment; retitling existing title Automotive Sheet Metal Worker to Automotive Sheet Metal Worker - Painter.",
+      "body": "City Council",
+      "meeting_at": "2026-10-20T14:00:00-07:00",
+      "meeting_location": "Council Chamber, City Hall\r\n600 4th Avenue\r\nSeattle, WA 98104",
+      "agenda_url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6910_A_City_Council_26-10-20_Full_Council_Meeting_Agenda.pdf",
+      "legistar_url": "https://seattle.legistar.com/MeetingDetail.aspx?LEGID=6910&GID=393&G=FFE3B678-CEF6-4197-84AC-5204EA4CFC0C",
+      "action": "passed",
+      "topics": [
+        "housing",
+        "transportation",
+        "public safety",
+        "budget & taxes",
+        "utilities"
+      ],
+      "citywide": true,
+      "locations": [],
+      "card": null,
+      "source_pages": [
+        {
+          "file": "Agenda",
+          "page": 7,
+          "url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6910_A_City_Council_26-10-20_Full_Council_Meeting_Agenda.pdf"
+        },
+        {
+          "file": "Summary and Fiscal Note",
+          "page": null,
+          "url": "https://legistar2.granicus.com/seattle/attachments/20773d45-1cf1-44a8-8162-7032ee94d75c.docx"
+        }
+      ],
+      "news": [],
+      "deadlines": {
+        "written": "2026-10-20T14:00:00-07:00",
+        "remote_signup_opens": "2026-10-20T13:00:00-07:00",
+        "in_person_signup": "2026-10-20T13:45:00-07:00"
+      },
+      "drafts": null,
+      "needs_review": true,
+      "model": null
+    },
+    {
+      "id": "126481",
+      "matter_file": "CB 121286",
+      "matter_type": "Council Bill (CB)",
+      "title": "An ordinance relating to City employment; retitling the Plant Ecologist classification title to Restoration Ecologist, and creating a Restoration Ecologist, Senior classification title and establishing corresponding rates of pay.",
+      "body": "City Council",
+      "meeting_at": "2026-10-20T14:00:00-07:00",
+      "meeting_location": "Council Chamber, City Hall\r\n600 4th Avenue\r\nSeattle, WA 98104",
+      "agenda_url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6910_A_City_Council_26-10-20_Full_Council_Meeting_Agenda.pdf",
+      "legistar_url": "https://seattle.legistar.com/MeetingDetail.aspx?LEGID=6910&GID=393&G=FFE3B678-CEF6-4197-84AC-5204EA4CFC0C",
+      "action": "passed",
+      "topics": [
+        "housing",
+        "parks",
+        "budget & taxes",
+        "utilities"
+      ],
+      "citywide": true,
+      "locations": [],
+      "card": null,
+      "source_pages": [
+        {
+          "file": "Agenda",
+          "page": 7,
+          "url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6910_A_City_Council_26-10-20_Full_Council_Meeting_Agenda.pdf"
+        },
+        {
+          "file": "Summary and Fiscal Note",
+          "page": null,
+          "url": "https://legistar2.granicus.com/seattle/attachments/832f13e9-23b5-4d8e-83e6-b5ae83705750.docx"
+        }
+      ],
+      "news": [],
+      "deadlines": {
+        "written": "2026-10-20T14:00:00-07:00",
+        "remote_signup_opens": "2026-10-20T13:00:00-07:00",
+        "in_person_signup": "2026-10-20T13:45:00-07:00"
+      },
+      "drafts": null,
+      "needs_review": true,
+      "model": null
+    },
+    {
+      "id": "126591",
+      "matter_file": "CB 121302",
+      "matter_type": "Council Bill (CB)",
+      "title": "An ordinance appropriating money to pay certain claims for the week of September 14, 2026, through September 18, 2026, and ordering the payment thereof; and ratifying and confirming certain prior acts.",
+      "body": "City Council",
+      "meeting_at": "2026-10-20T14:00:00-07:00",
+      "meeting_location": "Council Chamber, City Hall\r\n600 4th Avenue\r\nSeattle, WA 98104",
+      "agenda_url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6910_A_City_Council_26-10-20_Full_Council_Meeting_Agenda.pdf",
+      "legistar_url": "https://seattle.legistar.com/MeetingDetail.aspx?LEGID=6910&GID=393&G=FFE3B678-CEF6-4197-84AC-5204EA4CFC0C",
+      "action": "passed",
+      "topics": [
+        "housing",
+        "budget & taxes",
+        "utilities"
+      ],
+      "citywide": true,
+      "locations": [],
+      "card": null,
+      "source_pages": [
+        {
+          "file": "Agenda",
+          "page": 3,
+          "url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6910_A_City_Council_26-10-20_Full_Council_Meeting_Agenda.pdf"
+        },
+        {
+          "file": "Summary and Fiscal Note",
+          "page": null,
+          "url": "https://legistar2.granicus.com/seattle/attachments/dc58cc2d-cd25-4cdf-b381-aaad3ca7fa20.docx"
+        }
+      ],
+      "news": [],
+      "deadlines": {
+        "written": "2026-10-20T14:00:00-07:00",
+        "remote_signup_opens": "2026-10-20T13:00:00-07:00",
+        "in_person_signup": "2026-10-20T13:45:00-07:00"
+      },
+      "drafts": null,
+      "needs_review": true,
+      "model": null
+    },
+    {
+      "id": "126592",
+      "matter_file": "CB 121303",
+      "matter_type": "Council Bill (CB)",
+      "title": "An ordinance appropriating money to pay certain claims for the week of September 21, 2026, through September 25, 2026, and ordering the payment thereof; and ratifying and confirming certain prior acts.",
+      "body": "City Council",
+      "meeting_at": "2026-10-20T14:00:00-07:00",
+      "meeting_location": "Council Chamber, City Hall\r\n600 4th Avenue\r\nSeattle, WA 98104",
+      "agenda_url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6910_A_City_Council_26-10-20_Full_Council_Meeting_Agenda.pdf",
+      "legistar_url": "https://seattle.legistar.com/MeetingDetail.aspx?LEGID=6910&GID=393&G=FFE3B678-CEF6-4197-84AC-5204EA4CFC0C",
+      "action": "passed",
+      "topics": [
+        "housing",
+        "budget & taxes",
+        "utilities"
+      ],
+      "citywide": true,
+      "locations": [],
+      "card": null,
+      "source_pages": [
+        {
+          "file": "Agenda",
+          "page": 4,
+          "url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6910_A_City_Council_26-10-20_Full_Council_Meeting_Agenda.pdf"
+        },
+        {
+          "file": "Summary and Fiscal Note",
+          "page": null,
+          "url": "https://legistar2.granicus.com/seattle/attachments/39b74831-e3b4-4173-a9ac-2a74a15e8fd9.docx"
+        }
+      ],
+      "news": [],
+      "deadlines": {
+        "written": "2026-10-20T14:00:00-07:00",
+        "remote_signup_opens": "2026-10-20T13:00:00-07:00",
+        "in_person_signup": "2026-10-20T13:45:00-07:00"
+      },
+      "drafts": null,
+      "needs_review": true,
+      "model": null
+    },
+    {
+      "id": "126593",
+      "matter_file": "CB 121304",
+      "matter_type": "Council Bill (CB)",
+      "title": "An ordinance appropriating money to pay certain claims for the week of September 28, 2026, through October 2, 2026, and ordering the payment thereof; and ratifying and confirming certain prior acts.",
+      "body": "City Council",
+      "meeting_at": "2026-10-20T14:00:00-07:00",
+      "meeting_location": "Council Chamber, City Hall\r\n600 4th Avenue\r\nSeattle, WA 98104",
+      "agenda_url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6910_A_City_Council_26-10-20_Full_Council_Meeting_Agenda.pdf",
+      "legistar_url": "https://seattle.legistar.com/MeetingDetail.aspx?LEGID=6910&GID=393&G=FFE3B678-CEF6-4197-84AC-5204EA4CFC0C",
+      "action": "passed",
+      "topics": [
+        "housing",
+        "budget & taxes",
+        "utilities"
+      ],
+      "citywide": true,
+      "locations": [],
+      "card": null,
+      "source_pages": [
+        {
+          "file": "Agenda",
+          "page": 4,
+          "url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6910_A_City_Council_26-10-20_Full_Council_Meeting_Agenda.pdf"
+        },
+        {
+          "file": "Summary and Fiscal Note",
+          "page": null,
+          "url": "https://legistar2.granicus.com/seattle/attachments/1bc78d0b-7073-4154-9b83-7436d161428e.docx"
+        }
+      ],
+      "news": [],
+      "deadlines": {
+        "written": "2026-10-20T14:00:00-07:00",
+        "remote_signup_opens": "2026-10-20T13:00:00-07:00",
+        "in_person_signup": "2026-10-20T13:45:00-07:00"
+      },
+      "drafts": null,
+      "needs_review": true,
+      "model": null
+    },
+    {
+      "id": "126594",
+      "matter_file": "CB 121305",
+      "matter_type": "Council Bill (CB)",
+      "title": "An ordinance appropriating money to pay certain claims for the week of October 5, 2026, through October 9, 2026, and ordering the payment thereof; and ratifying and confirming certain prior acts.",
+      "body": "City Council",
+      "meeting_at": "2026-10-20T14:00:00-07:00",
+      "meeting_location": "Council Chamber, City Hall\r\n600 4th Avenue\r\nSeattle, WA 98104",
+      "agenda_url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6910_A_City_Council_26-10-20_Full_Council_Meeting_Agenda.pdf",
+      "legistar_url": "https://seattle.legistar.com/MeetingDetail.aspx?LEGID=6910&GID=393&G=FFE3B678-CEF6-4197-84AC-5204EA4CFC0C",
+      "action": "passed",
+      "topics": [
+        "housing",
+        "budget & taxes",
+        "utilities"
+      ],
+      "citywide": true,
+      "locations": [],
+      "card": null,
+      "source_pages": [
+        {
+          "file": "Agenda",
+          "page": 4,
+          "url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6910_A_City_Council_26-10-20_Full_Council_Meeting_Agenda.pdf"
+        },
+        {
+          "file": "Summary and Fiscal Note",
+          "page": null,
+          "url": "https://legistar2.granicus.com/seattle/attachments/84daccc0-d690-41d1-93d7-303a987bc6d2.docx"
+        }
+      ],
+      "news": [],
+      "deadlines": {
+        "written": "2026-10-20T14:00:00-07:00",
+        "remote_signup_opens": "2026-10-20T13:00:00-07:00",
+        "in_person_signup": "2026-10-20T13:45:00-07:00"
+      },
+      "drafts": null,
+      "needs_review": true,
+      "model": null
+    },
+    {
+      "id": "126614",
+      "matter_file": "CB 121297",
+      "title": "An ordinance relating to traffic management and public safety; clarifying the authority of the City Traffic Engineer; and amending Sections 11.16.240 and 11.16.360 of the Seattle Municipal Code.",
+      "body": "City Council",
+      "meeting_at": "2026-10-26T14:00:00-07:00",
+      "agenda_url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6911_A_City_Council_26-10-26_Full_Council_Meeting_Agenda.pdf",
+      "legistar_url": "https://seattle.legistar.com/MeetingDetail.aspx?LEGID=6911&GID=393&G=FFE3B678-CEF6-4197-84AC-5204EA4CFC0C",
+      "action": "scheduled",
+      "topics": [
+        "transportation"
+      ],
+      "citywide": true,
+      "locations": [],
+      "source_pages": [
+        {
+          "file": "Agenda",
+          "page": 3,
+          "url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6911_A_City_Council_26-10-26_Full_Council_Meeting_Agenda.pdf"
+        }
+      ],
+      "news": [],
+      "needs_review": false,
+      "deadlines": {
+        "written": "2026-10-26T10:00:00-07:00",
+        "remote_signup_opens": "2026-10-26T13:00:00-07:00",
+        "in_person_signup": "2026-10-26T13:45:00-07:00"
+      },
+      "card": null,
+      "drafts": null,
+      "editorial": {
+        "title": "Clarifying who manages street traffic",
+        "what": "The bill clarifies the City Traffic Engineer\u2019s authority and amends two Traffic Code sections.",
+        "why": "This is a citywide rule. It does not identify a construction site on a specific street."
+      },
+      "deadline_source_page": 2
+    },
+    {
+      "id": "126615",
+      "matter_file": "CB 121298",
+      "title": "An ordinance relating to City contracts; requesting the development of new recommended requirements for truck lateral protective devices that would be applicable to City contractors; requesting consideration of recommendations for complementary safety equipment; and describing specific dimensions for all requested recommended requirements.",
+      "body": "City Council",
+      "meeting_at": "2026-10-26T14:00:00-07:00",
+      "agenda_url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6911_A_City_Council_26-10-26_Full_Council_Meeting_Agenda.pdf",
+      "legistar_url": "https://seattle.legistar.com/MeetingDetail.aspx?LEGID=6911&GID=393&G=FFE3B678-CEF6-4197-84AC-5204EA4CFC0C",
+      "action": "scheduled",
+      "topics": [
+        "transportation"
+      ],
+      "citywide": true,
+      "locations": [],
+      "source_pages": [
+        {
+          "file": "Agenda",
+          "page": 3,
+          "url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6911_A_City_Council_26-10-26_Full_Council_Meeting_Agenda.pdf"
+        }
+      ],
+      "news": [],
+      "needs_review": false,
+      "deadlines": {
+        "written": "2026-10-26T10:00:00-07:00",
+        "remote_signup_opens": "2026-10-26T13:00:00-07:00",
+        "in_person_signup": "2026-10-26T13:45:00-07:00"
+      },
+      "card": null,
+      "drafts": null,
+      "editorial": {
+        "title": "Safer trucks on city contracts",
+        "what": "The bill requests recommended requirements for side guards on trucks used by city contractors.",
+        "why": "This concerns pedestrian and cyclist safety. It asks for recommendations, rather than putting new requirements in place today."
+      },
+      "deadline_source_page": 2
+    }
+  ],
+  "matches": {
+    "aurora": [
+      {
+        "item_id": "126615",
+        "kind": "citywide",
+        "distance_mi": null
+      },
+      {
+        "item_id": "126614",
+        "kind": "citywide",
+        "distance_mi": null
+      },
+      {
+        "item_id": "126453",
+        "kind": "near",
+        "distance_mi": 0.46
+      },
+      {
+        "item_id": "126449",
+        "kind": "citywide",
+        "distance_mi": null
+      },
+      {
+        "item_id": "126469",
+        "kind": "citywide",
+        "distance_mi": null
+      },
+      {
+        "item_id": "126471",
+        "kind": "citywide",
+        "distance_mi": null
+      },
+      {
+        "item_id": "126472",
+        "kind": "citywide",
+        "distance_mi": null
+      },
+      {
+        "item_id": "126473",
+        "kind": "citywide",
+        "distance_mi": null
+      },
+      {
+        "item_id": "126474",
+        "kind": "citywide",
+        "distance_mi": null
+      },
+      {
+        "item_id": "126475",
+        "kind": "citywide",
+        "distance_mi": null
+      },
+      {
+        "item_id": "126476",
+        "kind": "citywide",
+        "distance_mi": null
+      },
+      {
+        "item_id": "126478",
+        "kind": "citywide",
+        "distance_mi": null
+      },
+      {
+        "item_id": "126479",
+        "kind": "citywide",
+        "distance_mi": null
+      },
+      {
+        "item_id": "126480",
+        "kind": "citywide",
+        "distance_mi": null
+      },
+      {
+        "item_id": "126481",
+        "kind": "citywide",
+        "distance_mi": null
+      },
+      {
+        "item_id": "126591",
+        "kind": "citywide",
+        "distance_mi": null
+      },
+      {
+        "item_id": "126592",
+        "kind": "citywide",
+        "distance_mi": null
+      },
+      {
+        "item_id": "126593",
+        "kind": "citywide",
+        "distance_mi": null
+      },
+      {
+        "item_id": "126594",
+        "kind": "citywide",
+        "distance_mi": null
+      }
+    ],
+    "rainier-beach": [
+      {
+        "item_id": "126615",
+        "kind": "citywide",
+        "distance_mi": null
+      },
+      {
+        "item_id": "126614",
+        "kind": "citywide",
+        "distance_mi": null
+      },
+      {
+        "item_id": "126449",
+        "kind": "citywide",
+        "distance_mi": null
+      },
+      {
+        "item_id": "126471",
+        "kind": "citywide",
+        "distance_mi": null
+      },
+      {
+        "item_id": "126472",
+        "kind": "citywide",
+        "distance_mi": null
+      },
+      {
+        "item_id": "126473",
+        "kind": "citywide",
+        "distance_mi": null
+      },
+      {
+        "item_id": "126475",
+        "kind": "citywide",
+        "distance_mi": null
+      },
+      {
+        "item_id": "126476",
+        "kind": "citywide",
+        "distance_mi": null
+      },
+      {
+        "item_id": "126478",
+        "kind": "citywide",
+        "distance_mi": null
+      },
+      {
+        "item_id": "126480",
+        "kind": "citywide",
+        "distance_mi": null
+      },
+      {
+        "item_id": "126481",
+        "kind": "citywide",
+        "distance_mi": null
+      }
+    ]
+  },
+  "sample": true,
+  "events": [
+    {
+      "id": 6768,
+      "name": "Select Budget Committee",
+      "date": "2026-10-27T00:00:00",
+      "time": "9:30 AM",
+      "cancelled": false,
+      "url": "https://seattle.legistar.com/MeetingDetail.aspx?LEGID=6768&GID=393&G=FFE3B678-CEF6-4197-84AC-5204EA4CFC0C",
+      "agenda_url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6768_A_Select_Budget_Committee_26-10-27_Committee_Agenda.pdf"
+    },
+    {
+      "id": 6769,
+      "name": "Select Budget Committee",
+      "date": "2026-10-28T00:00:00",
+      "time": "9:30 AM",
+      "cancelled": false,
+      "url": "https://seattle.legistar.com/MeetingDetail.aspx?LEGID=6769&GID=393&G=FFE3B678-CEF6-4197-84AC-5204EA4CFC0C",
+      "agenda_url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6769_A_Select_Budget_Committee_26-10-28_Committee_Agenda.pdf"
+    },
+    {
+      "id": 6770,
+      "name": "Select Budget Committee",
+      "date": "2026-10-29T00:00:00",
+      "time": "9:30 AM",
+      "cancelled": false,
+      "url": "https://seattle.legistar.com/MeetingDetail.aspx?LEGID=6770&GID=393&G=FFE3B678-CEF6-4197-84AC-5204EA4CFC0C",
+      "agenda_url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6770_A_Select_Budget_Committee_26-10-29_Committee_Agenda.pdf"
+    },
+    {
+      "id": 6897,
+      "name": "Council Briefing",
+      "date": "2026-10-19T00:00:00",
+      "time": "2:00 PM",
+      "cancelled": true,
+      "url": "https://seattle.legistar.com/MeetingDetail.aspx?LEGID=6897&GID=393&G=FFE3B678-CEF6-4197-84AC-5204EA4CFC0C",
+      "agenda_url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6897_A_Council_Briefing_26-10-19_Council_Briefing.pdf"
+    },
+    {
+      "id": 6898,
+      "name": "Council Briefing",
+      "date": "2026-10-26T00:00:00",
+      "time": "2:00 PM",
+      "cancelled": true,
+      "url": "https://seattle.legistar.com/MeetingDetail.aspx?LEGID=6898&GID=393&G=FFE3B678-CEF6-4197-84AC-5204EA4CFC0C",
+      "agenda_url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6898_A_Council_Briefing_26-10-26_Council_Briefing.pdf"
+    },
+    {
+      "id": 6899,
+      "name": "Council Briefing",
+      "date": "2026-11-02T00:00:00",
+      "time": "2:00 PM",
+      "cancelled": true,
+      "url": "https://seattle.legistar.com/MeetingDetail.aspx?LEGID=6899&GID=393&G=FFE3B678-CEF6-4197-84AC-5204EA4CFC0C",
+      "agenda_url": "https://legistar2.granicus.com/seattle/meetings/2026/11/6899_A_Council_Briefing_26-11-02_Council_Briefing.pdf"
+    },
+    {
+      "id": 6900,
+      "name": "Council Briefing",
+      "date": "2026-11-09T00:00:00",
+      "time": "2:00 PM",
+      "cancelled": true,
+      "url": "https://seattle.legistar.com/MeetingDetail.aspx?LEGID=6900&GID=393&G=FFE3B678-CEF6-4197-84AC-5204EA4CFC0C",
+      "agenda_url": "https://legistar2.granicus.com/seattle/meetings/2026/11/6900_A_Council_Briefing_26-11-09_Council_Briefing.pdf"
+    },
+    {
+      "id": 6910,
+      "name": "City Council",
+      "date": "2026-10-20T00:00:00",
+      "time": "2:00 PM",
+      "cancelled": false,
+      "url": "https://seattle.legistar.com/MeetingDetail.aspx?LEGID=6910&GID=393&G=FFE3B678-CEF6-4197-84AC-5204EA4CFC0C",
+      "agenda_url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6910_A_City_Council_26-10-20_Full_Council_Meeting_Agenda.pdf"
+    },
+    {
+      "id": 6911,
+      "name": "City Council",
+      "date": "2026-10-26T00:00:00",
+      "time": "2:00 PM",
+      "cancelled": false,
+      "url": "https://seattle.legistar.com/MeetingDetail.aspx?LEGID=6911&GID=393&G=FFE3B678-CEF6-4197-84AC-5204EA4CFC0C",
+      "agenda_url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6911_A_City_Council_26-10-26_Full_Council_Meeting_Agenda.pdf"
+    },
+    {
+      "id": 6912,
+      "name": "City Council",
+      "date": "2026-10-27T00:00:00",
+      "time": "2:00 PM",
+      "cancelled": true,
+      "url": "https://seattle.legistar.com/MeetingDetail.aspx?LEGID=6912&GID=393&G=FFE3B678-CEF6-4197-84AC-5204EA4CFC0C",
+      "agenda_url": "https://legistar2.granicus.com/seattle/meetings/2026/10/6912_A_City_Council_26-10-27_Full_Council_Meeting_Agenda.pdf"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#145c50">
+  <meta name="description" content="Your city council's agenda, read for you. Find local decisions and prepare a comment before the meeting.">
+  <title>Council Watch | Your neighborhood. Your say.</title>
+  <link rel="icon" href="img/icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="style.css">
+  <script src="data.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <header class="guide" id="guide" aria-label="Scene guide"></header>
+  <div class="workspace">
+    <section class="phone" aria-label="Council Watch application">
+      <header class="appbar" id="appbar"></header>
+      <div class="scroll-area" id="scroll-area">
+        <div id="connection" role="status"></div>
+        <main id="content" tabindex="-1"></main>
+        <footer id="disclosure" class="disclosure"></footer>
+      </div>
+      <nav class="tabbar" id="tabbar" aria-label="Main navigation"></nav>
+      <div id="overlay"></div>
+    </section>
+    <aside class="story" id="story" aria-label="Scene notes"></aside>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <noscript>Turn on JavaScript to read council items and prepare a comment.</noscript>
+</body>
+</html>

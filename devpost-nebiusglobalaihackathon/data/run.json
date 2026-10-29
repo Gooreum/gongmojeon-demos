@@ -1,0 +1,10 @@
+{
+  "available": false,
+  "offline": true,
+  "started": "2026-10-22T23:45:56.003151+00:00",
+  "items": 20,
+  "models": {},
+  "cost_usd": null,
+  "tavily_calls": 0,
+  "failures": []
+}
