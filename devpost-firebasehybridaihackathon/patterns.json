@@ -1,0 +1,138 @@
+[
+  {
+    "id": "delivery",
+    "name": [
+      "택배 수수료 사칭",
+      "Fake delivery fee"
+    ],
+    "features": [
+      "delivery",
+      "pay",
+      "fee"
+    ],
+    "action": [
+      "택배사 공식 앱이나 usps.com을 직접 열어 조회하세요.",
+      "Open the carrier’s official app or type usps.com yourself."
+    ],
+    "source": "https://consumer.ftc.gov/articles/how-recognize-avoid-phishing-scams"
+  },
+  {
+    "id": "family",
+    "name": [
+      "새 번호를 쓰는 가족 사칭",
+      "New-phone family impersonation"
+    ],
+    "features": [
+      "family",
+      "gift",
+      "new-phone"
+    ],
+    "action": [
+      "가족의 원래 전화번호로 먼저 전화하세요.",
+      "Call your family member’s old number before doing anything."
+    ],
+    "source": "https://consumer.ftc.gov/articles/scammers-use-fake-emergencies-steal-your-money"
+  },
+  {
+    "id": "bank",
+    "name": [
+      "계좌 정지 사칭",
+      "Account suspension phishing"
+    ],
+    "features": [
+      "bank",
+      "login",
+      "suspended"
+    ],
+    "action": [
+      "은행 공식 앱을 직접 열어 확인하세요.",
+      "Open your bank’s official app yourself."
+    ],
+    "source": "https://consumer.ftc.gov/articles/how-recognize-avoid-phishing-scams"
+  },
+  {
+    "id": "government",
+    "name": [
+      "공공기관 사칭",
+      "Government impersonation"
+    ],
+    "features": [
+      "government",
+      "payment",
+      "code"
+    ],
+    "action": [
+      "기관의 공식 홈페이지에서 전화번호를 찾아 확인하세요.",
+      "Find the agency’s number on its official website and call."
+    ],
+    "source": "https://consumer.ftc.gov/articles/how-avoid-government-impersonation-scam"
+  },
+  {
+    "id": "prize",
+    "name": [
+      "경품 수령비 요구",
+      "Prize fee scam"
+    ],
+    "features": [
+      "prize",
+      "pay",
+      "payment"
+    ],
+    "action": [
+      "경품을 받기 위한 돈은 보내지 마세요.",
+      "Do not pay to claim a prize."
+    ],
+    "source": "https://consumer.ftc.gov/articles/fake-prize-sweepstakes-and-lottery-scams"
+  },
+  {
+    "id": "job",
+    "name": [
+      "취업이나 과제 선입금 요구",
+      "Job and task scam"
+    ],
+    "features": [
+      "job",
+      "payment",
+      "reward"
+    ],
+    "action": [
+      "일을 시작하기 위한 선입금은 하지 마세요.",
+      "Do not pay upfront to start a job."
+    ],
+    "source": "https://consumer.ftc.gov/articles/job-scams"
+  },
+  {
+    "id": "tech",
+    "name": [
+      "기술 지원 사칭",
+      "Tech support scam"
+    ],
+    "features": [
+      "tech",
+      "remote",
+      "call"
+    ],
+    "action": [
+      "원격 접속을 허용하지 말고 공식 지원 창구를 찾으세요.",
+      "Do not grant remote access. Contact official support."
+    ],
+    "source": "https://consumer.ftc.gov/articles/how-spot-avoid-and-report-tech-support-scams"
+  },
+  {
+    "id": "investment",
+    "name": [
+      "친분을 이용한 투자 권유",
+      "Relationship investment scam"
+    ],
+    "features": [
+      "romance",
+      "invest",
+      "investment"
+    ],
+    "action": [
+      "온라인에서 만난 사람이 알려 준 곳으로 돈을 보내지 마세요.",
+      "Do not send money to an investment introduced by an online acquaintance."
+    ],
+    "source": "https://consumer.ftc.gov/articles/what-know-about-cryptocurrency-scams"
+  }
+]

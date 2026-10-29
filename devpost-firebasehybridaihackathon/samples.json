@@ -1,0 +1,143 @@
+[
+  {
+    "scene": 1,
+    "file": "samples/message-1.png",
+    "width": 760,
+    "height": 520,
+    "personalDetails": [
+      {
+        "type": "email",
+        "x": 234,
+        "y": 158,
+        "width": 166,
+        "height": 18
+      },
+      {
+        "type": "name",
+        "x": 262,
+        "y": 207,
+        "width": 109,
+        "height": 25
+      },
+      {
+        "type": "address",
+        "x": 217,
+        "y": 273,
+        "width": 241,
+        "height": 24
+      },
+      {
+        "type": "order",
+        "x": 256,
+        "y": 379,
+        "width": 62,
+        "height": 19
+      },
+      {
+        "type": "phone",
+        "x": 379,
+        "y": 379,
+        "width": 95,
+        "height": 19
+      }
+    ],
+    "fictional": true
+  },
+  {
+    "scene": 2,
+    "file": "samples/message-2.png",
+    "width": 760,
+    "height": 520,
+    "personalDetails": [
+      {
+        "type": "name",
+        "x": 262,
+        "y": 207,
+        "width": 109,
+        "height": 25
+      },
+      {
+        "type": "order",
+        "x": 305,
+        "y": 244,
+        "width": 167,
+        "height": 25
+      },
+      {
+        "type": "address",
+        "x": 322,
+        "y": 281,
+        "width": 241,
+        "height": 24
+      }
+    ],
+    "fictional": true
+  },
+  {
+    "scene": 3,
+    "file": "samples/message-3.png",
+    "width": 760,
+    "height": 520,
+    "personalDetails": [
+      {
+        "type": "phone",
+        "x": 249,
+        "y": 158,
+        "width": 88,
+        "height": 18
+      },
+      {
+        "type": "name",
+        "x": 343,
+        "y": 219,
+        "width": 100,
+        "height": 25
+      }
+    ],
+    "fictional": true
+  },
+  {
+    "scene": 4,
+    "file": "samples/message-4.png",
+    "width": 760,
+    "height": 520,
+    "personalDetails": [
+      {
+        "type": "email",
+        "x": 234,
+        "y": 158,
+        "width": 166,
+        "height": 18
+      },
+      {
+        "type": "name",
+        "x": 259,
+        "y": 207,
+        "width": 109,
+        "height": 25
+      },
+      {
+        "type": "account",
+        "x": 387,
+        "y": 244,
+        "width": 41,
+        "height": 25
+      },
+      {
+        "type": "address",
+        "x": 275,
+        "y": 350,
+        "width": 189,
+        "height": 19
+      },
+      {
+        "type": "phone",
+        "x": 263,
+        "y": 372,
+        "width": 95,
+        "height": 19
+      }
+    ],
+    "fictional": true
+  }
+]

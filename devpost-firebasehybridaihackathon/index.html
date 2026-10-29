@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#145c50">
+  <meta name="description" content="Review a suspicious message without sharing the original screenshot. Your personal details stay on your device.">
+  <title>Shape Check — Check a message privately</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="data.js"></script>
+  <script defer src="firebase-config.js"></script>
+  <script defer src="hybrid.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content / 본문으로</a>
+  <div id="guide" class="guide"></div>
+  <header id="appbar" class="appbar"></header>
+  <main id="content" tabindex="-1"></main>
+  <footer id="disclosure" class="disclosure"></footer>
+  <nav id="mobile-tabs" class="mobile-tabs" aria-label="Menu"></nav>
+  <dialog id="sheet" class="sheet" aria-labelledby="sheet-title"></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <input id="file" type="file" accept="image/png,image/jpeg" hidden>
+  <noscript>Please enable JavaScript to check a message. 자바스크립트를 켜 주세요.</noscript>
+</body>
+</html>
