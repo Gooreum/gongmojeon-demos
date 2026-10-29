@@ -1,0 +1,1061 @@
+{
+  "period": "2018여름",
+  "mode": "말 다듬기: 규칙 기반",
+  "database": "bus.sqlite",
+  "trace": [
+    {
+      "tool": "find_place",
+      "도구": "find_place",
+      "why": "입력한 곳과 맞는 시장·마을·노선을 찾습니다.",
+      "왜 불렀나": "입력한 곳과 맞는 시장·마을·노선을 찾습니다.",
+      "result": "후보 0곳",
+      "핵심 결과": "후보 0곳",
+      "ms": 3.683
+    },
+    {
+      "tool": "detect_cycle",
+      "도구": "detect_cycle",
+      "why": "실제 승차 기록에서 장날 주기를 찾습니다.",
+      "왜 불렀나": "실제 승차 기록에서 장날 주기를 찾습니다.",
+      "result": "2묶음, 장날 평균 117.5명",
+      "핵심 결과": "2묶음, 장날 평균 117.5명",
+      "ms": 3.642
+    },
+    {
+      "tool": "detect_cycle",
+      "도구": "detect_cycle",
+      "why": "실제 승차 기록에서 장날 주기를 찾습니다.",
+      "왜 불렀나": "실제 승차 기록에서 장날 주기를 찾습니다.",
+      "result": "2묶음, 장날 평균 84.0명",
+      "핵심 결과": "2묶음, 장날 평균 84.0명",
+      "ms": 3.183
+    },
+    {
+      "tool": "split_routes",
+      "도구": "split_routes",
+      "why": "장날 손님을 노선 갈래별로 나눕니다.",
+      "왜 불렀나": "장날 손님을 노선 갈래별로 나눕니다.",
+      "result": "장날 손님이 있는 노선 갈래 12개",
+      "핵심 결과": "장날 손님이 있는 노선 갈래 12개",
+      "ms": 44.024
+    },
+    {
+      "tool": "village_lift",
+      "도구": "village_lift",
+      "why": "같은 노선이 지나는 다른 마을의 승차 변화를 봅니다.",
+      "왜 불렀나": "같은 노선이 지나는 다른 마을의 승차 변화를 봅니다.",
+      "result": "마을 18곳 · 장날에 가장 많이 느는 곳 표선면 하루 +93.2명",
+      "핵심 결과": "마을 18곳 · 장날에 가장 많이 느는 곳 표선면 하루 +93.2명",
+      "ms": 175.707
+    },
+    {
+      "tool": "check_timetable",
+      "도구": "check_timetable",
+      "why": "지금 공개 시간표 202개와 노선 정류장 목록을 확인합니다.",
+      "왜 불렀나": "지금 공개 시간표 202개와 노선 정류장 목록을 확인합니다.",
+      "result": "노선 1개 대조 · 장날 문구 0개 · 공개 시간표 없음 0개",
+      "핵심 결과": "노선 1개 대조 · 장날 문구 0개 · 공개 시간표 없음 0개",
+      "ms": 33.205
+    },
+    {
+      "tool": "judge",
+      "도구": "judge",
+      "why": "옛 장날 승차와 지금 공개 정보를 노선마다 맞춰 판정합니다.",
+      "왜 불렀나": "옛 장날 승차와 지금 공개 정보를 노선마다 맞춰 판정합니다.",
+      "result": "지켜짐 1개",
+      "핵심 결과": "지켜짐 1개",
+      "ms": 7.81
+    }
+  ],
+  "search": {
+    "candidates": [],
+    "suggestions": [
+      "건입동",
+      "고성오일장(성산)",
+      "구좌읍"
+    ],
+    "basis": {
+      "data": "bus.sqlite",
+      "period": null,
+      "formula": "이름 공백·오일장 표현 정규화 및 비슷한 이름 비교",
+      "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+    }
+  },
+  "proposed_plan": {},
+  "llm_log": {
+    "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+    "plan": {
+      "accepted": {},
+      "discarded": [],
+      "ms": 0,
+      "source": "규칙 기반"
+    },
+    "sentences": {
+      "summary": {
+        "total": 0,
+        "accepted": 0,
+        "discarded": [],
+        "used": 0,
+        "fallback": true,
+        "source": "규칙 문장(모델 문장은 기본으로 끔)",
+        "citations": []
+      }
+    },
+    "requests": []
+  },
+  "question": "",
+  "market": {
+    "id": "pyoseon",
+    "name": "표선오일장",
+    "known_group": 2,
+    "known_days": [
+      2,
+      7
+    ],
+    "stop_ids": [
+      "0002564",
+      "0002565"
+    ],
+    "source": "외부 안내 미확인(10/28 검색) · 데이터가 찾은 값(2·7일)",
+    "stop_names": [
+      "표선오일시장"
+    ]
+  },
+  "cycles": {
+    "2018여름": {
+      "market_mean": 117.55,
+      "other_mean": 46.493506493506494,
+      "difference": 71.0564935064935,
+      "ratio": 2.50140942379439,
+      "market_days": 20,
+      "other_days": 77,
+      "day_group": 2,
+      "groups": [
+        {
+          "day_group": 1,
+          "label": "1·6일",
+          "days": 20,
+          "mean": 47.95
+        },
+        {
+          "day_group": 2,
+          "label": "2·7일",
+          "days": 20,
+          "mean": 117.55
+        },
+        {
+          "day_group": 3,
+          "label": "3·8일",
+          "days": 19,
+          "mean": 47
+        },
+        {
+          "day_group": 4,
+          "label": "4·9일",
+          "days": 19,
+          "mean": 45.526315789473685
+        },
+        {
+          "day_group": 5,
+          "label": "5·10일",
+          "days": 19,
+          "mean": 45.421052631578945
+        }
+      ],
+      "known_group": 2,
+      "needs_confirm": false,
+      "cycle": "주기 있음",
+      "confirmation": "",
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2018여름",
+        "formula": "각 묶음 승차 합계 ÷ 실제 날짜 수; 배수=장날 평균/(다른 날 평균+0.5)",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      }
+    },
+    "2020봄": {
+      "market_mean": 84,
+      "other_mean": 28.22222222222222,
+      "difference": 55.77777777777778,
+      "ratio": 2.9245647969052224,
+      "market_days": 12,
+      "other_days": 36,
+      "day_group": 2,
+      "groups": [
+        {
+          "day_group": 1,
+          "label": "1·6일",
+          "days": 12,
+          "mean": 25.416666666666668
+        },
+        {
+          "day_group": 2,
+          "label": "2·7일",
+          "days": 12,
+          "mean": 84
+        },
+        {
+          "day_group": 3,
+          "label": "3·8일",
+          "days": 8,
+          "mean": 31.25
+        },
+        {
+          "day_group": 4,
+          "label": "4·9일",
+          "days": 8,
+          "mean": 27.625
+        },
+        {
+          "day_group": 5,
+          "label": "5·10일",
+          "days": 8,
+          "mean": 30
+        }
+      ],
+      "known_group": 2,
+      "needs_confirm": false,
+      "cycle": "주기 있음",
+      "confirmation": "",
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2020봄",
+        "formula": "각 묶음 승차 합계 ÷ 실제 날짜 수; 배수=장날 평균/(다른 날 평균+0.5)",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      }
+    }
+  },
+  "cycle": {
+    "market_mean": 117.55,
+    "other_mean": 46.493506493506494,
+    "difference": 71.0564935064935,
+    "ratio": 2.50140942379439,
+    "market_days": 20,
+    "other_days": 77,
+    "day_group": 2,
+    "groups": [
+      {
+        "day_group": 1,
+        "label": "1·6일",
+        "days": 20,
+        "mean": 47.95
+      },
+      {
+        "day_group": 2,
+        "label": "2·7일",
+        "days": 20,
+        "mean": 117.55
+      },
+      {
+        "day_group": 3,
+        "label": "3·8일",
+        "days": 19,
+        "mean": 47
+      },
+      {
+        "day_group": 4,
+        "label": "4·9일",
+        "days": 19,
+        "mean": 45.526315789473685
+      },
+      {
+        "day_group": 5,
+        "label": "5·10일",
+        "days": 19,
+        "mean": 45.421052631578945
+      }
+    ],
+    "known_group": 2,
+    "needs_confirm": false,
+    "cycle": "주기 있음",
+    "confirmation": "",
+    "basis": {
+      "data": "bus.sqlite",
+      "period": "2018여름",
+      "formula": "각 묶음 승차 합계 ÷ 실제 날짜 수; 배수=장날 평균/(다른 날 평균+0.5)",
+      "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+    }
+  },
+  "needs_confirm": false,
+  "confirmation": "",
+  "routes": [
+    {
+      "line": "201",
+      "market": "표선오일장",
+      "verdict": "지켜짐",
+      "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+      "market_mean": 117.55,
+      "other_mean": 46.493506493506494,
+      "difference": 71.0564935064935,
+      "ratio": 2.50140942379439,
+      "market_days": 20,
+      "other_days": 77,
+      "standard_error": 5.943811246283838,
+      "required_market_days": 1,
+      "timetable": {
+        "line": "201",
+        "route": "201",
+        "market_mentions": [],
+        "files": [
+          "x_405009.txt"
+        ],
+        "missing": false,
+        "day_service": false,
+        "phrases": [],
+        "mentions": [
+          "서귀포향토오일시장",
+          "표선오일장",
+          "고성오일장(성산)"
+        ],
+        "market_stops": [
+          {
+            "market": "pyoseon",
+            "name": "표선오일시장[서]",
+            "line": "201-11",
+            "location": "길가"
+          },
+          {
+            "market": "pyoseon",
+            "name": "표선오일시장[동]",
+            "line": "201-12",
+            "location": "길가"
+          },
+          {
+            "market": "pyoseon",
+            "name": "표선오일시장[서]",
+            "line": "201-13",
+            "location": "길가"
+          },
+          {
+            "market": "pyoseon",
+            "name": "표선오일시장[동]",
+            "line": "201-14",
+            "location": "길가"
+          },
+          {
+            "market": "pyoseon",
+            "name": "표선오일시장[서]",
+            "line": "201-15",
+            "location": "길가"
+          },
+          {
+            "market": "pyoseon",
+            "name": "표선오일시장[동]",
+            "line": "201-16",
+            "location": "길가"
+          },
+          {
+            "market": "pyoseon",
+            "name": "표선오일시장[서]",
+            "line": "201-17",
+            "location": "길가"
+          },
+          {
+            "market": "pyoseon",
+            "name": "표선오일시장[동]",
+            "line": "201-18",
+            "location": "길가"
+          },
+          {
+            "market": "goseong",
+            "name": "고성오일시장[서]",
+            "line": "201-19",
+            "location": "길가"
+          },
+          {
+            "market": "pyoseon",
+            "name": "표선오일시장[서]",
+            "line": "201-19",
+            "location": "길가"
+          },
+          {
+            "market": "pyoseon",
+            "name": "표선오일시장[동]",
+            "line": "201-20",
+            "location": "길가"
+          },
+          {
+            "market": "goseong",
+            "name": "고성오일시장[동]",
+            "line": "201-20",
+            "location": "길가"
+          },
+          {
+            "market": "goseong",
+            "name": "고성오일시장[서]",
+            "line": "201-21",
+            "location": "길가"
+          },
+          {
+            "market": "pyoseon",
+            "name": "표선오일시장[서]",
+            "line": "201-21",
+            "location": "길가"
+          },
+          {
+            "market": "pyoseon",
+            "name": "표선오일시장[동]",
+            "line": "201-22",
+            "location": "길가"
+          },
+          {
+            "market": "goseong",
+            "name": "고성오일시장[동]",
+            "line": "201-22",
+            "location": "길가"
+          },
+          {
+            "market": "pyoseon",
+            "name": "표선오일시장[서]",
+            "line": "201-23",
+            "location": "길가"
+          },
+          {
+            "market": "pyoseon",
+            "name": "표선오일시장[동]",
+            "line": "201-24",
+            "location": "길가"
+          },
+          {
+            "market": "pyoseon",
+            "name": "표선오일시장[서]",
+            "line": "201-25",
+            "location": "길가"
+          },
+          {
+            "market": "pyoseon",
+            "name": "표선오일시장[동]",
+            "line": "201-26",
+            "location": "길가"
+          },
+          {
+            "market": "goseong",
+            "name": "고성오일시장[서]",
+            "line": "201-27",
+            "location": "길가"
+          },
+          {
+            "market": "goseong",
+            "name": "고성오일시장[동]",
+            "line": "201-28",
+            "location": "길가"
+          },
+          {
+            "market": "goseong",
+            "name": "고성오일시장[동]",
+            "line": "201-30",
+            "location": "길가"
+          },
+          {
+            "market": "pyoseon",
+            "name": "표선오일시장[동]",
+            "line": "201-32",
+            "location": "길가"
+          },
+          {
+            "market": "goseong",
+            "name": "고성오일시장[동]",
+            "line": "201-32",
+            "location": "길가"
+          }
+        ],
+        "current_lines": [
+          "201-11",
+          "201-12",
+          "201-13",
+          "201-14",
+          "201-15",
+          "201-16",
+          "201-17",
+          "201-18",
+          "201-19",
+          "201-20",
+          "201-21",
+          "201-22",
+          "201-23",
+          "201-24",
+          "201-25",
+          "201-26",
+          "201-27",
+          "201-28",
+          "201-30",
+          "201-32"
+        ],
+        "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+        "basis": {
+          "data": "bus.sqlite",
+          "period": null,
+          "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "roadside": true,
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2018여름",
+        "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      },
+      "judgement": {
+        "line": "201",
+        "market": "표선오일장",
+        "verdict": "지켜짐",
+        "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+        "market_mean": 117.55,
+        "other_mean": 46.493506493506494,
+        "difference": 71.0564935064935,
+        "ratio": 2.50140942379439,
+        "market_days": 20,
+        "other_days": 77,
+        "standard_error": 5.943811246283838,
+        "required_market_days": 1,
+        "timetable": {
+          "line": "201",
+          "route": "201",
+          "market_mentions": [],
+          "files": [
+            "x_405009.txt"
+          ],
+          "missing": false,
+          "day_service": false,
+          "phrases": [],
+          "mentions": [
+            "서귀포향토오일시장",
+            "표선오일장",
+            "고성오일장(성산)"
+          ],
+          "market_stops": [
+            {
+              "market": "pyoseon",
+              "name": "표선오일시장[서]",
+              "line": "201-11",
+              "location": "길가"
+            },
+            {
+              "market": "pyoseon",
+              "name": "표선오일시장[동]",
+              "line": "201-12",
+              "location": "길가"
+            },
+            {
+              "market": "pyoseon",
+              "name": "표선오일시장[서]",
+              "line": "201-13",
+              "location": "길가"
+            },
+            {
+              "market": "pyoseon",
+              "name": "표선오일시장[동]",
+              "line": "201-14",
+              "location": "길가"
+            },
+            {
+              "market": "pyoseon",
+              "name": "표선오일시장[서]",
+              "line": "201-15",
+              "location": "길가"
+            },
+            {
+              "market": "pyoseon",
+              "name": "표선오일시장[동]",
+              "line": "201-16",
+              "location": "길가"
+            },
+            {
+              "market": "pyoseon",
+              "name": "표선오일시장[서]",
+              "line": "201-17",
+              "location": "길가"
+            },
+            {
+              "market": "pyoseon",
+              "name": "표선오일시장[동]",
+              "line": "201-18",
+              "location": "길가"
+            },
+            {
+              "market": "goseong",
+              "name": "고성오일시장[서]",
+              "line": "201-19",
+              "location": "길가"
+            },
+            {
+              "market": "pyoseon",
+              "name": "표선오일시장[서]",
+              "line": "201-19",
+              "location": "길가"
+            },
+            {
+              "market": "pyoseon",
+              "name": "표선오일시장[동]",
+              "line": "201-20",
+              "location": "길가"
+            },
+            {
+              "market": "goseong",
+              "name": "고성오일시장[동]",
+              "line": "201-20",
+              "location": "길가"
+            },
+            {
+              "market": "goseong",
+              "name": "고성오일시장[서]",
+              "line": "201-21",
+              "location": "길가"
+            },
+            {
+              "market": "pyoseon",
+              "name": "표선오일시장[서]",
+              "line": "201-21",
+              "location": "길가"
+            },
+            {
+              "market": "pyoseon",
+              "name": "표선오일시장[동]",
+              "line": "201-22",
+              "location": "길가"
+            },
+            {
+              "market": "goseong",
+              "name": "고성오일시장[동]",
+              "line": "201-22",
+              "location": "길가"
+            },
+            {
+              "market": "pyoseon",
+              "name": "표선오일시장[서]",
+              "line": "201-23",
+              "location": "길가"
+            },
+            {
+              "market": "pyoseon",
+              "name": "표선오일시장[동]",
+              "line": "201-24",
+              "location": "길가"
+            },
+            {
+              "market": "pyoseon",
+              "name": "표선오일시장[서]",
+              "line": "201-25",
+              "location": "길가"
+            },
+            {
+              "market": "pyoseon",
+              "name": "표선오일시장[동]",
+              "line": "201-26",
+              "location": "길가"
+            },
+            {
+              "market": "goseong",
+              "name": "고성오일시장[서]",
+              "line": "201-27",
+              "location": "길가"
+            },
+            {
+              "market": "goseong",
+              "name": "고성오일시장[동]",
+              "line": "201-28",
+              "location": "길가"
+            },
+            {
+              "market": "goseong",
+              "name": "고성오일시장[동]",
+              "line": "201-30",
+              "location": "길가"
+            },
+            {
+              "market": "pyoseon",
+              "name": "표선오일시장[동]",
+              "line": "201-32",
+              "location": "길가"
+            },
+            {
+              "market": "goseong",
+              "name": "고성오일시장[동]",
+              "line": "201-32",
+              "location": "길가"
+            }
+          ],
+          "current_lines": [
+            "201-11",
+            "201-12",
+            "201-13",
+            "201-14",
+            "201-15",
+            "201-16",
+            "201-17",
+            "201-18",
+            "201-19",
+            "201-20",
+            "201-21",
+            "201-22",
+            "201-23",
+            "201-24",
+            "201-25",
+            "201-26",
+            "201-27",
+            "201-28",
+            "201-30",
+            "201-32"
+          ],
+          "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+          "basis": {
+            "data": "bus.sqlite",
+            "period": null,
+            "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+            "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+          }
+        },
+        "roadside": true,
+        "basis": {
+          "data": "bus.sqlite",
+          "period": "2018여름",
+          "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "branches": [
+        {
+          "line": "201-14",
+          "route": "201",
+          "market_mean": 22.95,
+          "other_mean": 8.636363636363637,
+          "difference": 14.313636363636363,
+          "ratio": 2.5119402985074624,
+          "market_days": 20,
+          "other_days": 77,
+          "share": 0.19523606975754998
+        },
+        {
+          "line": "201-12",
+          "route": "201",
+          "market_mean": 22.8,
+          "other_mean": 5.545454545454546,
+          "difference": 17.254545454545454,
+          "ratio": 3.7714285714285714,
+          "market_days": 20,
+          "other_days": 77,
+          "share": 0.1939600170140366
+        },
+        {
+          "line": "201-13",
+          "route": "201",
+          "market_mean": 16.55,
+          "other_mean": 4.805194805194805,
+          "difference": 11.744805194805195,
+          "ratio": 3.1195838433292535,
+          "market_days": 20,
+          "other_days": 77,
+          "share": 0.1407911527009783
+        },
+        {
+          "line": "201-21",
+          "route": "201",
+          "market_mean": 13.45,
+          "other_mean": 9.753246753246753,
+          "difference": 3.6967532467532465,
+          "ratio": 1.3117796073464218,
+          "market_days": 20,
+          "other_days": 77,
+          "share": 0.1144193960017014
+        },
+        {
+          "line": "201-11",
+          "route": "201",
+          "market_mean": 11.8,
+          "other_mean": 4.805194805194805,
+          "difference": 6.9948051948051955,
+          "ratio": 2.224235006119951,
+          "market_days": 20,
+          "other_days": 77,
+          "share": 0.10038281582305403
+        },
+        {
+          "line": "201-15",
+          "route": "201",
+          "market_mean": 5.9,
+          "other_mean": 1.9870129870129871,
+          "difference": 3.9129870129870135,
+          "ratio": 2.372323759791123,
+          "market_days": 20,
+          "other_days": 77,
+          "share": 0.050191407911527014
+        },
+        {
+          "line": "201-22",
+          "route": "201",
+          "market_mean": 5.7,
+          "other_mean": 2.8701298701298703,
+          "difference": 2.82987012987013,
+          "ratio": 1.6913294797687861,
+          "market_days": 20,
+          "other_days": 77,
+          "share": 0.04849000425350915
+        },
+        {
+          "line": "201-16",
+          "route": "201",
+          "market_mean": 4.05,
+          "other_mean": 2.142857142857143,
+          "difference": 1.907142857142857,
+          "ratio": 1.5324324324324323,
+          "market_days": 20,
+          "other_days": 77,
+          "share": 0.03445342407486176
+        },
+        {
+          "line": "201-19",
+          "route": "201",
+          "market_mean": 3.95,
+          "other_mean": 0.6233766233766234,
+          "difference": 3.3266233766233766,
+          "ratio": 3.516184971098266,
+          "market_days": 20,
+          "other_days": 77,
+          "share": 0.03360272224585283
+        },
+        {
+          "line": "201-17",
+          "route": "201",
+          "market_mean": 3.55,
+          "other_mean": 1.12987012987013,
+          "difference": 2.4201298701298697,
+          "ratio": 2.17808764940239,
+          "market_days": 20,
+          "other_days": 77,
+          "share": 0.0301999149298171
+        },
+        {
+          "line": "201-32",
+          "route": "201",
+          "market_mean": 2.3,
+          "other_mean": 0.2597402597402597,
+          "difference": 2.04025974025974,
+          "ratio": 3.0273504273504273,
+          "market_days": 20,
+          "other_days": 77,
+          "share": 0.019566142067205444
+        },
+        {
+          "line": "201-23",
+          "route": "201",
+          "market_mean": 2.1,
+          "other_mean": 1.7012987012987013,
+          "difference": 0.3987012987012988,
+          "ratio": 0.9539823008849558,
+          "market_days": 20,
+          "other_days": 77,
+          "share": 0.01786473840918758
+        }
+      ]
+    }
+  ],
+  "villages": {
+    "villages": [
+      {
+        "name": "건입동",
+        "emd": "건입동",
+        "market_mean": 223.75,
+        "other_mean": 214.5974025974026,
+        "difference": 9.152597402597394,
+        "ratio": 1.0402264150943397,
+        "market_days": 20,
+        "other_days": 77
+      },
+      {
+        "name": "구좌읍",
+        "emd": "구좌읍",
+        "market_mean": 2095.8,
+        "other_mean": 2112.4935064935066,
+        "difference": -16.693506493506447,
+        "ratio": 0.991862962928817,
+        "market_days": 20,
+        "other_days": 77
+      },
+      {
+        "name": "남원읍",
+        "emd": "남원읍",
+        "market_mean": 1021.25,
+        "other_mean": 952.1558441558442,
+        "difference": 69.09415584415581,
+        "ratio": 1.0720030809289136,
+        "market_days": 20,
+        "other_days": 77
+      },
+      {
+        "name": "대륜동",
+        "emd": "대륜동",
+        "market_mean": 305.3,
+        "other_mean": 293.12987012987014,
+        "difference": 12.17012987012987,
+        "ratio": 1.0397443552488999,
+        "market_days": 20,
+        "other_days": 77
+      },
+      {
+        "name": "동홍동",
+        "emd": "동홍동",
+        "market_mean": 143.45,
+        "other_mean": 140.58441558441558,
+        "difference": 2.865584415584408,
+        "ratio": 1.0167671560730887,
+        "market_days": 20,
+        "other_days": 77
+      },
+      {
+        "name": "삼양동",
+        "emd": "삼양동",
+        "market_mean": 128.65,
+        "other_mean": 128.6883116883117,
+        "difference": -0.03831168831169407,
+        "ratio": 0.9958331239004775,
+        "market_days": 20,
+        "other_days": 77
+      },
+      {
+        "name": "성산읍",
+        "emd": "성산읍",
+        "market_mean": 2050.65,
+        "other_mean": 2005.1818181818182,
+        "difference": 45.46818181818185,
+        "ratio": 1.0224203966005665,
+        "market_days": 20,
+        "other_days": 77
+      },
+      {
+        "name": "영천동",
+        "emd": "영천동",
+        "market_mean": 78,
+        "other_mean": 78.75324675324676,
+        "difference": -0.7532467532467564,
+        "ratio": 0.9841868086849651,
+        "market_days": 20,
+        "other_days": 77
+      },
+      {
+        "name": "오라동",
+        "emd": "오라동",
+        "market_mean": 344,
+        "other_mean": 325.24675324675326,
+        "difference": 18.753246753246742,
+        "ratio": 1.0560350842220672,
+        "market_days": 20,
+        "other_days": 77
+      },
+      {
+        "name": "이도1동",
+        "emd": "이도1동",
+        "market_mean": 288.3,
+        "other_mean": 281.4155844155844,
+        "difference": 6.884415584415592,
+        "ratio": 1.022646550731314,
+        "market_days": 20,
+        "other_days": 77
+      },
+      {
+        "name": "이도2동",
+        "emd": "이도2동",
+        "market_mean": 0.05,
+        "other_mean": 0,
+        "difference": 0.05,
+        "ratio": 0.1,
+        "market_days": 20,
+        "other_days": 77
+      },
+      {
+        "name": "정방동",
+        "emd": "정방동",
+        "market_mean": 179.75,
+        "other_mean": 177.55844155844156,
+        "difference": 2.191558441558442,
+        "ratio": 1.0095000182342,
+        "market_days": 20,
+        "other_days": 77
+      },
+      {
+        "name": "조천읍",
+        "emd": "조천읍",
+        "market_mean": 1363.05,
+        "other_mean": 1360.8311688311687,
+        "difference": 2.2188311688312297,
+        "ratio": 1.0012626106036395,
+        "market_days": 20,
+        "other_days": 77
+      },
+      {
+        "name": "중앙동",
+        "emd": "중앙동",
+        "market_mean": 151.3,
+        "other_mean": 148.9090909090909,
+        "difference": 2.390909090909105,
+        "ratio": 1.012655917249772,
+        "market_days": 20,
+        "other_days": 77
+      },
+      {
+        "name": "천지동",
+        "emd": "천지동",
+        "market_mean": 435.5,
+        "other_mean": 429.02597402597405,
+        "difference": 6.474025974025949,
+        "ratio": 1.013908416103527,
+        "market_days": 20,
+        "other_days": 77
+      },
+      {
+        "name": "표선면",
+        "emd": "표선면",
+        "market_mean": 1042.45,
+        "other_mean": 949.2857142857143,
+        "difference": 93.16428571428571,
+        "ratio": 1.0975633601564263,
+        "market_days": 20,
+        "other_days": 77
+      },
+      {
+        "name": "화북동",
+        "emd": "화북동",
+        "market_mean": 536.4,
+        "other_mean": 508.75324675324674,
+        "difference": 27.646753246753235,
+        "ratio": 1.0533069811922218,
+        "market_days": 20,
+        "other_days": 77
+      },
+      {
+        "name": "효돈동",
+        "emd": "효돈동",
+        "market_mean": 12.75,
+        "other_mean": 13.077922077922079,
+        "difference": -0.3279220779220786,
+        "ratio": 0.9390243902439024,
+        "market_days": 20,
+        "other_days": 77
+      }
+    ],
+    "weekday_only": false,
+    "basis": {
+      "data": "bus.sqlite",
+      "period": "2018여름",
+      "formula": "시장 경유 갈래의 시장 외 정류장 승차를 읍면동별 합산. 시장행 승객을 직접 추적한 수치는 아님",
+      "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+    }
+  },
+  "basis": {
+    "data": "bus.sqlite",
+    "period": "2018여름",
+    "formula": "각 묶음 승차 합계 ÷ 실제 날짜 수; 배수=장날 평균/(다른 날 평균+0.5)",
+    "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+  },
+  "observations": [],
+  "summary": [
+    "표선오일장의 2018여름 승차 기록을 살폈습니다.",
+    "장날 하루 평균 117.5명, 다른 날 46.5명입니다.",
+    "과거 승차 기록과 현재 공개 시간표는 시점이 다릅니다.",
+    "공백 후보는 운행 여부를 확인할 대상입니다. 담당 부서에 정차 유지를 확인해 주세요."
+  ],
+  "opinion": [],
+  "opinion_source": "고정 문안",
+  "opinion_citations": [],
+  "answer": ""
+}

@@ -1,0 +1,5078 @@
+{
+  "period": "2020봄",
+  "mode": "말 다듬기: 규칙 기반",
+  "database": "bus.sqlite",
+  "trace": [
+    {
+      "tool": "find_place",
+      "도구": "find_place",
+      "why": "입력한 곳과 맞는 시장·마을·노선을 찾습니다.",
+      "왜 불렀나": "입력한 곳과 맞는 시장·마을·노선을 찾습니다.",
+      "result": "후보 0곳",
+      "핵심 결과": "후보 0곳",
+      "ms": 3.707
+    },
+    {
+      "tool": "detect_cycle",
+      "도구": "detect_cycle",
+      "why": "실제 승차 기록에서 장날 주기를 찾습니다.",
+      "왜 불렀나": "실제 승차 기록에서 장날 주기를 찾습니다.",
+      "result": "2묶음, 장날 평균 2730.9명",
+      "핵심 결과": "2묶음, 장날 평균 2730.9명",
+      "ms": 18.666
+    },
+    {
+      "tool": "detect_cycle",
+      "도구": "detect_cycle",
+      "why": "실제 승차 기록에서 장날 주기를 찾습니다.",
+      "왜 불렀나": "실제 승차 기록에서 장날 주기를 찾습니다.",
+      "result": "2묶음, 장날 평균 2216.9명",
+      "핵심 결과": "2묶음, 장날 평균 2216.9명",
+      "ms": 17.712
+    },
+    {
+      "tool": "split_routes",
+      "도구": "split_routes",
+      "why": "장날 손님을 노선 갈래별로 나눕니다.",
+      "왜 불렀나": "장날 손님을 노선 갈래별로 나눕니다.",
+      "result": "장날 손님이 있는 노선 갈래 59개",
+      "핵심 결과": "장날 손님이 있는 노선 갈래 59개",
+      "ms": 119.597
+    },
+    {
+      "tool": "village_lift",
+      "도구": "village_lift",
+      "why": "같은 노선이 지나는 다른 마을의 승차 변화를 봅니다.",
+      "왜 불렀나": "같은 노선이 지나는 다른 마을의 승차 변화를 봅니다.",
+      "result": "마을 30곳 · 장날에 가장 많이 느는 곳 연동 하루 +364.6명",
+      "핵심 결과": "마을 30곳 · 장날에 가장 많이 느는 곳 연동 하루 +364.6명",
+      "ms": 242.337
+    },
+    {
+      "tool": "check_timetable",
+      "도구": "check_timetable",
+      "why": "지금 공개 시간표 202개와 노선 정류장 목록을 확인합니다.",
+      "왜 불렀나": "지금 공개 시간표 202개와 노선 정류장 목록을 확인합니다.",
+      "result": "노선 21개 대조 · 장날 문구 1개 · 공개 시간표 없음 0개",
+      "핵심 결과": "노선 21개 대조 · 장날 문구 1개 · 공개 시간표 없음 0개",
+      "ms": 0.015
+    },
+    {
+      "tool": "judge",
+      "도구": "judge",
+      "why": "옛 장날 승차와 지금 공개 정보를 노선마다 맞춰 판정합니다.",
+      "왜 불렀나": "옛 장날 승차와 지금 공개 정보를 노선마다 맞춰 판정합니다.",
+      "result": "지켜짐 20개 · 구분 안 됨 1개",
+      "핵심 결과": "지켜짐 20개 · 구분 안 됨 1개",
+      "ms": 695.457
+    }
+  ],
+  "search": {
+    "candidates": [],
+    "suggestions": [
+      "건입동",
+      "고성오일장(성산)",
+      "구좌읍"
+    ],
+    "basis": {
+      "data": "bus.sqlite",
+      "period": null,
+      "formula": "이름 공백·오일장 표현 정규화 및 비슷한 이름 비교",
+      "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+    }
+  },
+  "proposed_plan": {},
+  "llm_log": {
+    "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+    "plan": {
+      "accepted": {},
+      "discarded": [],
+      "ms": 0,
+      "source": "규칙 기반"
+    },
+    "sentences": {
+      "summary": {
+        "total": 0,
+        "accepted": 0,
+        "discarded": [],
+        "used": 0,
+        "fallback": true,
+        "source": "규칙 문장(모델 문장은 기본으로 끔)",
+        "citations": []
+      }
+    },
+    "requests": []
+  },
+  "question": "",
+  "market": {
+    "id": "jeju",
+    "name": "제주시민속오일장",
+    "known_group": 2,
+    "known_days": [
+      2,
+      7
+    ],
+    "stop_ids": [
+      "0000096",
+      "0000097",
+      "0000098"
+    ],
+    "source": "관광 안내 trazy.com/spot/1102(2·7·12·17·22·27일) · 데이터가 찾은 값과 일치",
+    "stop_names": [
+      "제주민속오일장",
+      "제주민속오일장입구"
+    ]
+  },
+  "cycles": {
+    "2018여름": {
+      "market_mean": 2730.95,
+      "other_mean": 649.6233766233767,
+      "difference": 2081.326623376623,
+      "ratio": 4.200664209590586,
+      "market_days": 20,
+      "other_days": 77,
+      "day_group": 2,
+      "groups": [
+        {
+          "day_group": 1,
+          "label": "1·6일",
+          "days": 20,
+          "mean": 637.05
+        },
+        {
+          "day_group": 2,
+          "label": "2·7일",
+          "days": 20,
+          "mean": 2730.95
+        },
+        {
+          "day_group": 3,
+          "label": "3·8일",
+          "days": 19,
+          "mean": 634.7894736842105
+        },
+        {
+          "day_group": 4,
+          "label": "4·9일",
+          "days": 19,
+          "mean": 669.578947368421
+        },
+        {
+          "day_group": 5,
+          "label": "5·10일",
+          "days": 19,
+          "mean": 657.7368421052631
+        }
+      ],
+      "known_group": 2,
+      "needs_confirm": false,
+      "cycle": "주기 있음",
+      "confirmation": "",
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2018여름",
+        "formula": "각 묶음 승차 합계 ÷ 실제 날짜 수; 배수=장날 평균/(다른 날 평균+0.5)",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      }
+    },
+    "2020봄": {
+      "market_mean": 2216.9166666666665,
+      "other_mean": 544.3888888888889,
+      "difference": 1672.5277777777776,
+      "ratio": 4.06856647634584,
+      "market_days": 12,
+      "other_days": 36,
+      "day_group": 2,
+      "groups": [
+        {
+          "day_group": 1,
+          "label": "1·6일",
+          "days": 12,
+          "mean": 548.8333333333334
+        },
+        {
+          "day_group": 2,
+          "label": "2·7일",
+          "days": 12,
+          "mean": 2216.9166666666665
+        },
+        {
+          "day_group": 3,
+          "label": "3·8일",
+          "days": 8,
+          "mean": 549.25
+        },
+        {
+          "day_group": 4,
+          "label": "4·9일",
+          "days": 8,
+          "mean": 544.875
+        },
+        {
+          "day_group": 5,
+          "label": "5·10일",
+          "days": 8,
+          "mean": 532.375
+        }
+      ],
+      "known_group": 2,
+      "needs_confirm": false,
+      "cycle": "주기 있음",
+      "confirmation": "",
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2020봄",
+        "formula": "각 묶음 승차 합계 ÷ 실제 날짜 수; 배수=장날 평균/(다른 날 평균+0.5)",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      }
+    }
+  },
+  "cycle": {
+    "market_mean": 2216.9166666666665,
+    "other_mean": 544.3888888888889,
+    "difference": 1672.5277777777776,
+    "ratio": 4.06856647634584,
+    "market_days": 12,
+    "other_days": 36,
+    "day_group": 2,
+    "groups": [
+      {
+        "day_group": 1,
+        "label": "1·6일",
+        "days": 12,
+        "mean": 548.8333333333334
+      },
+      {
+        "day_group": 2,
+        "label": "2·7일",
+        "days": 12,
+        "mean": 2216.9166666666665
+      },
+      {
+        "day_group": 3,
+        "label": "3·8일",
+        "days": 8,
+        "mean": 549.25
+      },
+      {
+        "day_group": 4,
+        "label": "4·9일",
+        "days": 8,
+        "mean": 544.875
+      },
+      {
+        "day_group": 5,
+        "label": "5·10일",
+        "days": 8,
+        "mean": 532.375
+      }
+    ],
+    "known_group": 2,
+    "needs_confirm": false,
+    "cycle": "주기 있음",
+    "confirmation": "",
+    "basis": {
+      "data": "bus.sqlite",
+      "period": "2020봄",
+      "formula": "각 묶음 승차 합계 ÷ 실제 날짜 수; 배수=장날 평균/(다른 날 평균+0.5)",
+      "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+    }
+  },
+  "needs_confirm": false,
+  "confirmation": "",
+  "routes": [
+    {
+      "line": "202",
+      "market": "제주시민속오일장",
+      "verdict": "지켜짐",
+      "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+      "market_mean": 575.4166666666666,
+      "other_mean": 192.97222222222223,
+      "difference": 382.4444444444444,
+      "ratio": 2.9741564967695617,
+      "market_days": 12,
+      "other_days": 36,
+      "standard_error": 43.47435174974926,
+      "required_market_days": 1,
+      "timetable": {
+        "line": "202",
+        "route": "202",
+        "market_mentions": [
+          "jeju"
+        ],
+        "files": [
+          "x_405010.txt",
+          "x_405114.txt",
+          "x_405115.txt",
+          "x_405157.txt"
+        ],
+        "missing": false,
+        "day_service": false,
+        "phrases": [],
+        "mentions": [
+          "서귀포향토오일시장",
+          "한림민속오일장"
+        ],
+        "market_stops": [
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "202-13",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "202-13",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "202-14",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "202-15",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "202-15",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "202-16",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "202-17",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "202-17",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "202-18",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "202-19",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "202-19",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "202-20",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "202-26",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "202-27",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "202-27",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "202-28",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "202-29",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "202-29",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "202-30",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "202-32",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "202-33",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "202-33",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "202-34",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "202-36",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "202-37",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "202-37",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "202-39",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "202-39",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "202-51",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "202-51",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "202-52",
+            "location": "길가"
+          }
+        ],
+        "current_lines": [
+          "202-13",
+          "202-14",
+          "202-15",
+          "202-16",
+          "202-17",
+          "202-18",
+          "202-19",
+          "202-20",
+          "202-21",
+          "202-22",
+          "202-23",
+          "202-24",
+          "202-26",
+          "202-27",
+          "202-28",
+          "202-29",
+          "202-30",
+          "202-31",
+          "202-32",
+          "202-33",
+          "202-34",
+          "202-36",
+          "202-37",
+          "202-39",
+          "202-51",
+          "202-52"
+        ],
+        "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+        "basis": {
+          "data": "bus.sqlite",
+          "period": null,
+          "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "roadside": true,
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2020봄",
+        "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      },
+      "judgement": {
+        "line": "202",
+        "market": "제주시민속오일장",
+        "verdict": "지켜짐",
+        "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+        "market_mean": 575.4166666666666,
+        "other_mean": 192.97222222222223,
+        "difference": 382.4444444444444,
+        "ratio": 2.9741564967695617,
+        "market_days": 12,
+        "other_days": 36,
+        "standard_error": 43.47435174974926,
+        "required_market_days": 1,
+        "timetable": {
+          "line": "202",
+          "route": "202",
+          "market_mentions": [
+            "jeju"
+          ],
+          "files": [
+            "x_405010.txt",
+            "x_405114.txt",
+            "x_405115.txt",
+            "x_405157.txt"
+          ],
+          "missing": false,
+          "day_service": false,
+          "phrases": [],
+          "mentions": [
+            "서귀포향토오일시장",
+            "한림민속오일장"
+          ],
+          "market_stops": [
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "202-13",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "202-13",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "202-14",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "202-15",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "202-15",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "202-16",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "202-17",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "202-17",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "202-18",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "202-19",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "202-19",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "202-20",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "202-26",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "202-27",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "202-27",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "202-28",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "202-29",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "202-29",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "202-30",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "202-32",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "202-33",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "202-33",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "202-34",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "202-36",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "202-37",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "202-37",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "202-39",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "202-39",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "202-51",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "202-51",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "202-52",
+              "location": "길가"
+            }
+          ],
+          "current_lines": [
+            "202-13",
+            "202-14",
+            "202-15",
+            "202-16",
+            "202-17",
+            "202-18",
+            "202-19",
+            "202-20",
+            "202-21",
+            "202-22",
+            "202-23",
+            "202-24",
+            "202-26",
+            "202-27",
+            "202-28",
+            "202-29",
+            "202-30",
+            "202-31",
+            "202-32",
+            "202-33",
+            "202-34",
+            "202-36",
+            "202-37",
+            "202-39",
+            "202-51",
+            "202-52"
+          ],
+          "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+          "basis": {
+            "data": "bus.sqlite",
+            "period": null,
+            "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+            "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+          }
+        },
+        "roadside": true,
+        "basis": {
+          "data": "bus.sqlite",
+          "period": "2020봄",
+          "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "branches": [
+        {
+          "line": "202-13",
+          "route": "202",
+          "market_mean": 146.33333333333334,
+          "other_mean": 51.94444444444444,
+          "difference": 94.3888888888889,
+          "ratio": 2.790254237288136,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.06600759312859453
+        },
+        {
+          "line": "202-15",
+          "route": "202",
+          "market_mean": 141.33333333333334,
+          "other_mean": 46.05555555555556,
+          "difference": 95.27777777777779,
+          "ratio": 3.035799522673031,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.06375220839754915
+        },
+        {
+          "line": "202-16",
+          "route": "202",
+          "market_mean": 132.16666666666666,
+          "other_mean": 37.638888888888886,
+          "difference": 94.52777777777777,
+          "ratio": 3.465404224326293,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.05961733639063264
+        },
+        {
+          "line": "202-14",
+          "route": "202",
+          "market_mean": 125.5,
+          "other_mean": 38.69444444444444,
+          "difference": 86.80555555555556,
+          "ratio": 3.20198440822112,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.05661015674923881
+        },
+        {
+          "line": "202-28",
+          "route": "202",
+          "market_mean": 6.833333333333333,
+          "other_mean": 3.861111111111111,
+          "difference": 2.972222222222222,
+          "ratio": 1.5668789808917198,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.0030823591324286737
+        },
+        {
+          "line": "202-30",
+          "route": "202",
+          "market_mean": 6.083333333333333,
+          "other_mean": 2.0833333333333335,
+          "difference": 3.9999999999999996,
+          "ratio": 2.354838709677419,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.002744051422771868
+        },
+        {
+          "line": "202-27",
+          "route": "202",
+          "market_mean": 4.5,
+          "other_mean": 4.416666666666667,
+          "difference": 0.08333333333333304,
+          "ratio": 0.9152542372881355,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.0020298462579408337
+        },
+        {
+          "line": "202-26",
+          "route": "202",
+          "market_mean": 3.6666666666666665,
+          "other_mean": 1.9444444444444444,
+          "difference": 1.722222222222222,
+          "ratio": 1.4999999999999998,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.0016539488027666053
+        },
+        {
+          "line": "202-32",
+          "route": "202",
+          "market_mean": 3.3333333333333335,
+          "other_mean": 1.25,
+          "difference": 2.0833333333333335,
+          "ratio": 1.9047619047619049,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.0015035898206969141
+        },
+        {
+          "line": "202-29",
+          "route": "202",
+          "market_mean": 2.25,
+          "other_mean": 1.8055555555555556,
+          "difference": 0.4444444444444444,
+          "ratio": 0.9759036144578314,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.0010149231289704169
+        },
+        {
+          "line": "202-20",
+          "route": "202",
+          "market_mean": 2.1666666666666665,
+          "other_mean": 1.3055555555555556,
+          "difference": 0.8611111111111109,
+          "ratio": 1.2,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.0009773333834529941
+        },
+        {
+          "line": "202-17",
+          "route": "202",
+          "market_mean": 1.25,
+          "other_mean": 1.8611111111111112,
+          "difference": -0.6111111111111112,
+          "ratio": 0.5294117647058824,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.0005638461827613427
+        }
+      ]
+    },
+    {
+      "line": "355",
+      "market": "제주시민속오일장",
+      "verdict": "지켜짐",
+      "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+      "market_mean": 285,
+      "other_mean": 53.138888888888886,
+      "difference": 231.86111111111111,
+      "ratio": 5.313309166235111,
+      "market_days": 12,
+      "other_days": 36,
+      "standard_error": 29.526566609111573,
+      "required_market_days": 1,
+      "timetable": {
+        "line": "355",
+        "route": "355",
+        "market_mentions": [
+          "jeju"
+        ],
+        "files": [
+          "x_405036.txt"
+        ],
+        "missing": false,
+        "day_service": false,
+        "phrases": [],
+        "mentions": [
+          "제주시민속오일장"
+        ],
+        "market_stops": [
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "355-21",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "355-22",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "355-22",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "355-23",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "355-24",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "355-24",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "355-25",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "355-26",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "355-26",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "355-27",
+            "location": "길가"
+          }
+        ],
+        "current_lines": [
+          "355-21",
+          "355-22",
+          "355-23",
+          "355-24",
+          "355-25",
+          "355-26",
+          "355-27"
+        ],
+        "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+        "basis": {
+          "data": "bus.sqlite",
+          "period": null,
+          "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "roadside": true,
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2020봄",
+        "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      },
+      "judgement": {
+        "line": "355",
+        "market": "제주시민속오일장",
+        "verdict": "지켜짐",
+        "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+        "market_mean": 285,
+        "other_mean": 53.138888888888886,
+        "difference": 231.86111111111111,
+        "ratio": 5.313309166235111,
+        "market_days": 12,
+        "other_days": 36,
+        "standard_error": 29.526566609111573,
+        "required_market_days": 1,
+        "timetable": {
+          "line": "355",
+          "route": "355",
+          "market_mentions": [
+            "jeju"
+          ],
+          "files": [
+            "x_405036.txt"
+          ],
+          "missing": false,
+          "day_service": false,
+          "phrases": [],
+          "mentions": [
+            "제주시민속오일장"
+          ],
+          "market_stops": [
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "355-21",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "355-22",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "355-22",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "355-23",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "355-24",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "355-24",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "355-25",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "355-26",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "355-26",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "355-27",
+              "location": "길가"
+            }
+          ],
+          "current_lines": [
+            "355-21",
+            "355-22",
+            "355-23",
+            "355-24",
+            "355-25",
+            "355-26",
+            "355-27"
+          ],
+          "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+          "basis": {
+            "data": "bus.sqlite",
+            "period": null,
+            "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+            "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+          }
+        },
+        "roadside": true,
+        "basis": {
+          "data": "bus.sqlite",
+          "period": "2020봄",
+          "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "branches": [
+        {
+          "line": "355-21",
+          "route": "355",
+          "market_mean": 150.91666666666666,
+          "other_mean": 32.02777777777778,
+          "difference": 118.88888888888889,
+          "ratio": 4.6396242527754055,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.06807502913205278
+        },
+        {
+          "line": "355-22",
+          "route": "355",
+          "market_mean": 132,
+          "other_mean": 19.944444444444443,
+          "difference": 112.05555555555556,
+          "ratio": 6.4565217391304355,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.05954215689959779
+        },
+        {
+          "line": "355-23",
+          "route": "355",
+          "market_mean": 1.0833333333333333,
+          "other_mean": 0.6944444444444444,
+          "difference": 0.38888888888888884,
+          "ratio": 0.9069767441860465,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.0004886666917264971
+        }
+      ]
+    },
+    {
+      "line": "325",
+      "market": "제주시민속오일장",
+      "verdict": "지켜짐",
+      "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+      "market_mean": 248.83333333333334,
+      "other_mean": 36.583333333333336,
+      "difference": 212.25,
+      "ratio": 6.710112359550561,
+      "market_days": 12,
+      "other_days": 36,
+      "standard_error": 19.600868082345986,
+      "required_market_days": 1,
+      "timetable": {
+        "line": "325",
+        "route": "325",
+        "market_mentions": [
+          "jeju"
+        ],
+        "files": [
+          "x_405027.txt"
+        ],
+        "missing": false,
+        "day_service": false,
+        "phrases": [],
+        "mentions": [],
+        "market_stops": [
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "325-11",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "325-12",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "325-12",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "325-13",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "325-13",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "325-14",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "325-14",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "325-15",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "325-15",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "325-19",
+            "location": "길가"
+          }
+        ],
+        "current_lines": [
+          "325-11",
+          "325-12",
+          "325-13",
+          "325-14",
+          "325-15",
+          "325-17",
+          "325-19"
+        ],
+        "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+        "basis": {
+          "data": "bus.sqlite",
+          "period": null,
+          "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "roadside": true,
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2020봄",
+        "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      },
+      "judgement": {
+        "line": "325",
+        "market": "제주시민속오일장",
+        "verdict": "지켜짐",
+        "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+        "market_mean": 248.83333333333334,
+        "other_mean": 36.583333333333336,
+        "difference": 212.25,
+        "ratio": 6.710112359550561,
+        "market_days": 12,
+        "other_days": 36,
+        "standard_error": 19.600868082345986,
+        "required_market_days": 1,
+        "timetable": {
+          "line": "325",
+          "route": "325",
+          "market_mentions": [
+            "jeju"
+          ],
+          "files": [
+            "x_405027.txt"
+          ],
+          "missing": false,
+          "day_service": false,
+          "phrases": [],
+          "mentions": [],
+          "market_stops": [
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "325-11",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "325-12",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "325-12",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "325-13",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "325-13",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "325-14",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "325-14",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "325-15",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "325-15",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "325-19",
+              "location": "길가"
+            }
+          ],
+          "current_lines": [
+            "325-11",
+            "325-12",
+            "325-13",
+            "325-14",
+            "325-15",
+            "325-17",
+            "325-19"
+          ],
+          "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+          "basis": {
+            "data": "bus.sqlite",
+            "period": null,
+            "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+            "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+          }
+        },
+        "roadside": true,
+        "basis": {
+          "data": "bus.sqlite",
+          "period": "2020봄",
+          "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "branches": [
+        {
+          "line": "325-11",
+          "route": "325",
+          "market_mean": 131.41666666666666,
+          "other_mean": 21.11111111111111,
+          "difference": 110.30555555555554,
+          "ratio": 6.080976863753213,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.05927902868097583
+        },
+        {
+          "line": "325-12",
+          "route": "325",
+          "market_mean": 113.5,
+          "other_mean": 13.722222222222221,
+          "difference": 99.77777777777777,
+          "ratio": 7.98046875,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.051197233394729924
+        },
+        {
+          "line": "325-13",
+          "route": "325",
+          "market_mean": 1.9166666666666667,
+          "other_mean": 0.7777777777777778,
+          "difference": 1.1388888888888888,
+          "ratio": 1.5000000000000002,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.0008645641469007256
+        },
+        {
+          "line": "325-15",
+          "route": "325",
+          "market_mean": 1.6666666666666667,
+          "other_mean": 0.6388888888888888,
+          "difference": 1.027777777777778,
+          "ratio": 1.4634146341463417,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.0007517949103484571
+        }
+      ]
+    },
+    {
+      "line": "356",
+      "market": "제주시민속오일장",
+      "verdict": "지켜짐",
+      "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+      "market_mean": 227.66666666666666,
+      "other_mean": 48.833333333333336,
+      "difference": 178.83333333333331,
+      "ratio": 4.614864864864864,
+      "market_days": 12,
+      "other_days": 36,
+      "standard_error": 21.144392957362324,
+      "required_market_days": 1,
+      "timetable": {
+        "line": "356",
+        "route": "356",
+        "market_mentions": [
+          "jeju"
+        ],
+        "files": [
+          "x_405036.txt",
+          "x_405043.txt"
+        ],
+        "missing": false,
+        "day_service": false,
+        "phrases": [],
+        "mentions": [
+          "제주시민속오일장"
+        ],
+        "market_stops": [
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "356-1",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "356-2",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "356-2",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "356-3",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "356-4",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "356-4",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "356-51",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "356-8",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "356-8",
+            "location": "길가"
+          }
+        ],
+        "current_lines": [
+          "356-1",
+          "356-2",
+          "356-3",
+          "356-4",
+          "356-51",
+          "356-8"
+        ],
+        "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+        "basis": {
+          "data": "bus.sqlite",
+          "period": null,
+          "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "roadside": true,
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2020봄",
+        "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      },
+      "judgement": {
+        "line": "356",
+        "market": "제주시민속오일장",
+        "verdict": "지켜짐",
+        "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+        "market_mean": 227.66666666666666,
+        "other_mean": 48.833333333333336,
+        "difference": 178.83333333333331,
+        "ratio": 4.614864864864864,
+        "market_days": 12,
+        "other_days": 36,
+        "standard_error": 21.144392957362324,
+        "required_market_days": 1,
+        "timetable": {
+          "line": "356",
+          "route": "356",
+          "market_mentions": [
+            "jeju"
+          ],
+          "files": [
+            "x_405036.txt",
+            "x_405043.txt"
+          ],
+          "missing": false,
+          "day_service": false,
+          "phrases": [],
+          "mentions": [
+            "제주시민속오일장"
+          ],
+          "market_stops": [
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "356-1",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "356-2",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "356-2",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "356-3",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "356-4",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "356-4",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "356-51",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "356-8",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "356-8",
+              "location": "길가"
+            }
+          ],
+          "current_lines": [
+            "356-1",
+            "356-2",
+            "356-3",
+            "356-4",
+            "356-51",
+            "356-8"
+          ],
+          "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+          "basis": {
+            "data": "bus.sqlite",
+            "period": null,
+            "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+            "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+          }
+        },
+        "roadside": true,
+        "basis": {
+          "data": "bus.sqlite",
+          "period": "2020봄",
+          "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "branches": [
+        {
+          "line": "356-1",
+          "route": "356",
+          "market_mean": 119.83333333333333,
+          "other_mean": 29.25,
+          "difference": 90.58333333333333,
+          "ratio": 4.028011204481793,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.05405405405405406
+        },
+        {
+          "line": "356-2",
+          "route": "356",
+          "market_mean": 103.66666666666667,
+          "other_mean": 16.88888888888889,
+          "difference": 86.77777777777779,
+          "ratio": 5.961661341853035,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.046761643423674025
+        },
+        {
+          "line": "356-4",
+          "route": "356",
+          "market_mean": 1.6666666666666667,
+          "other_mean": 0.5833333333333334,
+          "difference": 1.0833333333333335,
+          "ratio": 1.5384615384615383,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.0007517949103484571
+        }
+      ]
+    },
+    {
+      "line": "331",
+      "market": "제주시민속오일장",
+      "verdict": "지켜짐",
+      "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+      "market_mean": 152.91666666666666,
+      "other_mean": 31.13888888888889,
+      "difference": 121.77777777777777,
+      "ratio": 4.833187006145741,
+      "market_days": 12,
+      "other_days": 36,
+      "standard_error": 12.365768777310375,
+      "required_market_days": 1,
+      "timetable": {
+        "line": "331",
+        "route": "331",
+        "market_mentions": [
+          "jeju"
+        ],
+        "files": [
+          "x_405041.txt"
+        ],
+        "missing": false,
+        "day_service": false,
+        "phrases": [],
+        "mentions": [
+          "제주시민속오일장"
+        ],
+        "market_stops": [
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "331-1",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "331-2",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "331-2",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "331-3",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "331-4",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "331-4",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "331-6",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "331-6",
+            "location": "길가"
+          }
+        ],
+        "current_lines": [
+          "331-1",
+          "331-2",
+          "331-3",
+          "331-4",
+          "331-5",
+          "331-6"
+        ],
+        "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+        "basis": {
+          "data": "bus.sqlite",
+          "period": null,
+          "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "roadside": true,
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2020봄",
+        "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      },
+      "judgement": {
+        "line": "331",
+        "market": "제주시민속오일장",
+        "verdict": "지켜짐",
+        "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+        "market_mean": 152.91666666666666,
+        "other_mean": 31.13888888888889,
+        "difference": 121.77777777777777,
+        "ratio": 4.833187006145741,
+        "market_days": 12,
+        "other_days": 36,
+        "standard_error": 12.365768777310375,
+        "required_market_days": 1,
+        "timetable": {
+          "line": "331",
+          "route": "331",
+          "market_mentions": [
+            "jeju"
+          ],
+          "files": [
+            "x_405041.txt"
+          ],
+          "missing": false,
+          "day_service": false,
+          "phrases": [],
+          "mentions": [
+            "제주시민속오일장"
+          ],
+          "market_stops": [
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "331-1",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "331-2",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "331-2",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "331-3",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "331-4",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "331-4",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "331-6",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "331-6",
+              "location": "길가"
+            }
+          ],
+          "current_lines": [
+            "331-1",
+            "331-2",
+            "331-3",
+            "331-4",
+            "331-5",
+            "331-6"
+          ],
+          "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+          "basis": {
+            "data": "bus.sqlite",
+            "period": null,
+            "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+            "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+          }
+        },
+        "roadside": true,
+        "basis": {
+          "data": "bus.sqlite",
+          "period": "2020봄",
+          "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "branches": [
+        {
+          "line": "331-1",
+          "route": "331",
+          "market_mean": 66.75,
+          "other_mean": 14.805555555555555,
+          "difference": 51.94444444444444,
+          "ratio": 4.361161524500908,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.030109386159455704
+        },
+        {
+          "line": "331-2",
+          "route": "331",
+          "market_mean": 60.083333333333336,
+          "other_mean": 12.527777777777779,
+          "difference": 47.55555555555556,
+          "ratio": 4.611940298507463,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.027102206518061875
+        },
+        {
+          "line": "331-3",
+          "route": "331",
+          "market_mean": 13.75,
+          "other_mean": 2.138888888888889,
+          "difference": 11.61111111111111,
+          "ratio": 5.2105263157894735,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.006202308010374771
+        },
+        {
+          "line": "331-4",
+          "route": "331",
+          "market_mean": 12.333333333333334,
+          "other_mean": 1.6666666666666667,
+          "difference": 10.666666666666668,
+          "ratio": 5.692307692307692,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.005563282336578582
+        }
+      ]
+    },
+    {
+      "line": "326",
+      "market": "제주시민속오일장",
+      "verdict": "지켜짐",
+      "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+      "market_mean": 111.16666666666667,
+      "other_mean": 15.722222222222221,
+      "difference": 95.44444444444446,
+      "ratio": 6.852739726027398,
+      "market_days": 12,
+      "other_days": 36,
+      "standard_error": 10.531100249771585,
+      "required_market_days": 1,
+      "timetable": {
+        "line": "326",
+        "route": "326",
+        "market_mentions": [
+          "jeju"
+        ],
+        "files": [
+          "x_405143.txt"
+        ],
+        "missing": false,
+        "day_service": false,
+        "phrases": [],
+        "mentions": [],
+        "market_stops": [
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "326-72",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "326-72",
+            "location": "길가"
+          }
+        ],
+        "current_lines": [
+          "326-72"
+        ],
+        "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+        "basis": {
+          "data": "bus.sqlite",
+          "period": null,
+          "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "roadside": true,
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2020봄",
+        "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      },
+      "judgement": {
+        "line": "326",
+        "market": "제주시민속오일장",
+        "verdict": "지켜짐",
+        "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+        "market_mean": 111.16666666666667,
+        "other_mean": 15.722222222222221,
+        "difference": 95.44444444444446,
+        "ratio": 6.852739726027398,
+        "market_days": 12,
+        "other_days": 36,
+        "standard_error": 10.531100249771585,
+        "required_market_days": 1,
+        "timetable": {
+          "line": "326",
+          "route": "326",
+          "market_mentions": [
+            "jeju"
+          ],
+          "files": [
+            "x_405143.txt"
+          ],
+          "missing": false,
+          "day_service": false,
+          "phrases": [],
+          "mentions": [],
+          "market_stops": [
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "326-72",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "326-72",
+              "location": "길가"
+            }
+          ],
+          "current_lines": [
+            "326-72"
+          ],
+          "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+          "basis": {
+            "data": "bus.sqlite",
+            "period": null,
+            "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+            "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+          }
+        },
+        "roadside": true,
+        "basis": {
+          "data": "bus.sqlite",
+          "period": "2020봄",
+          "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "branches": [
+        {
+          "line": "326-1",
+          "route": "326",
+          "market_mean": 59.583333333333336,
+          "other_mean": 10.13888888888889,
+          "difference": 49.44444444444444,
+          "ratio": 5.600522193211488,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.02687666804495734
+        },
+        {
+          "line": "326-2",
+          "route": "326",
+          "market_mean": 51.5,
+          "other_mean": 5.527777777777778,
+          "difference": 45.97222222222222,
+          "ratio": 8.543778801843319,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.02323046272976732
+        }
+      ]
+    },
+    {
+      "line": "370",
+      "market": "제주시민속오일장",
+      "verdict": "지켜짐",
+      "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+      "market_mean": 102.75,
+      "other_mean": 18.833333333333332,
+      "difference": 83.91666666666667,
+      "ratio": 5.314655172413794,
+      "market_days": 12,
+      "other_days": 36,
+      "standard_error": 9.019896437655575,
+      "required_market_days": 1,
+      "timetable": {
+        "line": "370",
+        "route": "370",
+        "market_mentions": [
+          "jeju"
+        ],
+        "files": [
+          "x_405039.txt"
+        ],
+        "missing": false,
+        "day_service": false,
+        "phrases": [],
+        "mentions": [
+          "제주시민속오일장"
+        ],
+        "market_stops": [
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "370-1",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "370-2",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "370-2",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "370-3",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "370-3",
+            "location": "길가"
+          }
+        ],
+        "current_lines": [
+          "370-1",
+          "370-2",
+          "370-3"
+        ],
+        "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+        "basis": {
+          "data": "bus.sqlite",
+          "period": null,
+          "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "roadside": true,
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2020봄",
+        "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      },
+      "judgement": {
+        "line": "370",
+        "market": "제주시민속오일장",
+        "verdict": "지켜짐",
+        "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+        "market_mean": 102.75,
+        "other_mean": 18.833333333333332,
+        "difference": 83.91666666666667,
+        "ratio": 5.314655172413794,
+        "market_days": 12,
+        "other_days": 36,
+        "standard_error": 9.019896437655575,
+        "required_market_days": 1,
+        "timetable": {
+          "line": "370",
+          "route": "370",
+          "market_mentions": [
+            "jeju"
+          ],
+          "files": [
+            "x_405039.txt"
+          ],
+          "missing": false,
+          "day_service": false,
+          "phrases": [],
+          "mentions": [
+            "제주시민속오일장"
+          ],
+          "market_stops": [
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "370-1",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "370-2",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "370-2",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "370-3",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "370-3",
+              "location": "길가"
+            }
+          ],
+          "current_lines": [
+            "370-1",
+            "370-2",
+            "370-3"
+          ],
+          "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+          "basis": {
+            "data": "bus.sqlite",
+            "period": null,
+            "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+            "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+          }
+        },
+        "roadside": true,
+        "basis": {
+          "data": "bus.sqlite",
+          "period": "2020봄",
+          "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "branches": [
+        {
+          "line": "370-2",
+          "route": "370",
+          "market_mean": 56.916666666666664,
+          "other_mean": 8.75,
+          "difference": 48.166666666666664,
+          "ratio": 6.153153153153153,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.025673796188399805
+        },
+        {
+          "line": "370-1",
+          "route": "370",
+          "market_mean": 45.666666666666664,
+          "other_mean": 10.027777777777779,
+          "difference": 35.638888888888886,
+          "ratio": 4.3377308707124005,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.02059918054354772
+        }
+      ]
+    },
+    {
+      "line": "455",
+      "market": "제주시민속오일장",
+      "verdict": "지켜짐",
+      "reason": "공개 시간표에 장날 운행 문구가 있습니다: ※ 오일장날(2일,7일) 에 한해 오일시장 경유",
+      "market_mean": 99.25,
+      "other_mean": 0,
+      "difference": 99.25,
+      "ratio": 198.5,
+      "market_days": 12,
+      "other_days": 36,
+      "standard_error": 7.81521922374232,
+      "required_market_days": 1,
+      "timetable": {
+        "line": "455",
+        "route": "455",
+        "market_mentions": [],
+        "files": [
+          "x_405058.txt"
+        ],
+        "missing": false,
+        "day_service": true,
+        "phrases": [
+          " ※ 오일장날(2일,7일) 에 한해 오일시장 경유"
+        ],
+        "mentions": [
+          "제주시민속오일장",
+          "고성오일장(성산)"
+        ],
+        "market_stops": [
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "455-11",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "455-12",
+            "location": "길가"
+          }
+        ],
+        "current_lines": [
+          "455-11",
+          "455-12",
+          "455-13",
+          "455-15",
+          "455-7",
+          "455-8"
+        ],
+        "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+        "basis": {
+          "data": "bus.sqlite",
+          "period": null,
+          "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "roadside": true,
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2020봄",
+        "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      },
+      "judgement": {
+        "line": "455",
+        "market": "제주시민속오일장",
+        "verdict": "지켜짐",
+        "reason": "공개 시간표에 장날 운행 문구가 있습니다: ※ 오일장날(2일,7일) 에 한해 오일시장 경유",
+        "market_mean": 99.25,
+        "other_mean": 0,
+        "difference": 99.25,
+        "ratio": 198.5,
+        "market_days": 12,
+        "other_days": 36,
+        "standard_error": 7.81521922374232,
+        "required_market_days": 1,
+        "timetable": {
+          "line": "455",
+          "route": "455",
+          "market_mentions": [],
+          "files": [
+            "x_405058.txt"
+          ],
+          "missing": false,
+          "day_service": true,
+          "phrases": [
+            " ※ 오일장날(2일,7일) 에 한해 오일시장 경유"
+          ],
+          "mentions": [
+            "제주시민속오일장",
+            "고성오일장(성산)"
+          ],
+          "market_stops": [
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "455-11",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "455-12",
+              "location": "길가"
+            }
+          ],
+          "current_lines": [
+            "455-11",
+            "455-12",
+            "455-13",
+            "455-15",
+            "455-7",
+            "455-8"
+          ],
+          "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+          "basis": {
+            "data": "bus.sqlite",
+            "period": null,
+            "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+            "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+          }
+        },
+        "roadside": true,
+        "basis": {
+          "data": "bus.sqlite",
+          "period": "2020봄",
+          "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "branches": [
+        {
+          "line": "455-9",
+          "route": "455",
+          "market_mean": 46.583333333333336,
+          "other_mean": 0,
+          "difference": 46.583333333333336,
+          "ratio": 93.16666666666667,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.021012667744239374
+        },
+        {
+          "line": "455-10",
+          "route": "455",
+          "market_mean": 41.416666666666664,
+          "other_mean": 0,
+          "difference": 41.416666666666664,
+          "ratio": 82.83333333333333,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.018682103522159155
+        },
+        {
+          "line": "455-11",
+          "route": "455",
+          "market_mean": 11.25,
+          "other_mean": 0,
+          "difference": 11.25,
+          "ratio": 22.5,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.005074615644852085
+        }
+      ]
+    },
+    {
+      "line": "358",
+      "market": "제주시민속오일장",
+      "verdict": "지켜짐",
+      "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+      "market_mean": 57.75,
+      "other_mean": 14.833333333333334,
+      "difference": 42.916666666666664,
+      "ratio": 3.766304347826087,
+      "market_days": 12,
+      "other_days": 36,
+      "standard_error": 5.853880017169062,
+      "required_market_days": 1,
+      "timetable": {
+        "line": "358",
+        "route": "358",
+        "market_mentions": [
+          "jeju"
+        ],
+        "files": [
+          "x_405145.txt"
+        ],
+        "missing": false,
+        "day_service": false,
+        "phrases": [],
+        "mentions": [
+          "제주시민속오일장"
+        ],
+        "market_stops": [
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "358-71",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "358-72",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "358-72",
+            "location": "길가"
+          }
+        ],
+        "current_lines": [
+          "358-71",
+          "358-72"
+        ],
+        "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+        "basis": {
+          "data": "bus.sqlite",
+          "period": null,
+          "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "roadside": true,
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2020봄",
+        "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      },
+      "judgement": {
+        "line": "358",
+        "market": "제주시민속오일장",
+        "verdict": "지켜짐",
+        "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+        "market_mean": 57.75,
+        "other_mean": 14.833333333333334,
+        "difference": 42.916666666666664,
+        "ratio": 3.766304347826087,
+        "market_days": 12,
+        "other_days": 36,
+        "standard_error": 5.853880017169062,
+        "required_market_days": 1,
+        "timetable": {
+          "line": "358",
+          "route": "358",
+          "market_mentions": [
+            "jeju"
+          ],
+          "files": [
+            "x_405145.txt"
+          ],
+          "missing": false,
+          "day_service": false,
+          "phrases": [],
+          "mentions": [
+            "제주시민속오일장"
+          ],
+          "market_stops": [
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "358-71",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "358-72",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "358-72",
+              "location": "길가"
+            }
+          ],
+          "current_lines": [
+            "358-71",
+            "358-72"
+          ],
+          "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+          "basis": {
+            "data": "bus.sqlite",
+            "period": null,
+            "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+            "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+          }
+        },
+        "roadside": true,
+        "basis": {
+          "data": "bus.sqlite",
+          "period": "2020봄",
+          "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "branches": [
+        {
+          "line": "358-1",
+          "route": "358",
+          "market_mean": 36.916666666666664,
+          "other_mean": 10.694444444444445,
+          "difference": 26.22222222222222,
+          "ratio": 3.2977667493796523,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.01665225726421832
+        },
+        {
+          "line": "358-2",
+          "route": "358",
+          "market_mean": 20.833333333333332,
+          "other_mean": 4.138888888888889,
+          "difference": 16.694444444444443,
+          "ratio": 4.4910179640718555,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.009397436379355712
+        }
+      ]
+    },
+    {
+      "line": "462",
+      "market": "제주시민속오일장",
+      "verdict": "지켜짐",
+      "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+      "market_mean": 55.833333333333336,
+      "other_mean": 8.166666666666666,
+      "difference": 47.66666666666667,
+      "ratio": 6.442307692307693,
+      "market_days": 12,
+      "other_days": 36,
+      "standard_error": 6.054323583591652,
+      "required_market_days": 1,
+      "timetable": {
+        "line": "462",
+        "route": "462",
+        "market_mentions": [
+          "jeju"
+        ],
+        "files": [
+          "x_405044.txt"
+        ],
+        "missing": false,
+        "day_service": false,
+        "phrases": [],
+        "mentions": [],
+        "market_stops": [
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "462-1",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "462-1",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "462-1",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "462-2",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "462-3",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "462-3",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "462-3",
+            "location": "길가"
+          }
+        ],
+        "current_lines": [
+          "462-1",
+          "462-2",
+          "462-3"
+        ],
+        "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+        "basis": {
+          "data": "bus.sqlite",
+          "period": null,
+          "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "roadside": true,
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2020봄",
+        "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      },
+      "judgement": {
+        "line": "462",
+        "market": "제주시민속오일장",
+        "verdict": "지켜짐",
+        "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+        "market_mean": 55.833333333333336,
+        "other_mean": 8.166666666666666,
+        "difference": 47.66666666666667,
+        "ratio": 6.442307692307693,
+        "market_days": 12,
+        "other_days": 36,
+        "standard_error": 6.054323583591652,
+        "required_market_days": 1,
+        "timetable": {
+          "line": "462",
+          "route": "462",
+          "market_mentions": [
+            "jeju"
+          ],
+          "files": [
+            "x_405044.txt"
+          ],
+          "missing": false,
+          "day_service": false,
+          "phrases": [],
+          "mentions": [],
+          "market_stops": [
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "462-1",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "462-1",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "462-1",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "462-2",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "462-3",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "462-3",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "462-3",
+              "location": "길가"
+            }
+          ],
+          "current_lines": [
+            "462-1",
+            "462-2",
+            "462-3"
+          ],
+          "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+          "basis": {
+            "data": "bus.sqlite",
+            "period": null,
+            "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+            "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+          }
+        },
+        "roadside": true,
+        "basis": {
+          "data": "bus.sqlite",
+          "period": "2020봄",
+          "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "branches": [
+        {
+          "line": "462-1",
+          "route": "462",
+          "market_mean": 55.833333333333336,
+          "other_mean": 8.166666666666666,
+          "difference": 47.66666666666667,
+          "ratio": 6.442307692307693,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.02518512949667331
+        }
+      ]
+    },
+    {
+      "line": "357",
+      "market": "제주시민속오일장",
+      "verdict": "지켜짐",
+      "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+      "market_mean": 45.583333333333336,
+      "other_mean": 9.75,
+      "difference": 35.833333333333336,
+      "ratio": 4.4471544715447155,
+      "market_days": 12,
+      "other_days": 36,
+      "standard_error": 7.572423292222544,
+      "required_market_days": 3,
+      "timetable": {
+        "line": "357",
+        "route": "357",
+        "market_mentions": [
+          "jeju"
+        ],
+        "files": [
+          "x_405145.txt"
+        ],
+        "missing": false,
+        "day_service": false,
+        "phrases": [],
+        "mentions": [
+          "제주시민속오일장"
+        ],
+        "market_stops": [
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "357-71",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "357-72",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "357-72",
+            "location": "길가"
+          }
+        ],
+        "current_lines": [
+          "357-71",
+          "357-72"
+        ],
+        "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+        "basis": {
+          "data": "bus.sqlite",
+          "period": null,
+          "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "roadside": true,
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2020봄",
+        "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      },
+      "judgement": {
+        "line": "357",
+        "market": "제주시민속오일장",
+        "verdict": "지켜짐",
+        "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+        "market_mean": 45.583333333333336,
+        "other_mean": 9.75,
+        "difference": 35.833333333333336,
+        "ratio": 4.4471544715447155,
+        "market_days": 12,
+        "other_days": 36,
+        "standard_error": 7.572423292222544,
+        "required_market_days": 3,
+        "timetable": {
+          "line": "357",
+          "route": "357",
+          "market_mentions": [
+            "jeju"
+          ],
+          "files": [
+            "x_405145.txt"
+          ],
+          "missing": false,
+          "day_service": false,
+          "phrases": [],
+          "mentions": [
+            "제주시민속오일장"
+          ],
+          "market_stops": [
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "357-71",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "357-72",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "357-72",
+              "location": "길가"
+            }
+          ],
+          "current_lines": [
+            "357-71",
+            "357-72"
+          ],
+          "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+          "basis": {
+            "data": "bus.sqlite",
+            "period": null,
+            "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+            "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+          }
+        },
+        "roadside": true,
+        "basis": {
+          "data": "bus.sqlite",
+          "period": "2020봄",
+          "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "branches": [
+        {
+          "line": "357-2",
+          "route": "357",
+          "market_mean": 25.416666666666668,
+          "other_mean": 5.277777777777778,
+          "difference": 20.13888888888889,
+          "ratio": 4.399038461538462,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.011464872382813969
+        },
+        {
+          "line": "357-1",
+          "route": "357",
+          "market_mean": 20.166666666666668,
+          "other_mean": 4.472222222222222,
+          "difference": 15.694444444444446,
+          "ratio": 4.05586592178771,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.00909671841521633
+        }
+      ]
+    },
+    {
+      "line": "292",
+      "market": "제주시민속오일장",
+      "verdict": "지켜짐",
+      "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+      "market_mean": 40.75,
+      "other_mean": 13.472222222222221,
+      "difference": 27.27777777777778,
+      "ratio": 2.9165009940357853,
+      "market_days": 12,
+      "other_days": 36,
+      "standard_error": 3.6612607181811994,
+      "required_market_days": 1,
+      "timetable": {
+        "line": "292",
+        "route": "292",
+        "market_mentions": [
+          "hallim",
+          "jeju"
+        ],
+        "files": [
+          "x_405021.txt"
+        ],
+        "missing": false,
+        "day_service": false,
+        "phrases": [],
+        "mentions": [
+          "한림민속오일장"
+        ],
+        "market_stops": [
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "292-1",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "292-1",
+            "location": "길가"
+          },
+          {
+            "market": "hallim",
+            "name": "한림오일시장[서]",
+            "line": "292-1",
+            "location": "길가"
+          },
+          {
+            "market": "hallim",
+            "name": "한림오일시장[동]",
+            "line": "292-2",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "292-2",
+            "location": "길가"
+          },
+          {
+            "market": "hallim",
+            "name": "한림오일시장[동]",
+            "line": "292-3",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "292-3",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "292-4",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "292-4",
+            "location": "길가"
+          },
+          {
+            "market": "hallim",
+            "name": "한림오일시장[서]",
+            "line": "292-4",
+            "location": "길가"
+          }
+        ],
+        "current_lines": [
+          "292-1",
+          "292-2",
+          "292-3",
+          "292-4"
+        ],
+        "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+        "basis": {
+          "data": "bus.sqlite",
+          "period": null,
+          "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "roadside": true,
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2020봄",
+        "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      },
+      "judgement": {
+        "line": "292",
+        "market": "제주시민속오일장",
+        "verdict": "지켜짐",
+        "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+        "market_mean": 40.75,
+        "other_mean": 13.472222222222221,
+        "difference": 27.27777777777778,
+        "ratio": 2.9165009940357853,
+        "market_days": 12,
+        "other_days": 36,
+        "standard_error": 3.6612607181811994,
+        "required_market_days": 1,
+        "timetable": {
+          "line": "292",
+          "route": "292",
+          "market_mentions": [
+            "hallim",
+            "jeju"
+          ],
+          "files": [
+            "x_405021.txt"
+          ],
+          "missing": false,
+          "day_service": false,
+          "phrases": [],
+          "mentions": [
+            "한림민속오일장"
+          ],
+          "market_stops": [
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "292-1",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "292-1",
+              "location": "길가"
+            },
+            {
+              "market": "hallim",
+              "name": "한림오일시장[서]",
+              "line": "292-1",
+              "location": "길가"
+            },
+            {
+              "market": "hallim",
+              "name": "한림오일시장[동]",
+              "line": "292-2",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "292-2",
+              "location": "길가"
+            },
+            {
+              "market": "hallim",
+              "name": "한림오일시장[동]",
+              "line": "292-3",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "292-3",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "292-4",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "292-4",
+              "location": "길가"
+            },
+            {
+              "market": "hallim",
+              "name": "한림오일시장[서]",
+              "line": "292-4",
+              "location": "길가"
+            }
+          ],
+          "current_lines": [
+            "292-1",
+            "292-2",
+            "292-3",
+            "292-4"
+          ],
+          "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+          "basis": {
+            "data": "bus.sqlite",
+            "period": null,
+            "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+            "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+          }
+        },
+        "roadside": true,
+        "basis": {
+          "data": "bus.sqlite",
+          "period": "2020봄",
+          "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "branches": [
+        {
+          "line": "292-2",
+          "route": "292",
+          "market_mean": 22,
+          "other_mean": 6.805555555555555,
+          "difference": 15.194444444444445,
+          "ratio": 3.011406844106464,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.009923692816599633
+        },
+        {
+          "line": "292-1",
+          "route": "292",
+          "market_mean": 16.166666666666668,
+          "other_mean": 5.805555555555555,
+          "difference": 10.361111111111112,
+          "ratio": 2.5638766519823792,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.007292410630380033
+        },
+        {
+          "line": "292-3",
+          "route": "292",
+          "market_mean": 2.5833333333333335,
+          "other_mean": 0.8611111111111112,
+          "difference": 1.7222222222222223,
+          "ratio": 1.8979591836734695,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.0011652821110401084
+        }
+      ]
+    },
+    {
+      "line": "444",
+      "market": "제주시민속오일장",
+      "verdict": "지켜짐",
+      "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+      "market_mean": 28.333333333333332,
+      "other_mean": 8.027777777777779,
+      "difference": 20.305555555555554,
+      "ratio": 3.322475570032573,
+      "market_days": 12,
+      "other_days": 36,
+      "standard_error": 2.935535065628205,
+      "required_market_days": 2,
+      "timetable": {
+        "line": "444",
+        "route": "444",
+        "market_mentions": [
+          "jeju"
+        ],
+        "files": [
+          "x_405172.txt"
+        ],
+        "missing": false,
+        "day_service": false,
+        "phrases": [],
+        "mentions": [],
+        "market_stops": [
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "444-1",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "444-2",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "444-3",
+            "location": "길가"
+          }
+        ],
+        "current_lines": [
+          "444-1",
+          "444-2",
+          "444-3"
+        ],
+        "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+        "basis": {
+          "data": "bus.sqlite",
+          "period": null,
+          "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "roadside": true,
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2020봄",
+        "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      },
+      "judgement": {
+        "line": "444",
+        "market": "제주시민속오일장",
+        "verdict": "지켜짐",
+        "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+        "market_mean": 28.333333333333332,
+        "other_mean": 8.027777777777779,
+        "difference": 20.305555555555554,
+        "ratio": 3.322475570032573,
+        "market_days": 12,
+        "other_days": 36,
+        "standard_error": 2.935535065628205,
+        "required_market_days": 2,
+        "timetable": {
+          "line": "444",
+          "route": "444",
+          "market_mentions": [
+            "jeju"
+          ],
+          "files": [
+            "x_405172.txt"
+          ],
+          "missing": false,
+          "day_service": false,
+          "phrases": [],
+          "mentions": [],
+          "market_stops": [
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "444-1",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "444-2",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "444-3",
+              "location": "길가"
+            }
+          ],
+          "current_lines": [
+            "444-1",
+            "444-2",
+            "444-3"
+          ],
+          "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+          "basis": {
+            "data": "bus.sqlite",
+            "period": null,
+            "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+            "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+          }
+        },
+        "roadside": true,
+        "basis": {
+          "data": "bus.sqlite",
+          "period": "2020봄",
+          "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "branches": [
+        {
+          "line": "444-1",
+          "route": "444",
+          "market_mean": 26.416666666666668,
+          "other_mean": 7.5,
+          "difference": 18.916666666666668,
+          "ratio": 3.3020833333333335,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.011915949329023044
+        },
+        {
+          "line": "444-2",
+          "route": "444",
+          "market_mean": 1.9166666666666667,
+          "other_mean": 0.5277777777777778,
+          "difference": 1.3888888888888888,
+          "ratio": 1.8648648648648651,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.0008645641469007256
+        }
+      ]
+    },
+    {
+      "line": "315",
+      "market": "제주시민속오일장",
+      "verdict": "지켜짐",
+      "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+      "market_mean": 27.583333333333332,
+      "other_mean": 4.222222222222222,
+      "difference": 23.36111111111111,
+      "ratio": 5.841176470588235,
+      "market_days": 12,
+      "other_days": 36,
+      "standard_error": 2.8406284292980915,
+      "required_market_days": 1,
+      "timetable": {
+        "line": "315",
+        "route": "315",
+        "market_mentions": [],
+        "files": [
+          "x_405024.txt"
+        ],
+        "missing": false,
+        "day_service": false,
+        "phrases": [],
+        "mentions": [],
+        "market_stops": [
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "315-2",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "315-4",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "315-8",
+            "location": "길가"
+          }
+        ],
+        "current_lines": [
+          "315-1",
+          "315-2",
+          "315-3",
+          "315-4",
+          "315-7",
+          "315-8"
+        ],
+        "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+        "basis": {
+          "data": "bus.sqlite",
+          "period": null,
+          "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "roadside": true,
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2020봄",
+        "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      },
+      "judgement": {
+        "line": "315",
+        "market": "제주시민속오일장",
+        "verdict": "지켜짐",
+        "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+        "market_mean": 27.583333333333332,
+        "other_mean": 4.222222222222222,
+        "difference": 23.36111111111111,
+        "ratio": 5.841176470588235,
+        "market_days": 12,
+        "other_days": 36,
+        "standard_error": 2.8406284292980915,
+        "required_market_days": 1,
+        "timetable": {
+          "line": "315",
+          "route": "315",
+          "market_mentions": [],
+          "files": [
+            "x_405024.txt"
+          ],
+          "missing": false,
+          "day_service": false,
+          "phrases": [],
+          "mentions": [],
+          "market_stops": [
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "315-2",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "315-4",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "315-8",
+              "location": "길가"
+            }
+          ],
+          "current_lines": [
+            "315-1",
+            "315-2",
+            "315-3",
+            "315-4",
+            "315-7",
+            "315-8"
+          ],
+          "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+          "basis": {
+            "data": "bus.sqlite",
+            "period": null,
+            "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+            "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+          }
+        },
+        "roadside": true,
+        "basis": {
+          "data": "bus.sqlite",
+          "period": "2020봄",
+          "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "branches": [
+        {
+          "line": "315-2",
+          "route": "315",
+          "market_mean": 27.583333333333332,
+          "other_mean": 4.138888888888889,
+          "difference": 23.444444444444443,
+          "ratio": 5.9461077844311365,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.012442205766266963
+        }
+      ]
+    },
+    {
+      "line": "445",
+      "market": "제주시민속오일장",
+      "verdict": "지켜짐",
+      "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+      "market_mean": 22.916666666666668,
+      "other_mean": 4.555555555555555,
+      "difference": 18.361111111111114,
+      "ratio": 4.532967032967034,
+      "market_days": 12,
+      "other_days": 36,
+      "standard_error": 2.770125462458649,
+      "required_market_days": 2,
+      "timetable": {
+        "line": "445",
+        "route": "445",
+        "market_mentions": [
+          "jeju"
+        ],
+        "files": [
+          "x_405151.txt"
+        ],
+        "missing": false,
+        "day_service": false,
+        "phrases": [],
+        "mentions": [],
+        "market_stops": [
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "445-5",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "445-5",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "445-6",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "445-6",
+            "location": "길가"
+          }
+        ],
+        "current_lines": [
+          "445-5",
+          "445-6",
+          "445-7"
+        ],
+        "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+        "basis": {
+          "data": "bus.sqlite",
+          "period": null,
+          "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "roadside": true,
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2020봄",
+        "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      },
+      "judgement": {
+        "line": "445",
+        "market": "제주시민속오일장",
+        "verdict": "지켜짐",
+        "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+        "market_mean": 22.916666666666668,
+        "other_mean": 4.555555555555555,
+        "difference": 18.361111111111114,
+        "ratio": 4.532967032967034,
+        "market_days": 12,
+        "other_days": 36,
+        "standard_error": 2.770125462458649,
+        "required_market_days": 2,
+        "timetable": {
+          "line": "445",
+          "route": "445",
+          "market_mentions": [
+            "jeju"
+          ],
+          "files": [
+            "x_405151.txt"
+          ],
+          "missing": false,
+          "day_service": false,
+          "phrases": [],
+          "mentions": [],
+          "market_stops": [
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "445-5",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "445-5",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "445-6",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "445-6",
+              "location": "길가"
+            }
+          ],
+          "current_lines": [
+            "445-5",
+            "445-6",
+            "445-7"
+          ],
+          "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+          "basis": {
+            "data": "bus.sqlite",
+            "period": null,
+            "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+            "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+          }
+        },
+        "roadside": true,
+        "basis": {
+          "data": "bus.sqlite",
+          "period": "2020봄",
+          "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "branches": [
+        {
+          "line": "445-5",
+          "route": "445",
+          "market_mean": 19.5,
+          "other_mean": 4.111111111111111,
+          "difference": 15.38888888888889,
+          "ratio": 4.228915662650603,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.008796000451076947
+        },
+        {
+          "line": "445-6",
+          "route": "445",
+          "market_mean": 3.4166666666666665,
+          "other_mean": 0.4444444444444444,
+          "difference": 2.9722222222222223,
+          "ratio": 3.6176470588235294,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.0015411795662143369
+        }
+      ]
+    },
+    {
+      "line": "451",
+      "market": "제주시민속오일장",
+      "verdict": "지켜짐",
+      "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+      "market_mean": 13.75,
+      "other_mean": 4.833333333333333,
+      "difference": 8.916666666666668,
+      "ratio": 2.578125,
+      "market_days": 12,
+      "other_days": 36,
+      "standard_error": 1.622604794873453,
+      "required_market_days": 2,
+      "timetable": {
+        "line": "451",
+        "route": "451",
+        "market_mentions": [
+          "jeju"
+        ],
+        "files": [
+          "x_405054.txt",
+          "x_405180.txt"
+        ],
+        "missing": false,
+        "day_service": false,
+        "phrases": [],
+        "mentions": [],
+        "market_stops": [
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "451-1",
+            "location": "길가"
+          }
+        ],
+        "current_lines": [
+          "451-1",
+          "451-10"
+        ],
+        "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+        "basis": {
+          "data": "bus.sqlite",
+          "period": null,
+          "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "roadside": true,
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2020봄",
+        "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      },
+      "judgement": {
+        "line": "451",
+        "market": "제주시민속오일장",
+        "verdict": "지켜짐",
+        "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+        "market_mean": 13.75,
+        "other_mean": 4.833333333333333,
+        "difference": 8.916666666666668,
+        "ratio": 2.578125,
+        "market_days": 12,
+        "other_days": 36,
+        "standard_error": 1.622604794873453,
+        "required_market_days": 2,
+        "timetable": {
+          "line": "451",
+          "route": "451",
+          "market_mentions": [
+            "jeju"
+          ],
+          "files": [
+            "x_405054.txt",
+            "x_405180.txt"
+          ],
+          "missing": false,
+          "day_service": false,
+          "phrases": [],
+          "mentions": [],
+          "market_stops": [
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "451-1",
+              "location": "길가"
+            }
+          ],
+          "current_lines": [
+            "451-1",
+            "451-10"
+          ],
+          "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+          "basis": {
+            "data": "bus.sqlite",
+            "period": null,
+            "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+            "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+          }
+        },
+        "roadside": true,
+        "basis": {
+          "data": "bus.sqlite",
+          "period": "2020봄",
+          "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "branches": [
+        {
+          "line": "451-1",
+          "route": "451",
+          "market_mean": 13.75,
+          "other_mean": 4.833333333333333,
+          "difference": 8.916666666666668,
+          "ratio": 2.578125,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.006202308010374771
+        }
+      ]
+    },
+    {
+      "line": "452",
+      "market": "제주시민속오일장",
+      "verdict": "지켜짐",
+      "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+      "market_mean": 11.666666666666666,
+      "other_mean": 4,
+      "difference": 7.666666666666666,
+      "ratio": 2.5925925925925926,
+      "market_days": 12,
+      "other_days": 36,
+      "standard_error": 1.4573790941116949,
+      "required_market_days": 2,
+      "timetable": {
+        "line": "452",
+        "route": "452",
+        "market_mentions": [
+          "jeju"
+        ],
+        "files": [
+          "x_405055.txt",
+          "x_405181.txt"
+        ],
+        "missing": false,
+        "day_service": false,
+        "phrases": [],
+        "mentions": [],
+        "market_stops": [
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "452-1",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "452-1",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "452-10",
+            "location": "길가"
+          }
+        ],
+        "current_lines": [
+          "452-1",
+          "452-10"
+        ],
+        "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+        "basis": {
+          "data": "bus.sqlite",
+          "period": null,
+          "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "roadside": true,
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2020봄",
+        "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      },
+      "judgement": {
+        "line": "452",
+        "market": "제주시민속오일장",
+        "verdict": "지켜짐",
+        "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+        "market_mean": 11.666666666666666,
+        "other_mean": 4,
+        "difference": 7.666666666666666,
+        "ratio": 2.5925925925925926,
+        "market_days": 12,
+        "other_days": 36,
+        "standard_error": 1.4573790941116949,
+        "required_market_days": 2,
+        "timetable": {
+          "line": "452",
+          "route": "452",
+          "market_mentions": [
+            "jeju"
+          ],
+          "files": [
+            "x_405055.txt",
+            "x_405181.txt"
+          ],
+          "missing": false,
+          "day_service": false,
+          "phrases": [],
+          "mentions": [],
+          "market_stops": [
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "452-1",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "452-1",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "452-10",
+              "location": "길가"
+            }
+          ],
+          "current_lines": [
+            "452-1",
+            "452-10"
+          ],
+          "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+          "basis": {
+            "data": "bus.sqlite",
+            "period": null,
+            "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+            "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+          }
+        },
+        "roadside": true,
+        "basis": {
+          "data": "bus.sqlite",
+          "period": "2020봄",
+          "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "branches": [
+        {
+          "line": "452-1",
+          "route": "452",
+          "market_mean": 11.666666666666666,
+          "other_mean": 4,
+          "difference": 7.666666666666666,
+          "ratio": 2.5925925925925926,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.005262564372439198
+        }
+      ]
+    },
+    {
+      "line": "454",
+      "market": "제주시민속오일장",
+      "verdict": "지켜짐",
+      "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+      "market_mean": 11,
+      "other_mean": 2.9444444444444446,
+      "difference": 8.055555555555555,
+      "ratio": 3.193548387096774,
+      "market_days": 12,
+      "other_days": 36,
+      "standard_error": 1.4474134211317367,
+      "required_market_days": 2,
+      "timetable": {
+        "line": "454",
+        "route": "454",
+        "market_mentions": [
+          "jeju"
+        ],
+        "files": [
+          "x_405057.txt"
+        ],
+        "missing": false,
+        "day_service": false,
+        "phrases": [],
+        "mentions": [],
+        "market_stops": [
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "454-1",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "454-1",
+            "location": "길가"
+          }
+        ],
+        "current_lines": [
+          "454-1",
+          "454-2"
+        ],
+        "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+        "basis": {
+          "data": "bus.sqlite",
+          "period": null,
+          "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "roadside": true,
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2020봄",
+        "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      },
+      "judgement": {
+        "line": "454",
+        "market": "제주시민속오일장",
+        "verdict": "지켜짐",
+        "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+        "market_mean": 11,
+        "other_mean": 2.9444444444444446,
+        "difference": 8.055555555555555,
+        "ratio": 3.193548387096774,
+        "market_days": 12,
+        "other_days": 36,
+        "standard_error": 1.4474134211317367,
+        "required_market_days": 2,
+        "timetable": {
+          "line": "454",
+          "route": "454",
+          "market_mentions": [
+            "jeju"
+          ],
+          "files": [
+            "x_405057.txt"
+          ],
+          "missing": false,
+          "day_service": false,
+          "phrases": [],
+          "mentions": [],
+          "market_stops": [
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "454-1",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "454-1",
+              "location": "길가"
+            }
+          ],
+          "current_lines": [
+            "454-1",
+            "454-2"
+          ],
+          "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+          "basis": {
+            "data": "bus.sqlite",
+            "period": null,
+            "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+            "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+          }
+        },
+        "roadside": true,
+        "basis": {
+          "data": "bus.sqlite",
+          "period": "2020봄",
+          "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "branches": [
+        {
+          "line": "454-1",
+          "route": "454",
+          "market_mean": 11,
+          "other_mean": 2.9444444444444446,
+          "difference": 8.055555555555555,
+          "ratio": 3.193548387096774,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.0049618464082998165
+        }
+      ]
+    },
+    {
+      "line": "453",
+      "market": "제주시민속오일장",
+      "verdict": "지켜짐",
+      "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+      "market_mean": 9.416666666666666,
+      "other_mean": 3.4722222222222223,
+      "difference": 5.944444444444444,
+      "ratio": 2.3706293706293704,
+      "market_days": 12,
+      "other_days": 36,
+      "standard_error": 0.98432683117244,
+      "required_market_days": 2,
+      "timetable": {
+        "line": "453",
+        "route": "453",
+        "market_mentions": [
+          "jeju"
+        ],
+        "files": [
+          "x_405056.txt"
+        ],
+        "missing": false,
+        "day_service": false,
+        "phrases": [],
+        "mentions": [],
+        "market_stops": [
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "453-1",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "453-2",
+            "location": "길가"
+          }
+        ],
+        "current_lines": [
+          "453-1",
+          "453-2"
+        ],
+        "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+        "basis": {
+          "data": "bus.sqlite",
+          "period": null,
+          "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "roadside": true,
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2020봄",
+        "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      },
+      "judgement": {
+        "line": "453",
+        "market": "제주시민속오일장",
+        "verdict": "지켜짐",
+        "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+        "market_mean": 9.416666666666666,
+        "other_mean": 3.4722222222222223,
+        "difference": 5.944444444444444,
+        "ratio": 2.3706293706293704,
+        "market_days": 12,
+        "other_days": 36,
+        "standard_error": 0.98432683117244,
+        "required_market_days": 2,
+        "timetable": {
+          "line": "453",
+          "route": "453",
+          "market_mentions": [
+            "jeju"
+          ],
+          "files": [
+            "x_405056.txt"
+          ],
+          "missing": false,
+          "day_service": false,
+          "phrases": [],
+          "mentions": [],
+          "market_stops": [
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "453-1",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "453-2",
+              "location": "길가"
+            }
+          ],
+          "current_lines": [
+            "453-1",
+            "453-2"
+          ],
+          "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+          "basis": {
+            "data": "bus.sqlite",
+            "period": null,
+            "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+            "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+          }
+        },
+        "roadside": true,
+        "basis": {
+          "data": "bus.sqlite",
+          "period": "2020봄",
+          "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "branches": [
+        {
+          "line": "453-1",
+          "route": "453",
+          "market_mean": 9.166666666666666,
+          "other_mean": 3.3055555555555554,
+          "difference": 5.861111111111111,
+          "ratio": 2.408759124087591,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.004134872006916513
+        }
+      ]
+    },
+    {
+      "line": "446",
+      "market": "제주시민속오일장",
+      "verdict": "지켜짐",
+      "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+      "market_mean": 6.666666666666667,
+      "other_mean": 1.3888888888888888,
+      "difference": 5.277777777777779,
+      "ratio": 3.5294117647058827,
+      "market_days": 12,
+      "other_days": 36,
+      "standard_error": 1.065398025030842,
+      "required_market_days": 2,
+      "timetable": {
+        "line": "446",
+        "route": "446",
+        "market_mentions": [],
+        "files": [
+          "x_405052.txt"
+        ],
+        "missing": false,
+        "day_service": false,
+        "phrases": [],
+        "mentions": [
+          "제주시민속오일장"
+        ],
+        "market_stops": [
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "446-2",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "446-4",
+            "location": "길가"
+          }
+        ],
+        "current_lines": [
+          "446-1",
+          "446-2",
+          "446-3",
+          "446-4",
+          "446-5",
+          "446-6",
+          "446-7"
+        ],
+        "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+        "basis": {
+          "data": "bus.sqlite",
+          "period": null,
+          "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "roadside": true,
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2020봄",
+        "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      },
+      "judgement": {
+        "line": "446",
+        "market": "제주시민속오일장",
+        "verdict": "지켜짐",
+        "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+        "market_mean": 6.666666666666667,
+        "other_mean": 1.3888888888888888,
+        "difference": 5.277777777777779,
+        "ratio": 3.5294117647058827,
+        "market_days": 12,
+        "other_days": 36,
+        "standard_error": 1.065398025030842,
+        "required_market_days": 2,
+        "timetable": {
+          "line": "446",
+          "route": "446",
+          "market_mentions": [],
+          "files": [
+            "x_405052.txt"
+          ],
+          "missing": false,
+          "day_service": false,
+          "phrases": [],
+          "mentions": [
+            "제주시민속오일장"
+          ],
+          "market_stops": [
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "446-2",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "446-4",
+              "location": "길가"
+            }
+          ],
+          "current_lines": [
+            "446-1",
+            "446-2",
+            "446-3",
+            "446-4",
+            "446-5",
+            "446-6",
+            "446-7"
+          ],
+          "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+          "basis": {
+            "data": "bus.sqlite",
+            "period": null,
+            "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+            "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+          }
+        },
+        "roadside": true,
+        "basis": {
+          "data": "bus.sqlite",
+          "period": "2020봄",
+          "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "branches": [
+        {
+          "line": "446-2",
+          "route": "446",
+          "market_mean": 4.916666666666667,
+          "other_mean": 1.0833333333333333,
+          "difference": 3.833333333333334,
+          "ratio": 3.105263157894737,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.0022177949855279482
+        },
+        {
+          "line": "446-4",
+          "route": "446",
+          "market_mean": 1.75,
+          "other_mean": 0.3055555555555556,
+          "difference": 1.4444444444444444,
+          "ratio": 2.1724137931034484,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.0007893846558658798
+        }
+      ]
+    },
+    {
+      "line": "102",
+      "market": "제주시민속오일장",
+      "verdict": "구분 안 됨",
+      "reason": "장날과 다른 날 차이가 우연히 생길 수 있는 폭보다 작습니다. 같은 흩어짐이라면 장날 자료가 모두 16일쯤 있어야 가릴 수 있습니다(지금 12일). 더 세어도 꼭 가려진다는 보장은 없습니다.",
+      "market_mean": 81.41666666666667,
+      "other_mean": 65.94444444444444,
+      "difference": 15.472222222222229,
+      "ratio": 1.2253344481605353,
+      "market_days": 12,
+      "other_days": 36,
+      "standard_error": 8.827916446493784,
+      "required_market_days": 16,
+      "timetable": {
+        "line": "102",
+        "route": "102",
+        "market_mentions": [
+          "jeju"
+        ],
+        "files": [
+          "x_405002.txt",
+          "x_405179.txt"
+        ],
+        "missing": false,
+        "day_service": false,
+        "phrases": [],
+        "mentions": [
+          "한림민속오일장"
+        ],
+        "market_stops": [
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "102-21",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "102-22",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "102-23",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "102-24",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "102-26",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "102-28",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "102-29",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "102-31",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "102-71",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "102-72",
+            "location": "길가"
+          }
+        ],
+        "current_lines": [
+          "102-21",
+          "102-22",
+          "102-23",
+          "102-24",
+          "102-25",
+          "102-26",
+          "102-27",
+          "102-28",
+          "102-29",
+          "102-30",
+          "102-31",
+          "102-71",
+          "102-72"
+        ],
+        "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+        "basis": {
+          "data": "bus.sqlite",
+          "period": null,
+          "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "roadside": true,
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2020봄",
+        "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      },
+      "judgement": {
+        "line": "102",
+        "market": "제주시민속오일장",
+        "verdict": "구분 안 됨",
+        "reason": "장날과 다른 날 차이가 우연히 생길 수 있는 폭보다 작습니다. 같은 흩어짐이라면 장날 자료가 모두 16일쯤 있어야 가릴 수 있습니다(지금 12일). 더 세어도 꼭 가려진다는 보장은 없습니다.",
+        "market_mean": 81.41666666666667,
+        "other_mean": 65.94444444444444,
+        "difference": 15.472222222222229,
+        "ratio": 1.2253344481605353,
+        "market_days": 12,
+        "other_days": 36,
+        "standard_error": 8.827916446493784,
+        "required_market_days": 16,
+        "timetable": {
+          "line": "102",
+          "route": "102",
+          "market_mentions": [
+            "jeju"
+          ],
+          "files": [
+            "x_405002.txt",
+            "x_405179.txt"
+          ],
+          "missing": false,
+          "day_service": false,
+          "phrases": [],
+          "mentions": [
+            "한림민속오일장"
+          ],
+          "market_stops": [
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "102-21",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "102-22",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "102-23",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "102-24",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "102-26",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "102-28",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "102-29",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "102-31",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "102-71",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "102-72",
+              "location": "길가"
+            }
+          ],
+          "current_lines": [
+            "102-21",
+            "102-22",
+            "102-23",
+            "102-24",
+            "102-25",
+            "102-26",
+            "102-27",
+            "102-28",
+            "102-29",
+            "102-30",
+            "102-31",
+            "102-71",
+            "102-72"
+          ],
+          "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+          "basis": {
+            "data": "bus.sqlite",
+            "period": null,
+            "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+            "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+          }
+        },
+        "roadside": true,
+        "basis": {
+          "data": "bus.sqlite",
+          "period": "2020봄",
+          "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "branches": [
+        {
+          "line": "102-1",
+          "route": "102",
+          "market_mean": 22.5,
+          "other_mean": 17.416666666666668,
+          "difference": 5.083333333333332,
+          "ratio": 1.255813953488372,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.01014923128970417
+        },
+        {
+          "line": "102-3",
+          "route": "102",
+          "market_mean": 20.083333333333332,
+          "other_mean": 15.027777777777779,
+          "difference": 5.055555555555554,
+          "ratio": 1.293381037567084,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.009059128669698907
+        },
+        {
+          "line": "102-4",
+          "route": "102",
+          "market_mean": 17,
+          "other_mean": 11.88888888888889,
+          "difference": 5.111111111111111,
+          "ratio": 1.3721973094170403,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.007668308085554261
+        },
+        {
+          "line": "102-2",
+          "route": "102",
+          "market_mean": 15.583333333333334,
+          "other_mean": 15.13888888888889,
+          "difference": 0.44444444444444464,
+          "ratio": 0.9964476021314387,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.007029282411758073
+        },
+        {
+          "line": "102-7",
+          "route": "102",
+          "market_mean": 2.1666666666666665,
+          "other_mean": 1.8333333333333333,
+          "difference": 0.33333333333333326,
+          "ratio": 0.9285714285714286,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.0009773333834529941
+        },
+        {
+          "line": "102-9",
+          "route": "102",
+          "market_mean": 1.6666666666666667,
+          "other_mean": 1.2222222222222223,
+          "difference": 0.4444444444444444,
+          "ratio": 0.967741935483871,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.0007517949103484571
+        },
+        {
+          "line": "102-8",
+          "route": "102",
+          "market_mean": 1.4166666666666667,
+          "other_mean": 1.1388888888888888,
+          "difference": 0.2777777777777779,
+          "ratio": 0.864406779661017,
+          "market_days": 12,
+          "other_days": 36,
+          "share": 0.0006390256737961884
+        }
+      ]
+    }
+  ],
+  "villages": {
+    "villages": [
+      {
+        "name": "건입동",
+        "emd": "건입동",
+        "market_mean": 263.6666666666667,
+        "other_mean": 253.97222222222223,
+        "difference": 9.694444444444457,
+        "ratio": 1.036131426700142,
+        "market_days": 12,
+        "other_days": 36
+      },
+      {
+        "name": "노형동",
+        "emd": "노형동",
+        "market_mean": 2534.3333333333335,
+        "other_mean": 2352.527777777778,
+        "difference": 181.80555555555566,
+        "ratio": 1.077052025168518,
+        "market_days": 12,
+        "other_days": 36
+      },
+      {
+        "name": "대륜동",
+        "emd": "대륜동",
+        "market_mean": 80.08333333333333,
+        "other_mean": 78.52777777777777,
+        "difference": 1.5555555555555571,
+        "ratio": 1.0133567662565905,
+        "market_days": 12,
+        "other_days": 36
+      },
+      {
+        "name": "대정읍",
+        "emd": "대정읍",
+        "market_mean": 917.25,
+        "other_mean": 996.1388888888889,
+        "difference": -78.88888888888891,
+        "ratio": 0.9203433763482817,
+        "market_days": 12,
+        "other_days": 36
+      },
+      {
+        "name": "대천동",
+        "emd": "대천동",
+        "market_mean": 94.66666666666667,
+        "other_mean": 100.41666666666667,
+        "difference": -5.75,
+        "ratio": 0.9380677126341866,
+        "market_days": 12,
+        "other_days": 36
+      },
+      {
+        "name": "도두동",
+        "emd": "도두동",
+        "market_mean": 430.3333333333333,
+        "other_mean": 431.22222222222223,
+        "difference": -0.8888888888889142,
+        "ratio": 0.996782910822288,
+        "market_days": 12,
+        "other_days": 36
+      },
+      {
+        "name": "봉개동",
+        "emd": "봉개동",
+        "market_mean": 0.8333333333333334,
+        "other_mean": 0.9722222222222222,
+        "difference": -0.13888888888888884,
+        "ratio": 0.5660377358490566,
+        "market_days": 12,
+        "other_days": 36
+      },
+      {
+        "name": "삼도2동",
+        "emd": "삼도2동",
+        "market_mean": 49.583333333333336,
+        "other_mean": 46.5,
+        "difference": 3.0833333333333357,
+        "ratio": 1.0549645390070923,
+        "market_days": 12,
+        "other_days": 36
+      },
+      {
+        "name": "삼양동",
+        "emd": "삼양동",
+        "market_mean": 136.08333333333334,
+        "other_mean": 151.5,
+        "difference": -15.416666666666657,
+        "ratio": 0.8952850877192983,
+        "market_days": 12,
+        "other_days": 36
+      },
+      {
+        "name": "서홍동",
+        "emd": "서홍동",
+        "market_mean": 39.166666666666664,
+        "other_mean": 35.94444444444444,
+        "difference": 3.2222222222222214,
+        "ratio": 1.0746951219512195,
+        "market_days": 12,
+        "other_days": 36
+      },
+      {
+        "name": "아라동",
+        "emd": "아라동",
+        "market_mean": 1227.5,
+        "other_mean": 1091.3055555555557,
+        "difference": 136.19444444444434,
+        "ratio": 1.1242844421829283,
+        "market_days": 12,
+        "other_days": 36
+      },
+      {
+        "name": "안덕면",
+        "emd": "안덕면",
+        "market_mean": 696.5,
+        "other_mean": 730.5555555555555,
+        "difference": -34.05555555555554,
+        "ratio": 0.9527319705144768,
+        "market_days": 12,
+        "other_days": 36
+      },
+      {
+        "name": "애월읍",
+        "emd": "애월읍",
+        "market_mean": 3847.6666666666665,
+        "other_mean": 3553.6944444444443,
+        "difference": 293.9722222222222,
+        "ratio": 1.0825706715852161,
+        "market_days": 12,
+        "other_days": 36
+      },
+      {
+        "name": "연동",
+        "emd": "연동",
+        "market_mean": 3745.3333333333335,
+        "other_mean": 3380.722222222222,
+        "difference": 364.6111111111113,
+        "ratio": 1.1076862410042392,
+        "market_days": 12,
+        "other_days": 36
+      },
+      {
+        "name": "예래동",
+        "emd": "예래동",
+        "market_mean": 70.33333333333333,
+        "other_mean": 71.22222222222223,
+        "difference": -0.8888888888888999,
+        "ratio": 0.9806351665375677,
+        "market_days": 12,
+        "other_days": 36
+      },
+      {
+        "name": "오라동",
+        "emd": "오라동",
+        "market_mean": 1105.1666666666667,
+        "other_mean": 1041.4722222222222,
+        "difference": 63.69444444444457,
+        "ratio": 1.06064887632961,
+        "market_days": 12,
+        "other_days": 36
+      },
+      {
+        "name": "외도동",
+        "emd": "외도동",
+        "market_mean": 1498.75,
+        "other_mean": 1485.7222222222222,
+        "difference": 13.027777777777828,
+        "ratio": 1.0084292763157896,
+        "market_days": 12,
+        "other_days": 36
+      },
+      {
+        "name": "용담1동",
+        "emd": "용담1동",
+        "market_mean": 674.5,
+        "other_mean": 645.8611111111111,
+        "difference": 28.638888888888914,
+        "ratio": 1.0435343160428037,
+        "market_days": 12,
+        "other_days": 36
+      },
+      {
+        "name": "용담2동",
+        "emd": "용담2동",
+        "market_mean": 1524.75,
+        "other_mean": 1403.25,
+        "difference": 121.5,
+        "ratio": 1.0861976847729296,
+        "market_days": 12,
+        "other_days": 36
+      },
+      {
+        "name": "이도1동",
+        "emd": "이도1동",
+        "market_mean": 944.0833333333334,
+        "other_mean": 794.1388888888889,
+        "difference": 149.94444444444446,
+        "ratio": 1.1880658580067815,
+        "market_days": 12,
+        "other_days": 36
+      },
+      {
+        "name": "이도2동",
+        "emd": "이도2동",
+        "market_mean": 458,
+        "other_mean": 406.44444444444446,
+        "difference": 51.55555555555554,
+        "ratio": 1.1254607508532424,
+        "market_days": 12,
+        "other_days": 36
+      },
+      {
+        "name": "이호동",
+        "emd": "이호동",
+        "market_mean": 346.8333333333333,
+        "other_mean": 354.6388888888889,
+        "difference": -7.8055555555556,
+        "ratio": 0.9766132186155649,
+        "market_days": 12,
+        "other_days": 36
+      },
+      {
+        "name": "일도1동",
+        "emd": "일도1동",
+        "market_mean": 566,
+        "other_mean": 573.2777777777778,
+        "difference": -7.277777777777828,
+        "ratio": 0.9864446165762973,
+        "market_days": 12,
+        "other_days": 36
+      },
+      {
+        "name": "일도2동",
+        "emd": "일도2동",
+        "market_mean": 51.75,
+        "other_mean": 54.77777777777778,
+        "difference": -3.0277777777777786,
+        "ratio": 0.936180904522613,
+        "market_days": 12,
+        "other_days": 36
+      },
+      {
+        "name": "조천읍",
+        "emd": "조천읍",
+        "market_mean": 551.8333333333334,
+        "other_mean": 560.8611111111111,
+        "difference": -9.027777777777715,
+        "ratio": 0.9830273640457223,
+        "market_days": 12,
+        "other_days": 36
+      },
+      {
+        "name": "중문동",
+        "emd": "중문동",
+        "market_mean": 467.8333333333333,
+        "other_mean": 480.22222222222223,
+        "difference": -12.388888888888914,
+        "ratio": 0.9731884895411995,
+        "market_days": 12,
+        "other_days": 36
+      },
+      {
+        "name": "천지동",
+        "emd": "천지동",
+        "market_mean": 355.4166666666667,
+        "other_mean": 360.25,
+        "difference": -4.833333333333314,
+        "ratio": 0.9852159852159853,
+        "market_days": 12,
+        "other_days": 36
+      },
+      {
+        "name": "한경면",
+        "emd": "한경면",
+        "market_mean": 601.5833333333334,
+        "other_mean": 626.4444444444445,
+        "difference": -24.861111111111086,
+        "ratio": 0.9595480726628268,
+        "market_days": 12,
+        "other_days": 36
+      },
+      {
+        "name": "한림읍",
+        "emd": "한림읍",
+        "market_mean": 2670.4166666666665,
+        "other_mean": 2779.222222222222,
+        "difference": -108.80555555555566,
+        "ratio": 0.9606775257319876,
+        "market_days": 12,
+        "other_days": 36
+      },
+      {
+        "name": "화북동",
+        "emd": "화북동",
+        "market_mean": 568.5,
+        "other_mean": 548.9722222222222,
+        "difference": 19.52777777777783,
+        "ratio": 1.0346291896264093,
+        "market_days": 12,
+        "other_days": 36
+      }
+    ],
+    "weekday_only": false,
+    "basis": {
+      "data": "bus.sqlite",
+      "period": "2020봄",
+      "formula": "시장 경유 갈래의 시장 외 정류장 승차를 읍면동별 합산. 시장행 승객을 직접 추적한 수치는 아님",
+      "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+    }
+  },
+  "basis": {
+    "data": "bus.sqlite",
+    "period": "2020봄",
+    "formula": "각 묶음 승차 합계 ÷ 실제 날짜 수; 배수=장날 평균/(다른 날 평균+0.5)",
+    "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+  },
+  "observations": [],
+  "summary": [
+    "제주시민속오일장의 2020봄 승차 기록을 살폈습니다.",
+    "장날 하루 평균 2216.9명, 다른 날 544.4명입니다.",
+    "과거 승차 기록과 현재 공개 시간표는 시점이 다릅니다.",
+    "공백 후보는 운행 여부를 확인할 대상입니다. 담당 부서에 정차 유지를 확인해 주세요."
+  ],
+  "opinion": [],
+  "opinion_source": "고정 문안",
+  "opinion_citations": [],
+  "answer": ""
+}

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#153f55">
+<title>장날 버스 지킴표 | 제주빅데이터센터</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%23153f55'/%3E%3Cpath d='M12 12h16v17H12zM12 21h16' stroke='white' fill='none' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<script src="data.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#content">본문으로 가기</a>
+<div class="demo-bar" aria-label="시연 안내"><div class="demo-inner"><span class="demo-label">시연</span><span id="scene-count">장면 1/6</span><span id="scene-task">서귀포 향토오일장을 골라 보세요</span><button id="demo-next" class="demo-next">다음 <span aria-hidden="true">›</span></button></div></div>
+<div class="workspace">
+<section class="phone" aria-label="장날 버스 지킴표 서비스">
+<header class="appbar"><button class="brand" data-action="home" aria-label="장날 버스 지킴표 처음으로"><span class="brand-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="16" rx="3"/><path d="M5 11h14M8 19v2m8-2v2M8 15h1m6 0h1M9 6h6"/></svg></span><span>장날 버스 <b>지킴표</b><small>제주빅데이터센터 마을 데이터 도우미</small></span></button><button class="icon-button" data-action="help" aria-label="도움말">?</button></header>
+<main id="content" tabindex="-1"><div class="loading">승차 자료를 불러오고 있어요.</div></main>
+<footer class="service-footer"><span class="local-dot" aria-hidden="true"></span><span id="connection">이 PC 안에서만 계산</span><span class="data-note">승차 숫자: 제주빅데이터센터 버스 매쉬업(2018·2020 실제 기록) · 시간표: 제주버스정보시스템(2026-10-28)</span></footer>
+<nav class="tabbar" aria-label="주 메뉴"><button data-action="home" id="nav-home"></button><button data-action="records" id="nav-records"></button><button data-action="admin" id="nav-admin"></button></nav>
+</section>
+<aside class="story" id="story" aria-label="장면 설명"></aside>
+</div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<dialog id="sheet" aria-labelledby="sheet-title"><div class="sheet-top"><span class="sheet-handle"></span><h2 id="sheet-title"></h2><button class="icon-button" data-action="close" aria-label="닫기">×</button></div><div id="sheet-body"></div></dialog>
+<noscript>이 화면을 사용하려면 브라우저의 자바스크립트를 켜 주세요.</noscript>
+</body>
+</html>

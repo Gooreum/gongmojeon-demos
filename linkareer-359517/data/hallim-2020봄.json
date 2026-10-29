@@ -1,0 +1,1354 @@
+{
+  "period": "2020봄",
+  "mode": "말 다듬기: 규칙 기반",
+  "database": "bus.sqlite",
+  "trace": [
+    {
+      "tool": "find_place",
+      "도구": "find_place",
+      "why": "입력한 곳과 맞는 시장·마을·노선을 찾습니다.",
+      "왜 불렀나": "입력한 곳과 맞는 시장·마을·노선을 찾습니다.",
+      "result": "후보 0곳",
+      "핵심 결과": "후보 0곳",
+      "ms": 3.757
+    },
+    {
+      "tool": "detect_cycle",
+      "도구": "detect_cycle",
+      "why": "실제 승차 기록에서 장날 주기를 찾습니다.",
+      "왜 불렀나": "실제 승차 기록에서 장날 주기를 찾습니다.",
+      "result": "4묶음, 장날 평균 225.1명",
+      "핵심 결과": "4묶음, 장날 평균 225.1명",
+      "ms": 3.892
+    },
+    {
+      "tool": "detect_cycle",
+      "도구": "detect_cycle",
+      "why": "실제 승차 기록에서 장날 주기를 찾습니다.",
+      "왜 불렀나": "실제 승차 기록에서 장날 주기를 찾습니다.",
+      "result": "4묶음, 장날 평균 234.4명",
+      "핵심 결과": "4묶음, 장날 평균 234.4명",
+      "ms": 2.053
+    },
+    {
+      "tool": "split_routes",
+      "도구": "split_routes",
+      "why": "장날 손님을 노선 갈래별로 나눕니다.",
+      "왜 불렀나": "장날 손님을 노선 갈래별로 나눕니다.",
+      "result": "장날 손님이 있는 노선 갈래 15개",
+      "핵심 결과": "장날 손님이 있는 노선 갈래 15개",
+      "ms": 14.117
+    },
+    {
+      "tool": "village_lift",
+      "도구": "village_lift",
+      "why": "같은 노선이 지나는 다른 마을의 승차 변화를 봅니다.",
+      "왜 불렀나": "같은 노선이 지나는 다른 마을의 승차 변화를 봅니다.",
+      "result": "마을 13곳 · 장날에 가장 많이 느는 곳 한림읍 하루 +113.6명",
+      "핵심 결과": "마을 13곳 · 장날에 가장 많이 느는 곳 한림읍 하루 +113.6명",
+      "ms": 28.218
+    },
+    {
+      "tool": "check_timetable",
+      "도구": "check_timetable",
+      "why": "지금 공개 시간표 202개와 노선 정류장 목록을 확인합니다.",
+      "왜 불렀나": "지금 공개 시간표 202개와 노선 정류장 목록을 확인합니다.",
+      "result": "노선 4개 대조 · 장날 문구 0개 · 공개 시간표 없음 0개",
+      "핵심 결과": "노선 4개 대조 · 장날 문구 0개 · 공개 시간표 없음 0개",
+      "ms": 0.006
+    },
+    {
+      "tool": "judge",
+      "도구": "judge",
+      "why": "옛 장날 승차와 지금 공개 정보를 노선마다 맞춰 판정합니다.",
+      "왜 불렀나": "옛 장날 승차와 지금 공개 정보를 노선마다 맞춰 판정합니다.",
+      "result": "지켜짐 4개",
+      "핵심 결과": "지켜짐 4개",
+      "ms": 17.326
+    }
+  ],
+  "search": {
+    "candidates": [],
+    "suggestions": [
+      "건입동",
+      "고성오일장(성산)",
+      "구좌읍"
+    ],
+    "basis": {
+      "data": "bus.sqlite",
+      "period": null,
+      "formula": "이름 공백·오일장 표현 정규화 및 비슷한 이름 비교",
+      "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+    }
+  },
+  "proposed_plan": {},
+  "llm_log": {
+    "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+    "plan": {
+      "accepted": {},
+      "discarded": [],
+      "ms": 0,
+      "source": "규칙 기반"
+    },
+    "sentences": {
+      "summary": {
+        "total": 0,
+        "accepted": 0,
+        "discarded": [],
+        "used": 0,
+        "fallback": true,
+        "source": "규칙 문장(모델 문장은 기본으로 끔)",
+        "citations": []
+      }
+    },
+    "requests": []
+  },
+  "question": "",
+  "market": {
+    "id": "hallim",
+    "name": "한림민속오일장",
+    "known_group": 4,
+    "known_days": [
+      4,
+      9
+    ],
+    "stop_ids": [
+      "0000966",
+      "0000967"
+    ],
+    "source": "관광 안내 ktriptips.com/kor/shopping/993224(4·9일) · 데이터가 찾은 값과 일치",
+    "stop_names": [
+      "한림오일시장"
+    ]
+  },
+  "cycles": {
+    "2018여름": {
+      "market_mean": 225.05263157894737,
+      "other_mean": 28.653846153846153,
+      "difference": 196.3987854251012,
+      "ratio": 7.719483405082627,
+      "market_days": 19,
+      "other_days": 78,
+      "day_group": 4,
+      "groups": [
+        {
+          "day_group": 1,
+          "label": "1·6일",
+          "days": 20,
+          "mean": 29.95
+        },
+        {
+          "day_group": 2,
+          "label": "2·7일",
+          "days": 20,
+          "mean": 28.5
+        },
+        {
+          "day_group": 3,
+          "label": "3·8일",
+          "days": 19,
+          "mean": 28.473684210526315
+        },
+        {
+          "day_group": 4,
+          "label": "4·9일",
+          "days": 19,
+          "mean": 225.05263157894737
+        },
+        {
+          "day_group": 5,
+          "label": "5·10일",
+          "days": 19,
+          "mean": 27.63157894736842
+        }
+      ],
+      "known_group": 4,
+      "needs_confirm": false,
+      "cycle": "주기 있음",
+      "confirmation": "",
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2018여름",
+        "formula": "각 묶음 승차 합계 ÷ 실제 날짜 수; 배수=장날 평균/(다른 날 평균+0.5)",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      }
+    },
+    "2020봄": {
+      "market_mean": 234.375,
+      "other_mean": 14.275,
+      "difference": 220.1,
+      "ratio": 15.862944162436548,
+      "market_days": 8,
+      "other_days": 40,
+      "day_group": 4,
+      "groups": [
+        {
+          "day_group": 1,
+          "label": "1·6일",
+          "days": 12,
+          "mean": 15.166666666666666
+        },
+        {
+          "day_group": 2,
+          "label": "2·7일",
+          "days": 12,
+          "mean": 14.666666666666666
+        },
+        {
+          "day_group": 3,
+          "label": "3·8일",
+          "days": 8,
+          "mean": 13.375
+        },
+        {
+          "day_group": 4,
+          "label": "4·9일",
+          "days": 8,
+          "mean": 234.375
+        },
+        {
+          "day_group": 5,
+          "label": "5·10일",
+          "days": 8,
+          "mean": 13.25
+        }
+      ],
+      "known_group": 4,
+      "needs_confirm": false,
+      "cycle": "주기 있음",
+      "confirmation": "",
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2020봄",
+        "formula": "각 묶음 승차 합계 ÷ 실제 날짜 수; 배수=장날 평균/(다른 날 평균+0.5)",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      }
+    }
+  },
+  "cycle": {
+    "market_mean": 234.375,
+    "other_mean": 14.275,
+    "difference": 220.1,
+    "ratio": 15.862944162436548,
+    "market_days": 8,
+    "other_days": 40,
+    "day_group": 4,
+    "groups": [
+      {
+        "day_group": 1,
+        "label": "1·6일",
+        "days": 12,
+        "mean": 15.166666666666666
+      },
+      {
+        "day_group": 2,
+        "label": "2·7일",
+        "days": 12,
+        "mean": 14.666666666666666
+      },
+      {
+        "day_group": 3,
+        "label": "3·8일",
+        "days": 8,
+        "mean": 13.375
+      },
+      {
+        "day_group": 4,
+        "label": "4·9일",
+        "days": 8,
+        "mean": 234.375
+      },
+      {
+        "day_group": 5,
+        "label": "5·10일",
+        "days": 8,
+        "mean": 13.25
+      }
+    ],
+    "known_group": 4,
+    "needs_confirm": false,
+    "cycle": "주기 있음",
+    "confirmation": "",
+    "basis": {
+      "data": "bus.sqlite",
+      "period": "2020봄",
+      "formula": "각 묶음 승차 합계 ÷ 실제 날짜 수; 배수=장날 평균/(다른 날 평균+0.5)",
+      "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+    }
+  },
+  "needs_confirm": false,
+  "confirmation": "",
+  "routes": [
+    {
+      "line": "291",
+      "market": "한림민속오일장",
+      "verdict": "지켜짐",
+      "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+      "market_mean": 140.25,
+      "other_mean": 10.8,
+      "difference": 129.45,
+      "ratio": 12.41150442477876,
+      "market_days": 8,
+      "other_days": 40,
+      "standard_error": 11.232284790358621,
+      "required_market_days": 1,
+      "timetable": {
+        "line": "291",
+        "route": "291",
+        "market_mentions": [
+          "hallim",
+          "jeju"
+        ],
+        "files": [
+          "x_405021.txt"
+        ],
+        "missing": false,
+        "day_service": false,
+        "phrases": [],
+        "mentions": [
+          "한림민속오일장"
+        ],
+        "market_stops": [
+          {
+            "market": "hallim",
+            "name": "한림오일시장[서]",
+            "line": "291-1",
+            "location": "길가"
+          },
+          {
+            "market": "hallim",
+            "name": "한림오일시장[동]",
+            "line": "291-2",
+            "location": "길가"
+          },
+          {
+            "market": "hallim",
+            "name": "한림오일시장[서]",
+            "line": "291-5",
+            "location": "길가"
+          }
+        ],
+        "current_lines": [
+          "291-1",
+          "291-2",
+          "291-5"
+        ],
+        "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+        "basis": {
+          "data": "bus.sqlite",
+          "period": null,
+          "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "roadside": true,
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2020봄",
+        "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      },
+      "judgement": {
+        "line": "291",
+        "market": "한림민속오일장",
+        "verdict": "지켜짐",
+        "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+        "market_mean": 140.25,
+        "other_mean": 10.8,
+        "difference": 129.45,
+        "ratio": 12.41150442477876,
+        "market_days": 8,
+        "other_days": 40,
+        "standard_error": 11.232284790358621,
+        "required_market_days": 1,
+        "timetable": {
+          "line": "291",
+          "route": "291",
+          "market_mentions": [
+            "hallim",
+            "jeju"
+          ],
+          "files": [
+            "x_405021.txt"
+          ],
+          "missing": false,
+          "day_service": false,
+          "phrases": [],
+          "mentions": [
+            "한림민속오일장"
+          ],
+          "market_stops": [
+            {
+              "market": "hallim",
+              "name": "한림오일시장[서]",
+              "line": "291-1",
+              "location": "길가"
+            },
+            {
+              "market": "hallim",
+              "name": "한림오일시장[동]",
+              "line": "291-2",
+              "location": "길가"
+            },
+            {
+              "market": "hallim",
+              "name": "한림오일시장[서]",
+              "line": "291-5",
+              "location": "길가"
+            }
+          ],
+          "current_lines": [
+            "291-1",
+            "291-2",
+            "291-5"
+          ],
+          "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+          "basis": {
+            "data": "bus.sqlite",
+            "period": null,
+            "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+            "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+          }
+        },
+        "roadside": true,
+        "basis": {
+          "data": "bus.sqlite",
+          "period": "2020봄",
+          "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "branches": [
+        {
+          "line": "291-2",
+          "route": "291",
+          "market_mean": 68.125,
+          "other_mean": 7.05,
+          "difference": 61.075,
+          "ratio": 9.02317880794702,
+          "market_days": 8,
+          "other_days": 40,
+          "share": 0.2906666666666667
+        },
+        {
+          "line": "291-1",
+          "route": "291",
+          "market_mean": 62.875,
+          "other_mean": 3.025,
+          "difference": 59.85,
+          "ratio": 17.836879432624112,
+          "market_days": 8,
+          "other_days": 40,
+          "share": 0.26826666666666665
+        },
+        {
+          "line": "291-3",
+          "route": "291",
+          "market_mean": 4.75,
+          "other_mean": 0.475,
+          "difference": 4.275,
+          "ratio": 4.871794871794872,
+          "market_days": 8,
+          "other_days": 40,
+          "share": 0.020266666666666665
+        },
+        {
+          "line": "291-4",
+          "route": "291",
+          "market_mean": 4.5,
+          "other_mean": 0.25,
+          "difference": 4.25,
+          "ratio": 6.0,
+          "market_days": 8,
+          "other_days": 40,
+          "share": 0.0192
+        }
+      ]
+    },
+    {
+      "line": "785",
+      "market": "한림민속오일장",
+      "verdict": "지켜짐",
+      "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+      "market_mean": 41.875,
+      "other_mean": 1.575,
+      "difference": 40.3,
+      "ratio": 20.180722891566262,
+      "market_days": 8,
+      "other_days": 40,
+      "standard_error": 3.3019453972761883,
+      "required_market_days": 1,
+      "timetable": {
+        "line": "785",
+        "route": "785",
+        "market_mentions": [
+          "hallim"
+        ],
+        "files": [
+          "x_405089.txt"
+        ],
+        "missing": false,
+        "day_service": false,
+        "phrases": [],
+        "mentions": [
+          "한림민속오일장",
+          "제주시민속오일장"
+        ],
+        "market_stops": [
+          {
+            "market": "hallim",
+            "name": "한림오일시장[동]",
+            "line": "785-10",
+            "location": "길가"
+          },
+          {
+            "market": "hallim",
+            "name": "한림오일시장[서]",
+            "line": "785-11",
+            "location": "길가"
+          },
+          {
+            "market": "hallim",
+            "name": "한림오일시장[동]",
+            "line": "785-12",
+            "location": "길가"
+          },
+          {
+            "market": "hallim",
+            "name": "한림오일시장[서]",
+            "line": "785-5",
+            "location": "길가"
+          },
+          {
+            "market": "hallim",
+            "name": "한림오일시장[동]",
+            "line": "785-6",
+            "location": "길가"
+          },
+          {
+            "market": "hallim",
+            "name": "한림오일시장[서]",
+            "line": "785-7",
+            "location": "길가"
+          },
+          {
+            "market": "hallim",
+            "name": "한림오일시장[동]",
+            "line": "785-8",
+            "location": "길가"
+          },
+          {
+            "market": "hallim",
+            "name": "한림오일시장[서]",
+            "line": "785-9",
+            "location": "길가"
+          }
+        ],
+        "current_lines": [
+          "785-10",
+          "785-11",
+          "785-12",
+          "785-5",
+          "785-6",
+          "785-7",
+          "785-8",
+          "785-9"
+        ],
+        "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+        "basis": {
+          "data": "bus.sqlite",
+          "period": null,
+          "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "roadside": true,
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2020봄",
+        "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      },
+      "judgement": {
+        "line": "785",
+        "market": "한림민속오일장",
+        "verdict": "지켜짐",
+        "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+        "market_mean": 41.875,
+        "other_mean": 1.575,
+        "difference": 40.3,
+        "ratio": 20.180722891566262,
+        "market_days": 8,
+        "other_days": 40,
+        "standard_error": 3.3019453972761883,
+        "required_market_days": 1,
+        "timetable": {
+          "line": "785",
+          "route": "785",
+          "market_mentions": [
+            "hallim"
+          ],
+          "files": [
+            "x_405089.txt"
+          ],
+          "missing": false,
+          "day_service": false,
+          "phrases": [],
+          "mentions": [
+            "한림민속오일장",
+            "제주시민속오일장"
+          ],
+          "market_stops": [
+            {
+              "market": "hallim",
+              "name": "한림오일시장[동]",
+              "line": "785-10",
+              "location": "길가"
+            },
+            {
+              "market": "hallim",
+              "name": "한림오일시장[서]",
+              "line": "785-11",
+              "location": "길가"
+            },
+            {
+              "market": "hallim",
+              "name": "한림오일시장[동]",
+              "line": "785-12",
+              "location": "길가"
+            },
+            {
+              "market": "hallim",
+              "name": "한림오일시장[서]",
+              "line": "785-5",
+              "location": "길가"
+            },
+            {
+              "market": "hallim",
+              "name": "한림오일시장[동]",
+              "line": "785-6",
+              "location": "길가"
+            },
+            {
+              "market": "hallim",
+              "name": "한림오일시장[서]",
+              "line": "785-7",
+              "location": "길가"
+            },
+            {
+              "market": "hallim",
+              "name": "한림오일시장[동]",
+              "line": "785-8",
+              "location": "길가"
+            },
+            {
+              "market": "hallim",
+              "name": "한림오일시장[서]",
+              "line": "785-9",
+              "location": "길가"
+            }
+          ],
+          "current_lines": [
+            "785-10",
+            "785-11",
+            "785-12",
+            "785-5",
+            "785-6",
+            "785-7",
+            "785-8",
+            "785-9"
+          ],
+          "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+          "basis": {
+            "data": "bus.sqlite",
+            "period": null,
+            "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+            "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+          }
+        },
+        "roadside": true,
+        "basis": {
+          "data": "bus.sqlite",
+          "period": "2020봄",
+          "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "branches": [
+        {
+          "line": "785-5",
+          "route": "785",
+          "market_mean": 16,
+          "other_mean": 0.675,
+          "difference": 15.325,
+          "ratio": 13.617021276595745,
+          "market_days": 8,
+          "other_days": 40,
+          "share": 0.06826666666666667
+        },
+        {
+          "line": "785-6",
+          "route": "785",
+          "market_mean": 15.875,
+          "other_mean": 0.625,
+          "difference": 15.25,
+          "ratio": 14.11111111111111,
+          "market_days": 8,
+          "other_days": 40,
+          "share": 0.06773333333333334
+        },
+        {
+          "line": "785-8",
+          "route": "785",
+          "market_mean": 6.375,
+          "other_mean": 0.2,
+          "difference": 6.175,
+          "ratio": 9.107142857142858,
+          "market_days": 8,
+          "other_days": 40,
+          "share": 0.0272
+        },
+        {
+          "line": "785-7",
+          "route": "785",
+          "market_mean": 3.625,
+          "other_mean": 0.075,
+          "difference": 3.55,
+          "ratio": 6.304347826086957,
+          "market_days": 8,
+          "other_days": 40,
+          "share": 0.015466666666666667
+        }
+      ]
+    },
+    {
+      "line": "292",
+      "market": "한림민속오일장",
+      "verdict": "지켜짐",
+      "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+      "market_mean": 39.125,
+      "other_mean": 1.9,
+      "difference": 37.225,
+      "ratio": 16.302083333333336,
+      "market_days": 8,
+      "other_days": 40,
+      "standard_error": 3.482134216200418,
+      "required_market_days": 1,
+      "timetable": {
+        "line": "292",
+        "route": "292",
+        "market_mentions": [
+          "hallim",
+          "jeju"
+        ],
+        "files": [
+          "x_405021.txt"
+        ],
+        "missing": false,
+        "day_service": false,
+        "phrases": [],
+        "mentions": [
+          "한림민속오일장"
+        ],
+        "market_stops": [
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "292-1",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "292-1",
+            "location": "길가"
+          },
+          {
+            "market": "hallim",
+            "name": "한림오일시장[서]",
+            "line": "292-1",
+            "location": "길가"
+          },
+          {
+            "market": "hallim",
+            "name": "한림오일시장[동]",
+            "line": "292-2",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "292-2",
+            "location": "길가"
+          },
+          {
+            "market": "hallim",
+            "name": "한림오일시장[동]",
+            "line": "292-3",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[남]",
+            "line": "292-3",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장[북]",
+            "line": "292-4",
+            "location": "길가"
+          },
+          {
+            "market": "jeju",
+            "name": "제주민속오일장입구[북]",
+            "line": "292-4",
+            "location": "길가"
+          },
+          {
+            "market": "hallim",
+            "name": "한림오일시장[서]",
+            "line": "292-4",
+            "location": "길가"
+          }
+        ],
+        "current_lines": [
+          "292-1",
+          "292-2",
+          "292-3",
+          "292-4"
+        ],
+        "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+        "basis": {
+          "data": "bus.sqlite",
+          "period": null,
+          "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "roadside": true,
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2020봄",
+        "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      },
+      "judgement": {
+        "line": "292",
+        "market": "한림민속오일장",
+        "verdict": "지켜짐",
+        "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+        "market_mean": 39.125,
+        "other_mean": 1.9,
+        "difference": 37.225,
+        "ratio": 16.302083333333336,
+        "market_days": 8,
+        "other_days": 40,
+        "standard_error": 3.482134216200418,
+        "required_market_days": 1,
+        "timetable": {
+          "line": "292",
+          "route": "292",
+          "market_mentions": [
+            "hallim",
+            "jeju"
+          ],
+          "files": [
+            "x_405021.txt"
+          ],
+          "missing": false,
+          "day_service": false,
+          "phrases": [],
+          "mentions": [
+            "한림민속오일장"
+          ],
+          "market_stops": [
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "292-1",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "292-1",
+              "location": "길가"
+            },
+            {
+              "market": "hallim",
+              "name": "한림오일시장[서]",
+              "line": "292-1",
+              "location": "길가"
+            },
+            {
+              "market": "hallim",
+              "name": "한림오일시장[동]",
+              "line": "292-2",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "292-2",
+              "location": "길가"
+            },
+            {
+              "market": "hallim",
+              "name": "한림오일시장[동]",
+              "line": "292-3",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[남]",
+              "line": "292-3",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장[북]",
+              "line": "292-4",
+              "location": "길가"
+            },
+            {
+              "market": "jeju",
+              "name": "제주민속오일장입구[북]",
+              "line": "292-4",
+              "location": "길가"
+            },
+            {
+              "market": "hallim",
+              "name": "한림오일시장[서]",
+              "line": "292-4",
+              "location": "길가"
+            }
+          ],
+          "current_lines": [
+            "292-1",
+            "292-2",
+            "292-3",
+            "292-4"
+          ],
+          "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+          "basis": {
+            "data": "bus.sqlite",
+            "period": null,
+            "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+            "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+          }
+        },
+        "roadside": true,
+        "basis": {
+          "data": "bus.sqlite",
+          "period": "2020봄",
+          "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "branches": [
+        {
+          "line": "292-2",
+          "route": "292",
+          "market_mean": 23.375,
+          "other_mean": 1.325,
+          "difference": 22.05,
+          "ratio": 12.808219178082192,
+          "market_days": 8,
+          "other_days": 40,
+          "share": 0.09973333333333333
+        },
+        {
+          "line": "292-1",
+          "route": "292",
+          "market_mean": 15.75,
+          "other_mean": 0.525,
+          "difference": 15.225,
+          "ratio": 15.365853658536587,
+          "market_days": 8,
+          "other_days": 40,
+          "share": 0.0672
+        }
+      ]
+    },
+    {
+      "line": "783",
+      "market": "한림민속오일장",
+      "verdict": "지켜짐",
+      "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+      "market_mean": 13.125,
+      "other_mean": 0,
+      "difference": 13.125,
+      "ratio": 26.25,
+      "market_days": 8,
+      "other_days": 40,
+      "standard_error": 3.1135504538342444,
+      "required_market_days": 2,
+      "timetable": {
+        "line": "783",
+        "route": "783",
+        "market_mentions": [
+          "hallim"
+        ],
+        "files": [
+          "x_405085.txt",
+          "x_405086.txt"
+        ],
+        "missing": false,
+        "day_service": false,
+        "phrases": [],
+        "mentions": [
+          "한림민속오일장",
+          "제주시민속오일장"
+        ],
+        "market_stops": [
+          {
+            "market": "hallim",
+            "name": "한림오일시장[서]",
+            "line": "783-5",
+            "location": "길가"
+          },
+          {
+            "market": "hallim",
+            "name": "한림오일시장[동]",
+            "line": "783-6",
+            "location": "길가"
+          },
+          {
+            "market": "hallim",
+            "name": "한림오일시장[서]",
+            "line": "783-7",
+            "location": "길가"
+          },
+          {
+            "market": "hallim",
+            "name": "한림오일시장[동]",
+            "line": "783-8",
+            "location": "길가"
+          }
+        ],
+        "current_lines": [
+          "783-1",
+          "783-2",
+          "783-3",
+          "783-4",
+          "783-5",
+          "783-6",
+          "783-7",
+          "783-8"
+        ],
+        "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+        "basis": {
+          "data": "bus.sqlite",
+          "period": null,
+          "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "roadside": true,
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2020봄",
+        "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      },
+      "judgement": {
+        "line": "783",
+        "market": "한림민속오일장",
+        "verdict": "지켜짐",
+        "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+        "market_mean": 13.125,
+        "other_mean": 0,
+        "difference": 13.125,
+        "ratio": 26.25,
+        "market_days": 8,
+        "other_days": 40,
+        "standard_error": 3.1135504538342444,
+        "required_market_days": 2,
+        "timetable": {
+          "line": "783",
+          "route": "783",
+          "market_mentions": [
+            "hallim"
+          ],
+          "files": [
+            "x_405085.txt",
+            "x_405086.txt"
+          ],
+          "missing": false,
+          "day_service": false,
+          "phrases": [],
+          "mentions": [
+            "한림민속오일장",
+            "제주시민속오일장"
+          ],
+          "market_stops": [
+            {
+              "market": "hallim",
+              "name": "한림오일시장[서]",
+              "line": "783-5",
+              "location": "길가"
+            },
+            {
+              "market": "hallim",
+              "name": "한림오일시장[동]",
+              "line": "783-6",
+              "location": "길가"
+            },
+            {
+              "market": "hallim",
+              "name": "한림오일시장[서]",
+              "line": "783-7",
+              "location": "길가"
+            },
+            {
+              "market": "hallim",
+              "name": "한림오일시장[동]",
+              "line": "783-8",
+              "location": "길가"
+            }
+          ],
+          "current_lines": [
+            "783-1",
+            "783-2",
+            "783-3",
+            "783-4",
+            "783-5",
+            "783-6",
+            "783-7",
+            "783-8"
+          ],
+          "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+          "basis": {
+            "data": "bus.sqlite",
+            "period": null,
+            "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+            "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+          }
+        },
+        "roadside": true,
+        "basis": {
+          "data": "bus.sqlite",
+          "period": "2020봄",
+          "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "branches": [
+        {
+          "line": "783-7",
+          "route": "783",
+          "market_mean": 3.875,
+          "other_mean": 0,
+          "difference": 3.875,
+          "ratio": 7.75,
+          "market_days": 8,
+          "other_days": 40,
+          "share": 0.016533333333333334
+        },
+        {
+          "line": "783-6",
+          "route": "783",
+          "market_mean": 3.125,
+          "other_mean": 0,
+          "difference": 3.125,
+          "ratio": 6.25,
+          "market_days": 8,
+          "other_days": 40,
+          "share": 0.013333333333333334
+        },
+        {
+          "line": "783-11",
+          "route": "783",
+          "market_mean": 3,
+          "other_mean": 0,
+          "difference": 3,
+          "ratio": 6.0,
+          "market_days": 8,
+          "other_days": 40,
+          "share": 0.0128
+        },
+        {
+          "line": "783-8",
+          "route": "783",
+          "market_mean": 1.375,
+          "other_mean": 0,
+          "difference": 1.375,
+          "ratio": 2.75,
+          "market_days": 8,
+          "other_days": 40,
+          "share": 0.005866666666666667
+        },
+        {
+          "line": "783-12",
+          "route": "783",
+          "market_mean": 1.125,
+          "other_mean": 0,
+          "difference": 1.125,
+          "ratio": 2.25,
+          "market_days": 8,
+          "other_days": 40,
+          "share": 0.0048
+        }
+      ]
+    }
+  ],
+  "villages": {
+    "villages": [
+      {
+        "name": "노형동",
+        "emd": "노형동",
+        "market_mean": 447.75,
+        "other_mean": 462.175,
+        "difference": -14.425000000000011,
+        "ratio": 0.967741935483871,
+        "market_days": 8,
+        "other_days": 40
+      },
+      {
+        "name": "도두동",
+        "emd": "도두동",
+        "market_mean": 5.75,
+        "other_mean": 7.55,
+        "difference": -1.7999999999999998,
+        "ratio": 0.7142857142857142,
+        "market_days": 8,
+        "other_days": 40
+      },
+      {
+        "name": "안덕면",
+        "emd": "안덕면",
+        "market_mean": 10.875,
+        "other_mean": 0,
+        "difference": 10.875,
+        "ratio": 21.75,
+        "market_days": 8,
+        "other_days": 40
+      },
+      {
+        "name": "애월읍",
+        "emd": "애월읍",
+        "market_mean": 682.75,
+        "other_mean": 630.625,
+        "difference": 52.125,
+        "ratio": 1.081798375916023,
+        "market_days": 8,
+        "other_days": 40
+      },
+      {
+        "name": "연동",
+        "emd": "연동",
+        "market_mean": 225,
+        "other_mean": 230.875,
+        "difference": -5.875,
+        "ratio": 0.9724473257698542,
+        "market_days": 8,
+        "other_days": 40
+      },
+      {
+        "name": "오라동",
+        "emd": "오라동",
+        "market_mean": 195.25,
+        "other_mean": 181.925,
+        "difference": 13.324999999999989,
+        "ratio": 1.0703028641907633,
+        "market_days": 8,
+        "other_days": 40
+      },
+      {
+        "name": "외도동",
+        "emd": "외도동",
+        "market_mean": 0.625,
+        "other_mean": 1.125,
+        "difference": -0.5,
+        "ratio": 0.38461538461538464,
+        "market_days": 8,
+        "other_days": 40
+      },
+      {
+        "name": "용담1동",
+        "emd": "용담1동",
+        "market_mean": 35.125,
+        "other_mean": 31.7,
+        "difference": 3.4250000000000007,
+        "ratio": 1.09083850931677,
+        "market_days": 8,
+        "other_days": 40
+      },
+      {
+        "name": "용담2동",
+        "emd": "용담2동",
+        "market_mean": 42.25,
+        "other_mean": 39.35,
+        "difference": 2.8999999999999986,
+        "ratio": 1.0602258469259724,
+        "market_days": 8,
+        "other_days": 40
+      },
+      {
+        "name": "이호동",
+        "emd": "이호동",
+        "market_mean": 1.25,
+        "other_mean": 1.725,
+        "difference": -0.4750000000000001,
+        "ratio": 0.5617977528089887,
+        "market_days": 8,
+        "other_days": 40
+      },
+      {
+        "name": "중문동",
+        "emd": "중문동",
+        "market_mean": 0.25,
+        "other_mean": 0,
+        "difference": 0.25,
+        "ratio": 0.5,
+        "market_days": 8,
+        "other_days": 40
+      },
+      {
+        "name": "한경면",
+        "emd": "한경면",
+        "market_mean": 51.875,
+        "other_mean": 43.45,
+        "difference": 8.424999999999997,
+        "ratio": 1.1803185437997723,
+        "market_days": 8,
+        "other_days": 40
+      },
+      {
+        "name": "한림읍",
+        "emd": "한림읍",
+        "market_mean": 778.5,
+        "other_mean": 664.875,
+        "difference": 113.625,
+        "ratio": 1.1700169077587825,
+        "market_days": 8,
+        "other_days": 40
+      }
+    ],
+    "weekday_only": false,
+    "basis": {
+      "data": "bus.sqlite",
+      "period": "2020봄",
+      "formula": "시장 경유 갈래의 시장 외 정류장 승차를 읍면동별 합산. 시장행 승객을 직접 추적한 수치는 아님",
+      "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+    }
+  },
+  "basis": {
+    "data": "bus.sqlite",
+    "period": "2020봄",
+    "formula": "각 묶음 승차 합계 ÷ 실제 날짜 수; 배수=장날 평균/(다른 날 평균+0.5)",
+    "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+  },
+  "observations": [],
+  "summary": [
+    "한림민속오일장의 2020봄 승차 기록을 살폈습니다.",
+    "장날 하루 평균 234.4명, 다른 날 14.3명입니다.",
+    "과거 승차 기록과 현재 공개 시간표는 시점이 다릅니다.",
+    "공백 후보는 운행 여부를 확인할 대상입니다. 담당 부서에 정차 유지를 확인해 주세요."
+  ],
+  "opinion": [],
+  "opinion_source": "고정 문안",
+  "opinion_citations": [],
+  "answer": ""
+}

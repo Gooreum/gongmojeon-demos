@@ -1,0 +1,3110 @@
+{
+  "period": "2018여름",
+  "mode": "말 다듬기: 규칙 기반",
+  "database": "bus.sqlite",
+  "trace": [
+    {
+      "tool": "find_place",
+      "도구": "find_place",
+      "why": "입력한 곳과 맞는 시장·마을·노선을 찾습니다.",
+      "왜 불렀나": "입력한 곳과 맞는 시장·마을·노선을 찾습니다.",
+      "result": "후보 0곳",
+      "핵심 결과": "후보 0곳",
+      "ms": 1256.52
+    },
+    {
+      "tool": "detect_cycle",
+      "도구": "detect_cycle",
+      "why": "실제 승차 기록에서 장날 주기를 찾습니다.",
+      "왜 불렀나": "실제 승차 기록에서 장날 주기를 찾습니다.",
+      "result": "4묶음, 장날 평균 1059.2명",
+      "핵심 결과": "4묶음, 장날 평균 1059.2명",
+      "ms": 7.874
+    },
+    {
+      "tool": "detect_cycle",
+      "도구": "detect_cycle",
+      "why": "실제 승차 기록에서 장날 주기를 찾습니다.",
+      "왜 불렀나": "실제 승차 기록에서 장날 주기를 찾습니다.",
+      "result": "4묶음, 장날 평균 912.5명",
+      "핵심 결과": "4묶음, 장날 평균 912.5명",
+      "ms": 6.783
+    },
+    {
+      "tool": "split_routes",
+      "도구": "split_routes",
+      "why": "장날 손님을 노선 갈래별로 나눕니다.",
+      "왜 불렀나": "장날 손님을 노선 갈래별로 나눕니다.",
+      "result": "장날 손님이 있는 노선 갈래 31개",
+      "핵심 결과": "장날 손님이 있는 노선 갈래 31개",
+      "ms": 52.215
+    },
+    {
+      "tool": "village_lift",
+      "도구": "village_lift",
+      "why": "같은 노선이 지나는 다른 마을의 승차 변화를 봅니다.",
+      "왜 불렀나": "같은 노선이 지나는 다른 마을의 승차 변화를 봅니다.",
+      "result": "마을 14곳 · 장날에 가장 많이 느는 곳 동홍동 하루 +160.3명",
+      "핵심 결과": "마을 14곳 · 장날에 가장 많이 느는 곳 동홍동 하루 +160.3명",
+      "ms": 121.341
+    },
+    {
+      "tool": "check_timetable",
+      "도구": "check_timetable",
+      "why": "지금 공개 시간표 202개와 노선 정류장 목록을 확인합니다.",
+      "왜 불렀나": "지금 공개 시간표 202개와 노선 정류장 목록을 확인합니다.",
+      "result": "노선 10개 대조 · 장날 문구 1개 · 공개 시간표 없음 1개",
+      "핵심 결과": "노선 10개 대조 · 장날 문구 1개 · 공개 시간표 없음 1개",
+      "ms": 166.834
+    },
+    {
+      "tool": "judge",
+      "도구": "judge",
+      "why": "옛 장날 승차와 지금 공개 정보를 노선마다 맞춰 판정합니다.",
+      "왜 불렀나": "옛 장날 승차와 지금 공개 정보를 노선마다 맞춰 판정합니다.",
+      "result": "공백 후보 1개 · 지켜짐 9개",
+      "핵심 결과": "공백 후보 1개 · 지켜짐 9개",
+      "ms": 307.699
+    }
+  ],
+  "search": {
+    "candidates": [],
+    "suggestions": [
+      "건입동",
+      "고성오일장(성산)",
+      "구좌읍"
+    ],
+    "basis": {
+      "data": "bus.sqlite",
+      "period": null,
+      "formula": "이름 공백·오일장 표현 정규화 및 비슷한 이름 비교",
+      "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+    }
+  },
+  "proposed_plan": {},
+  "llm_log": {
+    "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+    "plan": {
+      "accepted": {},
+      "discarded": [],
+      "ms": 0,
+      "source": "규칙 기반"
+    },
+    "sentences": {
+      "summary": {
+        "total": 0,
+        "accepted": 0,
+        "discarded": [],
+        "used": 0,
+        "fallback": true,
+        "source": "규칙 문장(모델 문장은 기본으로 끔)",
+        "citations": []
+      }
+    },
+    "requests": []
+  },
+  "question": "",
+  "market": {
+    "id": "seogwipo",
+    "name": "서귀포향토오일시장",
+    "known_group": 4,
+    "known_days": [
+      4,
+      9
+    ],
+    "stop_ids": [
+      "0001914",
+      "0001915",
+      "0002022",
+      "1002022",
+      "0004236",
+      "0001916"
+    ],
+    "source": "관광 안내 trazy.com/spot/1103(4·9·14·19·24·29일) · 데이터가 찾은 값과 일치",
+    "stop_names": [
+      "서귀포향토오일시장",
+      "측골",
+      "향토오일시장"
+    ]
+  },
+  "cycles": {
+    "2018여름": {
+      "market_mean": 1059.157894736842,
+      "other_mean": 42.51282051282051,
+      "difference": 1016.6450742240215,
+      "ratio": 24.624237195074123,
+      "market_days": 19,
+      "other_days": 78,
+      "day_group": 4,
+      "groups": [
+        {
+          "day_group": 1,
+          "label": "1·6일",
+          "days": 20,
+          "mean": 43.35
+        },
+        {
+          "day_group": 2,
+          "label": "2·7일",
+          "days": 20,
+          "mean": 40.2
+        },
+        {
+          "day_group": 3,
+          "label": "3·8일",
+          "days": 19,
+          "mean": 45.89473684210526
+        },
+        {
+          "day_group": 4,
+          "label": "4·9일",
+          "days": 19,
+          "mean": 1059.157894736842
+        },
+        {
+          "day_group": 5,
+          "label": "5·10일",
+          "days": 19,
+          "mean": 40.68421052631579
+        }
+      ],
+      "known_group": 4,
+      "needs_confirm": false,
+      "cycle": "주기 있음",
+      "confirmation": "",
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2018여름",
+        "formula": "각 묶음 승차 합계 ÷ 실제 날짜 수; 배수=장날 평균/(다른 날 평균+0.5)",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      }
+    },
+    "2020봄": {
+      "market_mean": 912.5,
+      "other_mean": 37.325,
+      "difference": 875.175,
+      "ratio": 24.124256444150692,
+      "market_days": 8,
+      "other_days": 40,
+      "day_group": 4,
+      "groups": [
+        {
+          "day_group": 1,
+          "label": "1·6일",
+          "days": 12,
+          "mean": 36.083333333333336
+        },
+        {
+          "day_group": 2,
+          "label": "2·7일",
+          "days": 12,
+          "mean": 34
+        },
+        {
+          "day_group": 3,
+          "label": "3·8일",
+          "days": 8,
+          "mean": 43.875
+        },
+        {
+          "day_group": 4,
+          "label": "4·9일",
+          "days": 8,
+          "mean": 912.5
+        },
+        {
+          "day_group": 5,
+          "label": "5·10일",
+          "days": 8,
+          "mean": 37.625
+        }
+      ],
+      "known_group": 4,
+      "needs_confirm": false,
+      "cycle": "주기 있음",
+      "confirmation": "",
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2020봄",
+        "formula": "각 묶음 승차 합계 ÷ 실제 날짜 수; 배수=장날 평균/(다른 날 평균+0.5)",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      }
+    }
+  },
+  "cycle": {
+    "market_mean": 1059.157894736842,
+    "other_mean": 42.51282051282051,
+    "difference": 1016.6450742240215,
+    "ratio": 24.624237195074123,
+    "market_days": 19,
+    "other_days": 78,
+    "day_group": 4,
+    "groups": [
+      {
+        "day_group": 1,
+        "label": "1·6일",
+        "days": 20,
+        "mean": 43.35
+      },
+      {
+        "day_group": 2,
+        "label": "2·7일",
+        "days": 20,
+        "mean": 40.2
+      },
+      {
+        "day_group": 3,
+        "label": "3·8일",
+        "days": 19,
+        "mean": 45.89473684210526
+      },
+      {
+        "day_group": 4,
+        "label": "4·9일",
+        "days": 19,
+        "mean": 1059.157894736842
+      },
+      {
+        "day_group": 5,
+        "label": "5·10일",
+        "days": 19,
+        "mean": 40.68421052631579
+      }
+    ],
+    "known_group": 4,
+    "needs_confirm": false,
+    "cycle": "주기 있음",
+    "confirmation": "",
+    "basis": {
+      "data": "bus.sqlite",
+      "period": "2018여름",
+      "formula": "각 묶음 승차 합계 ÷ 실제 날짜 수; 배수=장날 평균/(다른 날 평균+0.5)",
+      "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+    }
+  },
+  "needs_confirm": false,
+  "confirmation": "",
+  "routes": [
+    {
+      "line": "880",
+      "market": "서귀포향토오일시장",
+      "verdict": "공백 후보",
+      "reason": "장날 승객이 있었는데 지금 공개 시간표 202개에 이 노선이 없습니다. 노선 정보(정류장 목록)는 버스정보시스템에 남아 있습니다. 폐지 단정 아님 · 운행 여부 확인 필요 · 확인할 곳: 시청 교통 담당 부서, 버스정보시스템 노선 변경 공지, 다음 장날 실시간 위치.",
+      "market_mean": 313,
+      "other_mean": 6.294871794871795,
+      "difference": 306.70512820512823,
+      "ratio": 46.06415094339623,
+      "market_days": 19,
+      "other_days": 78,
+      "standard_error": 19.420949468324494,
+      "required_market_days": 1,
+      "timetable": {
+        "line": "880",
+        "route": "880",
+        "market_mentions": [],
+        "files": [],
+        "missing": true,
+        "day_service": false,
+        "phrases": [],
+        "mentions": [],
+        "market_stops": [
+          {
+            "market": "seogwipo",
+            "name": "향토오일시장",
+            "line": "880-1",
+            "location": "시장 안"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[남]",
+            "line": "880-1",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "향토오일시장",
+            "line": "880-1",
+            "location": "시장 안"
+          }
+        ],
+        "current_lines": [
+          "880-1"
+        ],
+        "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+        "basis": {
+          "data": "bus.sqlite",
+          "period": null,
+          "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "roadside": false,
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2018여름",
+        "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      },
+      "judgement": {
+        "line": "880",
+        "market": "서귀포향토오일시장",
+        "verdict": "공백 후보",
+        "reason": "장날 승객이 있었는데 지금 공개 시간표 202개에 이 노선이 없습니다. 노선 정보(정류장 목록)는 버스정보시스템에 남아 있습니다. 폐지 단정 아님 · 운행 여부 확인 필요 · 확인할 곳: 시청 교통 담당 부서, 버스정보시스템 노선 변경 공지, 다음 장날 실시간 위치.",
+        "market_mean": 313,
+        "other_mean": 6.294871794871795,
+        "difference": 306.70512820512823,
+        "ratio": 46.06415094339623,
+        "market_days": 19,
+        "other_days": 78,
+        "standard_error": 19.420949468324494,
+        "required_market_days": 1,
+        "timetable": {
+          "line": "880",
+          "route": "880",
+          "market_mentions": [],
+          "files": [],
+          "missing": true,
+          "day_service": false,
+          "phrases": [],
+          "mentions": [],
+          "market_stops": [
+            {
+              "market": "seogwipo",
+              "name": "향토오일시장",
+              "line": "880-1",
+              "location": "시장 안"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[남]",
+              "line": "880-1",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "향토오일시장",
+              "line": "880-1",
+              "location": "시장 안"
+            }
+          ],
+          "current_lines": [
+            "880-1"
+          ],
+          "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+          "basis": {
+            "data": "bus.sqlite",
+            "period": null,
+            "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+            "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+          }
+        },
+        "roadside": false,
+        "basis": {
+          "data": "bus.sqlite",
+          "period": "2018여름",
+          "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "branches": [
+        {
+          "line": "880-1",
+          "route": "880",
+          "market_mean": 313,
+          "other_mean": 6.294871794871795,
+          "difference": 306.70512820512823,
+          "ratio": 46.06415094339623,
+          "market_days": 19,
+          "other_days": 78,
+          "share": 0.29551778970383624
+        }
+      ]
+    },
+    {
+      "line": "531",
+      "market": "서귀포향토오일시장",
+      "verdict": "지켜짐",
+      "reason": "공개 시간표에 장날 운행 문구가 있습니다: ※ 매월 4일, 9일 오일장안 경유로 인하여 서귀포향토오일장 정류소 미정차 (09시~18시)",
+      "market_mean": 161,
+      "other_mean": 7.756410256410256,
+      "difference": 153.24358974358975,
+      "ratio": 19.500000000000004,
+      "market_days": 19,
+      "other_days": 78,
+      "standard_error": 12.116799492077204,
+      "required_market_days": 1,
+      "timetable": {
+        "line": "531",
+        "route": "531",
+        "market_mentions": [
+          "seogwipo"
+        ],
+        "files": [
+          "x_406005.txt"
+        ],
+        "missing": false,
+        "day_service": true,
+        "phrases": [
+          " ※ 매월 4일, 9일 오일장안 경유로 인하여 서귀포향토오일장 정류소 미정차 (09시~18시)",
+          "10.0\t14:50\t15:01\t\t15:15\t15:35\t15:55\t16:03\t16:15\t매월4,9일 서귀포향토오일시장안 경유색달경유",
+          "11.0\t15:50\t16:01\t\t16:15\t16:35\t16:55\t\t17:15\t매월4,9일 서귀포향토오일시장안 경유",
+          "12.0\t17:00\t17:11\t\t17:25\t17:45\t18:05\t\t18:25\t매월4,9일 서귀포향토오일시장안 경유",
+          "13.0\t17:30\t17:41\t\t17:55\t18:15\t18:35\t\t18:55\t매월4,9일 서귀포향토오일시장안 경유",
+          "3.0\t08:15\t08:26\t\t08:40\t09:00\t09:20\t\t09:40\t매월4,9일 서귀포향토오일시장안 경유",
+          "4.0\t08:50\t09:01\t\t09:15\t09:35\t09:55\t\t10:15\t매월4,9일 서귀포향토오일시장안 경유",
+          "5.0\t10:05\t10:16\t\t10:30\t10:50\t11:10\t\t11:30\t매월4,9일 서귀포향토오일시장안 경유",
+          "6.0\t11:00\t11:11\t\t11:25\t11:45\t12:05\t\t12:25\t매월4,9일 서귀포향토오일시장안 경유",
+          "7.0\t11:25\t11:36\t\t11:50\t12:10\t12:30\t\t12:50\t매월4,9일 서귀포향토오일시장안 경유",
+          "8.0\t12:50\t13:01\t\t13:15\t13:35\t13:55\t\t14:15\t매월4,9일 서귀포향토오일시장안 경유",
+          "9.0\t13:50\t14:01\t\t14:15\t14:35\t14:55\t\t15:15\t매월4,9일 서귀포향토오일시장안 경유"
+        ],
+        "mentions": [
+          "서귀포향토오일시장"
+        ],
+        "market_stops": [
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[남]",
+            "line": "531-1",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[남]",
+            "line": "531-1",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[북]",
+            "line": "531-10",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[북]",
+            "line": "531-10",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[북]",
+            "line": "531-12",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "향토오일시장",
+            "line": "531-12",
+            "location": "시장 안"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[북]",
+            "line": "531-14",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "향토오일시장",
+            "line": "531-14",
+            "location": "시장 안"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[북]",
+            "line": "531-16",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[북]",
+            "line": "531-16",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[북]",
+            "line": "531-2",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[북]",
+            "line": "531-2",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[남]",
+            "line": "531-3",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[남]",
+            "line": "531-3",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[북]",
+            "line": "531-4",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[북]",
+            "line": "531-4",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[북]",
+            "line": "531-8",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[북]",
+            "line": "531-8",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[남]",
+            "line": "531-9",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[남]",
+            "line": "531-9",
+            "location": "길가"
+          }
+        ],
+        "current_lines": [
+          "531-1",
+          "531-10",
+          "531-12",
+          "531-14",
+          "531-16",
+          "531-2",
+          "531-3",
+          "531-4",
+          "531-5",
+          "531-6",
+          "531-8",
+          "531-9"
+        ],
+        "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+        "basis": {
+          "data": "bus.sqlite",
+          "period": null,
+          "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "roadside": false,
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2018여름",
+        "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      },
+      "judgement": {
+        "line": "531",
+        "market": "서귀포향토오일시장",
+        "verdict": "지켜짐",
+        "reason": "공개 시간표에 장날 운행 문구가 있습니다: ※ 매월 4일, 9일 오일장안 경유로 인하여 서귀포향토오일장 정류소 미정차 (09시~18시)",
+        "market_mean": 161,
+        "other_mean": 7.756410256410256,
+        "difference": 153.24358974358975,
+        "ratio": 19.500000000000004,
+        "market_days": 19,
+        "other_days": 78,
+        "standard_error": 12.116799492077204,
+        "required_market_days": 1,
+        "timetable": {
+          "line": "531",
+          "route": "531",
+          "market_mentions": [
+            "seogwipo"
+          ],
+          "files": [
+            "x_406005.txt"
+          ],
+          "missing": false,
+          "day_service": true,
+          "phrases": [
+            " ※ 매월 4일, 9일 오일장안 경유로 인하여 서귀포향토오일장 정류소 미정차 (09시~18시)",
+            "10.0\t14:50\t15:01\t\t15:15\t15:35\t15:55\t16:03\t16:15\t매월4,9일 서귀포향토오일시장안 경유색달경유",
+            "11.0\t15:50\t16:01\t\t16:15\t16:35\t16:55\t\t17:15\t매월4,9일 서귀포향토오일시장안 경유",
+            "12.0\t17:00\t17:11\t\t17:25\t17:45\t18:05\t\t18:25\t매월4,9일 서귀포향토오일시장안 경유",
+            "13.0\t17:30\t17:41\t\t17:55\t18:15\t18:35\t\t18:55\t매월4,9일 서귀포향토오일시장안 경유",
+            "3.0\t08:15\t08:26\t\t08:40\t09:00\t09:20\t\t09:40\t매월4,9일 서귀포향토오일시장안 경유",
+            "4.0\t08:50\t09:01\t\t09:15\t09:35\t09:55\t\t10:15\t매월4,9일 서귀포향토오일시장안 경유",
+            "5.0\t10:05\t10:16\t\t10:30\t10:50\t11:10\t\t11:30\t매월4,9일 서귀포향토오일시장안 경유",
+            "6.0\t11:00\t11:11\t\t11:25\t11:45\t12:05\t\t12:25\t매월4,9일 서귀포향토오일시장안 경유",
+            "7.0\t11:25\t11:36\t\t11:50\t12:10\t12:30\t\t12:50\t매월4,9일 서귀포향토오일시장안 경유",
+            "8.0\t12:50\t13:01\t\t13:15\t13:35\t13:55\t\t14:15\t매월4,9일 서귀포향토오일시장안 경유",
+            "9.0\t13:50\t14:01\t\t14:15\t14:35\t14:55\t\t15:15\t매월4,9일 서귀포향토오일시장안 경유"
+          ],
+          "mentions": [
+            "서귀포향토오일시장"
+          ],
+          "market_stops": [
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[남]",
+              "line": "531-1",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[남]",
+              "line": "531-1",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[북]",
+              "line": "531-10",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[북]",
+              "line": "531-10",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[북]",
+              "line": "531-12",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "향토오일시장",
+              "line": "531-12",
+              "location": "시장 안"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[북]",
+              "line": "531-14",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "향토오일시장",
+              "line": "531-14",
+              "location": "시장 안"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[북]",
+              "line": "531-16",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[북]",
+              "line": "531-16",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[북]",
+              "line": "531-2",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[북]",
+              "line": "531-2",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[남]",
+              "line": "531-3",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[남]",
+              "line": "531-3",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[북]",
+              "line": "531-4",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[북]",
+              "line": "531-4",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[북]",
+              "line": "531-8",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[북]",
+              "line": "531-8",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[남]",
+              "line": "531-9",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[남]",
+              "line": "531-9",
+              "location": "길가"
+            }
+          ],
+          "current_lines": [
+            "531-1",
+            "531-10",
+            "531-12",
+            "531-14",
+            "531-16",
+            "531-2",
+            "531-3",
+            "531-4",
+            "531-5",
+            "531-6",
+            "531-8",
+            "531-9"
+          ],
+          "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+          "basis": {
+            "data": "bus.sqlite",
+            "period": null,
+            "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+            "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+          }
+        },
+        "roadside": false,
+        "basis": {
+          "data": "bus.sqlite",
+          "period": "2018여름",
+          "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "branches": [
+        {
+          "line": "531-1",
+          "route": "531",
+          "market_mean": 87.52631578947368,
+          "other_mean": 2.230769230769231,
+          "difference": 85.29554655870446,
+          "ratio": 32.05189028910304,
+          "market_days": 19,
+          "other_days": 78,
+          "share": 0.08263764659113497
+        },
+        {
+          "line": "531-2",
+          "route": "531",
+          "market_mean": 43.21052631578947,
+          "other_mean": 2.9615384615384617,
+          "difference": 40.24898785425101,
+          "ratio": 12.483040935672514,
+          "market_days": 19,
+          "other_days": 78,
+          "share": 0.0407970582389187
+        },
+        {
+          "line": "531-7",
+          "route": "531",
+          "market_mean": 18.789473684210527,
+          "other_mean": 1.0384615384615385,
+          "difference": 17.751012145748987,
+          "ratio": 12.213157894736842,
+          "market_days": 19,
+          "other_days": 78,
+          "share": 0.017740011926058438
+        },
+        {
+          "line": "531-8",
+          "route": "531",
+          "market_mean": 7.7894736842105265,
+          "other_mean": 0.5769230769230769,
+          "difference": 7.21255060728745,
+          "ratio": 7.2330827067669174,
+          "market_days": 19,
+          "other_days": 78,
+          "share": 0.007354402703239913
+        },
+        {
+          "line": "531-3",
+          "route": "531",
+          "market_mean": 2.1052631578947367,
+          "other_mean": 0.3717948717948718,
+          "difference": 1.733468286099865,
+          "ratio": 2.414860681114551,
+          "market_days": 19,
+          "other_days": 78,
+          "share": 0.0019876764062810573
+        },
+        {
+          "line": "531-4",
+          "route": "531",
+          "market_mean": 1.4736842105263157,
+          "other_mean": 0.47435897435897434,
+          "difference": 0.9993252361673414,
+          "ratio": 1.5124653739612188,
+          "market_days": 19,
+          "other_days": 78,
+          "share": 0.0013913734843967402
+        }
+      ]
+    },
+    {
+      "line": "630",
+      "market": "서귀포향토오일시장",
+      "verdict": "지켜짐",
+      "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+      "market_mean": 111.47368421052632,
+      "other_mean": 5.294871794871795,
+      "difference": 106.17881241565452,
+      "ratio": 19.236609222170472,
+      "market_days": 19,
+      "other_days": 78,
+      "standard_error": 7.9961896713842275,
+      "required_market_days": 1,
+      "timetable": {
+        "line": "630",
+        "route": "630",
+        "market_mentions": [
+          "seogwipo"
+        ],
+        "files": [
+          "x_406015.txt"
+        ],
+        "missing": false,
+        "day_service": false,
+        "phrases": [],
+        "mentions": [
+          "서귀포향토오일시장"
+        ],
+        "market_stops": [
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[남]",
+            "line": "630-1",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[남]",
+            "line": "630-1",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[북]",
+            "line": "630-2",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[북]",
+            "line": "630-2",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[남]",
+            "line": "630-3",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[남]",
+            "line": "630-3",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[북]",
+            "line": "630-4",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[북]",
+            "line": "630-4",
+            "location": "길가"
+          }
+        ],
+        "current_lines": [
+          "630-1",
+          "630-2",
+          "630-3",
+          "630-4"
+        ],
+        "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+        "basis": {
+          "data": "bus.sqlite",
+          "period": null,
+          "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "roadside": true,
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2018여름",
+        "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      },
+      "judgement": {
+        "line": "630",
+        "market": "서귀포향토오일시장",
+        "verdict": "지켜짐",
+        "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+        "market_mean": 111.47368421052632,
+        "other_mean": 5.294871794871795,
+        "difference": 106.17881241565452,
+        "ratio": 19.236609222170472,
+        "market_days": 19,
+        "other_days": 78,
+        "standard_error": 7.9961896713842275,
+        "required_market_days": 1,
+        "timetable": {
+          "line": "630",
+          "route": "630",
+          "market_mentions": [
+            "seogwipo"
+          ],
+          "files": [
+            "x_406015.txt"
+          ],
+          "missing": false,
+          "day_service": false,
+          "phrases": [],
+          "mentions": [
+            "서귀포향토오일시장"
+          ],
+          "market_stops": [
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[남]",
+              "line": "630-1",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[남]",
+              "line": "630-1",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[북]",
+              "line": "630-2",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[북]",
+              "line": "630-2",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[남]",
+              "line": "630-3",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[남]",
+              "line": "630-3",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[북]",
+              "line": "630-4",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[북]",
+              "line": "630-4",
+              "location": "길가"
+            }
+          ],
+          "current_lines": [
+            "630-1",
+            "630-2",
+            "630-3",
+            "630-4"
+          ],
+          "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+          "basis": {
+            "data": "bus.sqlite",
+            "period": null,
+            "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+            "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+          }
+        },
+        "roadside": true,
+        "basis": {
+          "data": "bus.sqlite",
+          "period": "2018여름",
+          "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "branches": [
+        {
+          "line": "630-2",
+          "route": "630",
+          "market_mean": 53.63157894736842,
+          "other_mean": 2.871794871794872,
+          "difference": 50.75978407557355,
+          "ratio": 15.905943566139683,
+          "market_days": 19,
+          "other_days": 78,
+          "share": 0.05063605645000994
+        },
+        {
+          "line": "630-1",
+          "route": "630",
+          "market_mean": 52.8421052631579,
+          "other_mean": 1.7564102564102564,
+          "difference": 51.08569500674764,
+          "ratio": 23.41866028708134,
+          "market_days": 19,
+          "other_days": 78,
+          "share": 0.04989067779765455
+        },
+        {
+          "line": "630-4",
+          "route": "630",
+          "market_mean": 4.052631578947368,
+          "other_mean": 0.358974358974359,
+          "difference": 3.693657219973009,
+          "ratio": 4.717989002356637,
+          "market_days": 19,
+          "other_days": 78,
+          "share": 0.0038262770820910352
+        }
+      ]
+    },
+    {
+      "line": "615",
+      "market": "서귀포향토오일시장",
+      "verdict": "지켜짐",
+      "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+      "market_mean": 108.21052631578948,
+      "other_mean": 6.115384615384615,
+      "difference": 102.09514170040487,
+      "ratio": 16.357405140758875,
+      "market_days": 19,
+      "other_days": 78,
+      "standard_error": 7.871001824982572,
+      "required_market_days": 1,
+      "timetable": {
+        "line": "615",
+        "route": "615",
+        "market_mentions": [
+          "seogwipo"
+        ],
+        "files": [
+          "x_406008.txt"
+        ],
+        "missing": false,
+        "day_service": false,
+        "phrases": [],
+        "mentions": [
+          "서귀포향토오일시장"
+        ],
+        "market_stops": [
+          {
+            "market": "seogwipo",
+            "name": "측골[북]",
+            "line": "615-5",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[북]",
+            "line": "615-5",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[남]",
+            "line": "615-6",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[남]",
+            "line": "615-6",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[북]",
+            "line": "615-7",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[북]",
+            "line": "615-7",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[남]",
+            "line": "615-8",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[남]",
+            "line": "615-8",
+            "location": "길가"
+          }
+        ],
+        "current_lines": [
+          "615-5",
+          "615-6",
+          "615-7",
+          "615-8"
+        ],
+        "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+        "basis": {
+          "data": "bus.sqlite",
+          "period": null,
+          "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "roadside": true,
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2018여름",
+        "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      },
+      "judgement": {
+        "line": "615",
+        "market": "서귀포향토오일시장",
+        "verdict": "지켜짐",
+        "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+        "market_mean": 108.21052631578948,
+        "other_mean": 6.115384615384615,
+        "difference": 102.09514170040487,
+        "ratio": 16.357405140758875,
+        "market_days": 19,
+        "other_days": 78,
+        "standard_error": 7.871001824982572,
+        "required_market_days": 1,
+        "timetable": {
+          "line": "615",
+          "route": "615",
+          "market_mentions": [
+            "seogwipo"
+          ],
+          "files": [
+            "x_406008.txt"
+          ],
+          "missing": false,
+          "day_service": false,
+          "phrases": [],
+          "mentions": [
+            "서귀포향토오일시장"
+          ],
+          "market_stops": [
+            {
+              "market": "seogwipo",
+              "name": "측골[북]",
+              "line": "615-5",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[북]",
+              "line": "615-5",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[남]",
+              "line": "615-6",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[남]",
+              "line": "615-6",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[북]",
+              "line": "615-7",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[북]",
+              "line": "615-7",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[남]",
+              "line": "615-8",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[남]",
+              "line": "615-8",
+              "location": "길가"
+            }
+          ],
+          "current_lines": [
+            "615-5",
+            "615-6",
+            "615-7",
+            "615-8"
+          ],
+          "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+          "basis": {
+            "data": "bus.sqlite",
+            "period": null,
+            "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+            "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+          }
+        },
+        "roadside": true,
+        "basis": {
+          "data": "bus.sqlite",
+          "period": "2018여름",
+          "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "branches": [
+        {
+          "line": "615-8",
+          "route": "615",
+          "market_mean": 35.05263157894737,
+          "other_mean": 1.6025641025641026,
+          "difference": 33.45006747638327,
+          "ratio": 16.671373555840823,
+          "market_days": 19,
+          "other_days": 78,
+          "share": 0.03309481216457961
+        },
+        {
+          "line": "615-6",
+          "route": "615",
+          "market_mean": 29.105263157894736,
+          "other_mean": 1.205128205128205,
+          "difference": 27.900134952766532,
+          "ratio": 17.06925207756233,
+          "market_days": 19,
+          "other_days": 78,
+          "share": 0.02747962631683562
+        },
+        {
+          "line": "615-7",
+          "route": "615",
+          "market_mean": 22.57894736842105,
+          "other_mean": 1.3974358974358974,
+          "difference": 21.181511470985154,
+          "ratio": 11.899715504978662,
+          "market_days": 19,
+          "other_days": 78,
+          "share": 0.02131782945736434
+        },
+        {
+          "line": "615-5",
+          "route": "615",
+          "market_mean": 21.473684210526315,
+          "other_mean": 1.9102564102564104,
+          "difference": 19.563427800269906,
+          "ratio": 8.909294512877938,
+          "market_days": 19,
+          "other_days": 78,
+          "share": 0.020274299344066785
+        }
+      ]
+    },
+    {
+      "line": "621",
+      "market": "서귀포향토오일시장",
+      "verdict": "지켜짐",
+      "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+      "market_mean": 78.78947368421052,
+      "other_mean": 3.628205128205128,
+      "difference": 75.1612685560054,
+      "ratio": 19.085648904870872,
+      "market_days": 19,
+      "other_days": 78,
+      "standard_error": 5.56161155459913,
+      "required_market_days": 1,
+      "timetable": {
+        "line": "621",
+        "route": "621",
+        "market_mentions": [
+          "seogwipo"
+        ],
+        "files": [
+          "x_406009.txt"
+        ],
+        "missing": false,
+        "day_service": false,
+        "phrases": [],
+        "mentions": [
+          "서귀포향토오일시장"
+        ],
+        "market_stops": [
+          {
+            "market": "seogwipo",
+            "name": "측골[북]",
+            "line": "621-1",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[북]",
+            "line": "621-1",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[남]",
+            "line": "621-1",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[남]",
+            "line": "621-1",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[북]",
+            "line": "621-2",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[북]",
+            "line": "621-2",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[남]",
+            "line": "621-2",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[남]",
+            "line": "621-2",
+            "location": "길가"
+          }
+        ],
+        "current_lines": [
+          "621-1",
+          "621-2"
+        ],
+        "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+        "basis": {
+          "data": "bus.sqlite",
+          "period": null,
+          "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "roadside": true,
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2018여름",
+        "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      },
+      "judgement": {
+        "line": "621",
+        "market": "서귀포향토오일시장",
+        "verdict": "지켜짐",
+        "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+        "market_mean": 78.78947368421052,
+        "other_mean": 3.628205128205128,
+        "difference": 75.1612685560054,
+        "ratio": 19.085648904870872,
+        "market_days": 19,
+        "other_days": 78,
+        "standard_error": 5.56161155459913,
+        "required_market_days": 1,
+        "timetable": {
+          "line": "621",
+          "route": "621",
+          "market_mentions": [
+            "seogwipo"
+          ],
+          "files": [
+            "x_406009.txt"
+          ],
+          "missing": false,
+          "day_service": false,
+          "phrases": [],
+          "mentions": [
+            "서귀포향토오일시장"
+          ],
+          "market_stops": [
+            {
+              "market": "seogwipo",
+              "name": "측골[북]",
+              "line": "621-1",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[북]",
+              "line": "621-1",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[남]",
+              "line": "621-1",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[남]",
+              "line": "621-1",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[북]",
+              "line": "621-2",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[북]",
+              "line": "621-2",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[남]",
+              "line": "621-2",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[남]",
+              "line": "621-2",
+              "location": "길가"
+            }
+          ],
+          "current_lines": [
+            "621-1",
+            "621-2"
+          ],
+          "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+          "basis": {
+            "data": "bus.sqlite",
+            "period": null,
+            "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+            "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+          }
+        },
+        "roadside": true,
+        "basis": {
+          "data": "bus.sqlite",
+          "period": "2018여름",
+          "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "branches": [
+        {
+          "line": "621-1",
+          "route": "621",
+          "market_mean": 48.05263157894737,
+          "other_mean": 1.8846153846153846,
+          "difference": 46.16801619433198,
+          "ratio": 20.151103565365027,
+          "market_days": 19,
+          "other_days": 78,
+          "share": 0.045368713973365137
+        },
+        {
+          "line": "621-3",
+          "route": "621",
+          "market_mean": 26.57894736842105,
+          "other_mean": 0.782051282051282,
+          "difference": 25.79689608636977,
+          "ratio": 20.731578947368423,
+          "market_days": 19,
+          "other_days": 78,
+          "share": 0.02509441462929835
+        },
+        {
+          "line": "621-2",
+          "route": "621",
+          "market_mean": 4.052631578947368,
+          "other_mean": 0.8076923076923077,
+          "difference": 3.2449392712550607,
+          "ratio": 3.0990712074303404,
+          "market_days": 19,
+          "other_days": 78,
+          "share": 0.0038262770820910352
+        }
+      ]
+    },
+    {
+      "line": "655",
+      "market": "서귀포향토오일시장",
+      "verdict": "지켜짐",
+      "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+      "market_mean": 71.94736842105263,
+      "other_mean": 2.641025641025641,
+      "difference": 69.306342780027,
+      "ratio": 22.905692803437166,
+      "market_days": 19,
+      "other_days": 78,
+      "standard_error": 5.041159260725619,
+      "required_market_days": 1,
+      "timetable": {
+        "line": "655",
+        "route": "655",
+        "market_mentions": [
+          "seogwipo"
+        ],
+        "files": [
+          "x_406022.txt"
+        ],
+        "missing": false,
+        "day_service": false,
+        "phrases": [],
+        "mentions": [
+          "서귀포향토오일시장"
+        ],
+        "market_stops": [
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[남]",
+            "line": "655-1",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[남]",
+            "line": "655-1",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[북]",
+            "line": "655-2",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[북]",
+            "line": "655-2",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[남]",
+            "line": "655-3",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[남]",
+            "line": "655-3",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[북]",
+            "line": "655-4",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[북]",
+            "line": "655-4",
+            "location": "길가"
+          }
+        ],
+        "current_lines": [
+          "655-1",
+          "655-2",
+          "655-3",
+          "655-4"
+        ],
+        "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+        "basis": {
+          "data": "bus.sqlite",
+          "period": null,
+          "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "roadside": true,
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2018여름",
+        "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      },
+      "judgement": {
+        "line": "655",
+        "market": "서귀포향토오일시장",
+        "verdict": "지켜짐",
+        "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+        "market_mean": 71.94736842105263,
+        "other_mean": 2.641025641025641,
+        "difference": 69.306342780027,
+        "ratio": 22.905692803437166,
+        "market_days": 19,
+        "other_days": 78,
+        "standard_error": 5.041159260725619,
+        "required_market_days": 1,
+        "timetable": {
+          "line": "655",
+          "route": "655",
+          "market_mentions": [
+            "seogwipo"
+          ],
+          "files": [
+            "x_406022.txt"
+          ],
+          "missing": false,
+          "day_service": false,
+          "phrases": [],
+          "mentions": [
+            "서귀포향토오일시장"
+          ],
+          "market_stops": [
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[남]",
+              "line": "655-1",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[남]",
+              "line": "655-1",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[북]",
+              "line": "655-2",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[북]",
+              "line": "655-2",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[남]",
+              "line": "655-3",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[남]",
+              "line": "655-3",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[북]",
+              "line": "655-4",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[북]",
+              "line": "655-4",
+              "location": "길가"
+            }
+          ],
+          "current_lines": [
+            "655-1",
+            "655-2",
+            "655-3",
+            "655-4"
+          ],
+          "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+          "basis": {
+            "data": "bus.sqlite",
+            "period": null,
+            "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+            "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+          }
+        },
+        "roadside": true,
+        "basis": {
+          "data": "bus.sqlite",
+          "period": "2018여름",
+          "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "branches": [
+        {
+          "line": "655-2",
+          "route": "655",
+          "market_mean": 37.473684210526315,
+          "other_mean": 1.5384615384615385,
+          "difference": 35.935222672064775,
+          "ratio": 18.383316782522343,
+          "market_days": 19,
+          "other_days": 78,
+          "share": 0.03538064003180282
+        },
+        {
+          "line": "655-1",
+          "route": "655",
+          "market_mean": 28.473684210526315,
+          "other_mean": 0.5641025641025641,
+          "difference": 27.90958164642375,
+          "ratio": 26.758402029169307,
+          "market_days": 19,
+          "other_days": 78,
+          "share": 0.0268833233949513
+        },
+        {
+          "line": "655-4",
+          "route": "655",
+          "market_mean": 4.157894736842105,
+          "other_mean": 0.3717948717948718,
+          "difference": 3.7860998650472335,
+          "ratio": 4.769349845201238,
+          "market_days": 19,
+          "other_days": 78,
+          "share": 0.003925660902405088
+        },
+        {
+          "line": "655-3",
+          "route": "655",
+          "market_mean": 1.8421052631578947,
+          "other_mean": 0.16666666666666666,
+          "difference": 1.675438596491228,
+          "ratio": 2.763157894736842,
+          "market_days": 19,
+          "other_days": 78,
+          "share": 0.0017392168554959252
+        }
+      ]
+    },
+    {
+      "line": "625",
+      "market": "서귀포향토오일시장",
+      "verdict": "지켜짐",
+      "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+      "market_mean": 65.57894736842105,
+      "other_mean": 2.871794871794872,
+      "difference": 62.707152496626186,
+      "ratio": 19.449269561737044,
+      "market_days": 19,
+      "other_days": 78,
+      "standard_error": 5.09505004957673,
+      "required_market_days": 1,
+      "timetable": {
+        "line": "625",
+        "route": "625",
+        "market_mentions": [
+          "seogwipo"
+        ],
+        "files": [
+          "x_406013.txt"
+        ],
+        "missing": false,
+        "day_service": false,
+        "phrases": [],
+        "mentions": [
+          "서귀포향토오일시장"
+        ],
+        "market_stops": [
+          {
+            "market": "seogwipo",
+            "name": "측골[북]",
+            "line": "625-1",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[북]",
+            "line": "625-1",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[남]",
+            "line": "625-10",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[남]",
+            "line": "625-10",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[남]",
+            "line": "625-2",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[남]",
+            "line": "625-2",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[북]",
+            "line": "625-3",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[북]",
+            "line": "625-3",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[남]",
+            "line": "625-4",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[남]",
+            "line": "625-4",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[북]",
+            "line": "625-5",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[북]",
+            "line": "625-5",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[남]",
+            "line": "625-6",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[남]",
+            "line": "625-6",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[남]",
+            "line": "625-8",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[남]",
+            "line": "625-8",
+            "location": "길가"
+          }
+        ],
+        "current_lines": [
+          "625-1",
+          "625-10",
+          "625-2",
+          "625-3",
+          "625-4",
+          "625-5",
+          "625-6",
+          "625-8"
+        ],
+        "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+        "basis": {
+          "data": "bus.sqlite",
+          "period": null,
+          "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "roadside": true,
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2018여름",
+        "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      },
+      "judgement": {
+        "line": "625",
+        "market": "서귀포향토오일시장",
+        "verdict": "지켜짐",
+        "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+        "market_mean": 65.57894736842105,
+        "other_mean": 2.871794871794872,
+        "difference": 62.707152496626186,
+        "ratio": 19.449269561737044,
+        "market_days": 19,
+        "other_days": 78,
+        "standard_error": 5.09505004957673,
+        "required_market_days": 1,
+        "timetable": {
+          "line": "625",
+          "route": "625",
+          "market_mentions": [
+            "seogwipo"
+          ],
+          "files": [
+            "x_406013.txt"
+          ],
+          "missing": false,
+          "day_service": false,
+          "phrases": [],
+          "mentions": [
+            "서귀포향토오일시장"
+          ],
+          "market_stops": [
+            {
+              "market": "seogwipo",
+              "name": "측골[북]",
+              "line": "625-1",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[북]",
+              "line": "625-1",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[남]",
+              "line": "625-10",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[남]",
+              "line": "625-10",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[남]",
+              "line": "625-2",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[남]",
+              "line": "625-2",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[북]",
+              "line": "625-3",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[북]",
+              "line": "625-3",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[남]",
+              "line": "625-4",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[남]",
+              "line": "625-4",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[북]",
+              "line": "625-5",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[북]",
+              "line": "625-5",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[남]",
+              "line": "625-6",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[남]",
+              "line": "625-6",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[남]",
+              "line": "625-8",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[남]",
+              "line": "625-8",
+              "location": "길가"
+            }
+          ],
+          "current_lines": [
+            "625-1",
+            "625-10",
+            "625-2",
+            "625-3",
+            "625-4",
+            "625-5",
+            "625-6",
+            "625-8"
+          ],
+          "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+          "basis": {
+            "data": "bus.sqlite",
+            "period": null,
+            "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+            "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+          }
+        },
+        "roadside": true,
+        "basis": {
+          "data": "bus.sqlite",
+          "period": "2018여름",
+          "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "branches": [
+        {
+          "line": "625-3",
+          "route": "625",
+          "market_mean": 45.10526315789474,
+          "other_mean": 1.4487179487179487,
+          "difference": 43.65654520917679,
+          "ratio": 23.146121883656512,
+          "market_days": 19,
+          "other_days": 78,
+          "share": 0.04258596700457166
+        },
+        {
+          "line": "625-4",
+          "route": "625",
+          "market_mean": 19.42105263157895,
+          "other_mean": 1.3461538461538463,
+          "difference": 18.074898785425102,
+          "ratio": 10.519736842105264,
+          "market_days": 19,
+          "other_days": 78,
+          "share": 0.018336314847942757
+        }
+      ]
+    },
+    {
+      "line": "635",
+      "market": "서귀포향토오일시장",
+      "verdict": "지켜짐",
+      "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+      "market_mean": 60.473684210526315,
+      "other_mean": 3.6666666666666665,
+      "difference": 56.80701754385965,
+      "ratio": 14.513684210526318,
+      "market_days": 19,
+      "other_days": 78,
+      "standard_error": 4.349802264873016,
+      "required_market_days": 1,
+      "timetable": {
+        "line": "635",
+        "route": "635",
+        "market_mentions": [
+          "seogwipo"
+        ],
+        "files": [
+          "x_406017.txt"
+        ],
+        "missing": false,
+        "day_service": false,
+        "phrases": [],
+        "mentions": [
+          "서귀포향토오일시장"
+        ],
+        "market_stops": [
+          {
+            "market": "seogwipo",
+            "name": "측골[북]",
+            "line": "635-1",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[북]",
+            "line": "635-1",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[남]",
+            "line": "635-2",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[남]",
+            "line": "635-2",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[북]",
+            "line": "635-3",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[북]",
+            "line": "635-3",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[남]",
+            "line": "635-4",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[남]",
+            "line": "635-4",
+            "location": "길가"
+          }
+        ],
+        "current_lines": [
+          "635-1",
+          "635-2",
+          "635-3",
+          "635-4"
+        ],
+        "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+        "basis": {
+          "data": "bus.sqlite",
+          "period": null,
+          "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "roadside": true,
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2018여름",
+        "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      },
+      "judgement": {
+        "line": "635",
+        "market": "서귀포향토오일시장",
+        "verdict": "지켜짐",
+        "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+        "market_mean": 60.473684210526315,
+        "other_mean": 3.6666666666666665,
+        "difference": 56.80701754385965,
+        "ratio": 14.513684210526318,
+        "market_days": 19,
+        "other_days": 78,
+        "standard_error": 4.349802264873016,
+        "required_market_days": 1,
+        "timetable": {
+          "line": "635",
+          "route": "635",
+          "market_mentions": [
+            "seogwipo"
+          ],
+          "files": [
+            "x_406017.txt"
+          ],
+          "missing": false,
+          "day_service": false,
+          "phrases": [],
+          "mentions": [
+            "서귀포향토오일시장"
+          ],
+          "market_stops": [
+            {
+              "market": "seogwipo",
+              "name": "측골[북]",
+              "line": "635-1",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[북]",
+              "line": "635-1",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[남]",
+              "line": "635-2",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[남]",
+              "line": "635-2",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[북]",
+              "line": "635-3",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[북]",
+              "line": "635-3",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[남]",
+              "line": "635-4",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[남]",
+              "line": "635-4",
+              "location": "길가"
+            }
+          ],
+          "current_lines": [
+            "635-1",
+            "635-2",
+            "635-3",
+            "635-4"
+          ],
+          "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+          "basis": {
+            "data": "bus.sqlite",
+            "period": null,
+            "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+            "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+          }
+        },
+        "roadside": true,
+        "basis": {
+          "data": "bus.sqlite",
+          "period": "2018여름",
+          "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "branches": [
+        {
+          "line": "635-1",
+          "route": "635",
+          "market_mean": 36.89473684210526,
+          "other_mean": 1.6282051282051282,
+          "difference": 35.26653171390013,
+          "ratio": 17.336081166772352,
+          "market_days": 19,
+          "other_days": 78,
+          "share": 0.03483402902007553
+        },
+        {
+          "line": "635-2",
+          "route": "635",
+          "market_mean": 19,
+          "other_mean": 1.294871794871795,
+          "difference": 17.705128205128204,
+          "ratio": 10.585714285714285,
+          "market_days": 19,
+          "other_days": 78,
+          "share": 0.017938779566686543
+        },
+        {
+          "line": "635-3",
+          "route": "635",
+          "market_mean": 2.5789473684210527,
+          "other_mean": 0.2948717948717949,
+          "difference": 2.284075573549258,
+          "ratio": 3.2444821731748723,
+          "market_days": 19,
+          "other_days": 78,
+          "share": 0.0024349035976942955
+        },
+        {
+          "line": "635-4",
+          "route": "635",
+          "market_mean": 2,
+          "other_mean": 0.44871794871794873,
+          "difference": 1.5512820512820513,
+          "ratio": 2.1081081081081083,
+          "market_days": 19,
+          "other_days": 78,
+          "share": 0.0018882925859670047
+        }
+      ]
+    },
+    {
+      "line": "532",
+      "market": "서귀포향토오일시장",
+      "verdict": "지켜짐",
+      "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+      "market_mean": 56.473684210526315,
+      "other_mean": 2.6666666666666665,
+      "difference": 53.80701754385965,
+      "ratio": 17.833795013850416,
+      "market_days": 19,
+      "other_days": 78,
+      "standard_error": 3.8914062831442293,
+      "required_market_days": 1,
+      "timetable": {
+        "line": "532",
+        "route": "532",
+        "market_mentions": [
+          "seogwipo"
+        ],
+        "files": [
+          "x_406006.txt"
+        ],
+        "missing": false,
+        "day_service": false,
+        "phrases": [],
+        "mentions": [
+          "서귀포향토오일시장"
+        ],
+        "market_stops": [
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[남]",
+            "line": "532-1",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[남]",
+            "line": "532-1",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[북]",
+            "line": "532-2",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[북]",
+            "line": "532-2",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[남]",
+            "line": "532-3",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[남]",
+            "line": "532-3",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[북]",
+            "line": "532-4",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[북]",
+            "line": "532-4",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[북]",
+            "line": "532-6",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[북]",
+            "line": "532-6",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[남]",
+            "line": "532-7",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[남]",
+            "line": "532-7",
+            "location": "길가"
+          }
+        ],
+        "current_lines": [
+          "532-1",
+          "532-2",
+          "532-3",
+          "532-4",
+          "532-5",
+          "532-6",
+          "532-7",
+          "532-8"
+        ],
+        "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+        "basis": {
+          "data": "bus.sqlite",
+          "period": null,
+          "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "roadside": true,
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2018여름",
+        "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      },
+      "judgement": {
+        "line": "532",
+        "market": "서귀포향토오일시장",
+        "verdict": "지켜짐",
+        "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+        "market_mean": 56.473684210526315,
+        "other_mean": 2.6666666666666665,
+        "difference": 53.80701754385965,
+        "ratio": 17.833795013850416,
+        "market_days": 19,
+        "other_days": 78,
+        "standard_error": 3.8914062831442293,
+        "required_market_days": 1,
+        "timetable": {
+          "line": "532",
+          "route": "532",
+          "market_mentions": [
+            "seogwipo"
+          ],
+          "files": [
+            "x_406006.txt"
+          ],
+          "missing": false,
+          "day_service": false,
+          "phrases": [],
+          "mentions": [
+            "서귀포향토오일시장"
+          ],
+          "market_stops": [
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[남]",
+              "line": "532-1",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[남]",
+              "line": "532-1",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[북]",
+              "line": "532-2",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[북]",
+              "line": "532-2",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[남]",
+              "line": "532-3",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[남]",
+              "line": "532-3",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[북]",
+              "line": "532-4",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[북]",
+              "line": "532-4",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[북]",
+              "line": "532-6",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[북]",
+              "line": "532-6",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[남]",
+              "line": "532-7",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[남]",
+              "line": "532-7",
+              "location": "길가"
+            }
+          ],
+          "current_lines": [
+            "532-1",
+            "532-2",
+            "532-3",
+            "532-4",
+            "532-5",
+            "532-6",
+            "532-7",
+            "532-8"
+          ],
+          "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+          "basis": {
+            "data": "bus.sqlite",
+            "period": null,
+            "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+            "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+          }
+        },
+        "roadside": true,
+        "basis": {
+          "data": "bus.sqlite",
+          "period": "2018여름",
+          "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "branches": [
+        {
+          "line": "532-2",
+          "route": "532",
+          "market_mean": 30.63157894736842,
+          "other_mean": 1.4487179487179487,
+          "difference": 29.182860998650472,
+          "ratio": 15.718836565096954,
+          "market_days": 19,
+          "other_days": 78,
+          "share": 0.028920691711389387
+        },
+        {
+          "line": "532-1",
+          "route": "532",
+          "market_mean": 24.736842105263158,
+          "other_mean": 0.9743589743589743,
+          "difference": 23.762483130904183,
+          "ratio": 16.778032036613272,
+          "market_days": 19,
+          "other_days": 78,
+          "share": 0.023355197773802426
+        }
+      ]
+    },
+    {
+      "line": "690",
+      "market": "서귀포향토오일시장",
+      "verdict": "지켜짐",
+      "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+      "market_mean": 32.21052631578947,
+      "other_mean": 1.5769230769230769,
+      "difference": 30.633603238866396,
+      "ratio": 15.508771929824563,
+      "market_days": 19,
+      "other_days": 78,
+      "standard_error": 2.639735233832219,
+      "required_market_days": 1,
+      "timetable": {
+        "line": "690",
+        "route": "690",
+        "market_mentions": [
+          "seogwipo"
+        ],
+        "files": [
+          "x_406023.txt"
+        ],
+        "missing": false,
+        "day_service": false,
+        "phrases": [],
+        "mentions": [
+          "서귀포향토오일시장"
+        ],
+        "market_stops": [
+          {
+            "market": "seogwipo",
+            "name": "측골[북]",
+            "line": "690-1",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[북]",
+            "line": "690-1",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[남]",
+            "line": "690-2",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[남]",
+            "line": "690-2",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[남]",
+            "line": "690-4",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[남]",
+            "line": "690-4",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[북]",
+            "line": "690-5",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[북]",
+            "line": "690-5",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "서귀포향토오일시장[남]",
+            "line": "690-6",
+            "location": "길가"
+          },
+          {
+            "market": "seogwipo",
+            "name": "측골[남]",
+            "line": "690-6",
+            "location": "길가"
+          }
+        ],
+        "current_lines": [
+          "690-1",
+          "690-2",
+          "690-3",
+          "690-4",
+          "690-5",
+          "690-6"
+        ],
+        "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+        "basis": {
+          "data": "bus.sqlite",
+          "period": null,
+          "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "roadside": true,
+      "basis": {
+        "data": "bus.sqlite",
+        "period": "2018여름",
+        "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+        "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+      },
+      "judgement": {
+        "line": "690",
+        "market": "서귀포향토오일시장",
+        "verdict": "지켜짐",
+        "reason": "지금 정류장 목록에 시장 정류장이 있어 매일 섭니다. 장날 몰림은 시간표에 적혀 있지 않습니다(개편 때 확인할 항목).",
+        "market_mean": 32.21052631578947,
+        "other_mean": 1.5769230769230769,
+        "difference": 30.633603238866396,
+        "ratio": 15.508771929824563,
+        "market_days": 19,
+        "other_days": 78,
+        "standard_error": 2.639735233832219,
+        "required_market_days": 1,
+        "timetable": {
+          "line": "690",
+          "route": "690",
+          "market_mentions": [
+            "seogwipo"
+          ],
+          "files": [
+            "x_406023.txt"
+          ],
+          "missing": false,
+          "day_service": false,
+          "phrases": [],
+          "mentions": [
+            "서귀포향토오일시장"
+          ],
+          "market_stops": [
+            {
+              "market": "seogwipo",
+              "name": "측골[북]",
+              "line": "690-1",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[북]",
+              "line": "690-1",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[남]",
+              "line": "690-2",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[남]",
+              "line": "690-2",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[남]",
+              "line": "690-4",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[남]",
+              "line": "690-4",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[북]",
+              "line": "690-5",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[북]",
+              "line": "690-5",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "서귀포향토오일시장[남]",
+              "line": "690-6",
+              "location": "길가"
+            },
+            {
+              "market": "seogwipo",
+              "name": "측골[남]",
+              "line": "690-6",
+              "location": "길가"
+            }
+          ],
+          "current_lines": [
+            "690-1",
+            "690-2",
+            "690-3",
+            "690-4",
+            "690-5",
+            "690-6"
+          ],
+          "source": "제주버스정보시스템 공개 시간표, 2026-10-28 내려받음",
+          "basis": {
+            "data": "bus.sqlite",
+            "period": null,
+            "formula": "노선 번호로 공식 시간표 대조, 현재 갈래 정류장 이름 비교",
+            "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+          }
+        },
+        "roadside": true,
+        "basis": {
+          "data": "bus.sqlite",
+          "period": "2018여름",
+          "formula": "노선 번호 단위로 시장 정류장 하루 승차를 장날·다른 날로 나눠 평균. 차이가 표준오차의 2배보다 작으면 구분 안 됨. 표준오차=sqrt(장날 분산/n + 다른 날 분산/m). 지금 시간표는 과거 승차와 시점이 다름.",
+          "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+        }
+      },
+      "branches": [
+        {
+          "line": "690-2",
+          "route": "690",
+          "market_mean": 19.526315789473685,
+          "other_mean": 0.6794871794871795,
+          "difference": 18.846828609986506,
+          "ratio": 16.554919908466818,
+          "market_days": 19,
+          "other_days": 78,
+          "share": 0.018435698668256808
+        },
+        {
+          "line": "690-1",
+          "route": "690",
+          "market_mean": 12.68421052631579,
+          "other_mean": 0.8974358974358975,
+          "difference": 11.786774628879892,
+          "ratio": 9.076774505070015,
+          "market_days": 19,
+          "other_days": 78,
+          "share": 0.01197575034784337
+        }
+      ]
+    }
+  ],
+  "villages": {
+    "villages": [
+      {
+        "name": "남원읍",
+        "emd": "남원읍",
+        "market_mean": 173,
+        "other_mean": 156.25641025641025,
+        "difference": 16.74358974358975,
+        "ratio": 1.103623129140427,
+        "market_days": 19,
+        "other_days": 78
+      },
+      {
+        "name": "대륜동",
+        "emd": "대륜동",
+        "market_mean": 123.57894736842105,
+        "other_mean": 115.61538461538461,
+        "difference": 7.963562753036442,
+        "ratio": 1.064277122086435,
+        "market_days": 19,
+        "other_days": 78
+      },
+      {
+        "name": "대천동",
+        "emd": "대천동",
+        "market_mean": 187.52631578947367,
+        "other_mean": 173.85897435897436,
+        "difference": 13.667341430499306,
+        "ratio": 1.075518575851393,
+        "market_days": 19,
+        "other_days": 78
+      },
+      {
+        "name": "동홍동",
+        "emd": "동홍동",
+        "market_mean": 1300.2105263157894,
+        "other_mean": 1139.9358974358975,
+        "difference": 160.2746288798919,
+        "ratio": 1.1400996138749417,
+        "market_days": 19,
+        "other_days": 78
+      },
+      {
+        "name": "서홍동",
+        "emd": "서홍동",
+        "market_mean": 765.7368421052631,
+        "other_mean": 722.7692307692307,
+        "difference": 42.967611336032405,
+        "ratio": 1.0587161869043789,
+        "market_days": 19,
+        "other_days": 78
+      },
+      {
+        "name": "송산동",
+        "emd": "송산동",
+        "market_mean": 31.842105263157894,
+        "other_mean": 24.512820512820515,
+        "difference": 7.329284750337379,
+        "ratio": 1.273031373924303,
+        "market_days": 19,
+        "other_days": 78
+      },
+      {
+        "name": "안덕면",
+        "emd": "안덕면",
+        "market_mean": 144.68421052631578,
+        "other_mean": 137.66666666666666,
+        "difference": 7.017543859649123,
+        "ratio": 1.0471716081518634,
+        "market_days": 19,
+        "other_days": 78
+      },
+      {
+        "name": "영천동",
+        "emd": "영천동",
+        "market_mean": 360.4736842105263,
+        "other_mean": 291.12820512820514,
+        "difference": 69.34547908232116,
+        "ratio": 1.2360727730435244,
+        "market_days": 19,
+        "other_days": 78
+      },
+      {
+        "name": "예래동",
+        "emd": "예래동",
+        "market_mean": 261.3157894736842,
+        "other_mean": 248.83333333333334,
+        "difference": 12.482456140350877,
+        "ratio": 1.0480579791725302,
+        "market_days": 19,
+        "other_days": 78
+      },
+      {
+        "name": "정방동",
+        "emd": "정방동",
+        "market_mean": 68.73684210526316,
+        "other_mean": 65.34615384615384,
+        "difference": 3.390688259109325,
+        "ratio": 1.0439006394490902,
+        "market_days": 19,
+        "other_days": 78
+      },
+      {
+        "name": "중문동",
+        "emd": "중문동",
+        "market_mean": 644.1052631578947,
+        "other_mean": 638.3589743589744,
+        "difference": 5.746288798920318,
+        "ratio": 1.00821196697469,
+        "market_days": 19,
+        "other_days": 78
+      },
+      {
+        "name": "중앙동",
+        "emd": "중앙동",
+        "market_mean": 177.05263157894737,
+        "other_mean": 168.14102564102564,
+        "difference": 8.911605937921735,
+        "ratio": 1.0498787641141778,
+        "market_days": 19,
+        "other_days": 78
+      },
+      {
+        "name": "천지동",
+        "emd": "천지동",
+        "market_mean": 947.7894736842105,
+        "other_mean": 799.6282051282051,
+        "difference": 148.16126855600544,
+        "ratio": 1.1845470108535239,
+        "market_days": 19,
+        "other_days": 78
+      },
+      {
+        "name": "효돈동",
+        "emd": "효돈동",
+        "market_mean": 17.05263157894737,
+        "other_mean": 9.961538461538462,
+        "difference": 7.091093117408908,
+        "ratio": 1.6300309597523222,
+        "market_days": 19,
+        "other_days": 78
+      }
+    ],
+    "weekday_only": false,
+    "basis": {
+      "data": "bus.sqlite",
+      "period": "2018여름",
+      "formula": "시장 경유 갈래의 시장 외 정류장 승차를 읍면동별 합산. 시장행 승객을 직접 추적한 수치는 아님",
+      "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+    }
+  },
+  "basis": {
+    "data": "bus.sqlite",
+    "period": "2018여름",
+    "formula": "각 묶음 승차 합계 ÷ 실제 날짜 수; 배수=장날 평균/(다른 날 평균+0.5)",
+    "limitations": "승차 기록이며 시장 방문 목적이나 이동 방향을 직접 증명하지 않음. 실제 있는 날짜만 사용, 31일 제외."
+  },
+  "observations": [],
+  "summary": [
+    "서귀포향토오일시장의 2018여름 승차 기록을 살폈습니다.",
+    "장날 하루 평균 1059.2명, 다른 날 42.5명입니다.",
+    "과거 승차 기록과 현재 공개 시간표는 시점이 다릅니다.",
+    "공백 후보는 운행 여부를 확인할 대상입니다. 담당 부서에 정차 유지를 확인해 주세요."
+  ],
+  "opinion": [],
+  "opinion_source": "고정 문안",
+  "opinion_citations": [],
+  "answer": ""
+}
