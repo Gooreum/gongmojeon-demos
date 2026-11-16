@@ -369,3 +369,27 @@ h1{font-size:var(--text-lg);letter-spacing:-.02em}
 .context-details>summary{display:flex;align-items:center;justify-content:space-between;gap:var(--s2);min-height:var(--s12);padding:var(--s2) var(--s4);font-size:var(--text-sm);color:var(--brand);cursor:pointer;list-style:none;border-top:var(--hairline) solid var(--line)}
 .context-details>summary::-webkit-details-marker{display:none}.context-details[open]>summary svg{transform:rotate(90deg)}
 @media(min-width:761px){.context-details{display:contents}.context-details>summary{display:none}.preview-card>.shape-list{grid-template-columns:1fr 1fr}.context-details>.shape-list{grid-template-columns:1fr 1fr 1fr}}
+
+/* v5: user checks, pattern list chip, shape card */
+.compare-note{font-size:var(--text-sm);color:var(--muted)}
+.user-checks{display:grid;grid-template-columns:1fr 1fr;gap:var(--s3) var(--s4);padding:var(--s3) var(--s6);border-top:var(--hairline) solid var(--line);background:var(--brand-wash)}
+.user-checks .eyebrow{grid-column:1/-1;margin:0}
+.user-checks .field{margin:0}
+.user-checks .field select{margin-top:var(--s1);min-height:var(--s10)}
+.pattern-panel{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s2) var(--s3);margin-top:var(--s4)}
+.pattern-panel .chip{white-space:normal}
+.privacy-check{display:flex;gap:var(--s2);align-items:flex-start;font-size:var(--text-sm);margin:var(--s3) 0}
+.privacy-check svg{width:var(--s5);height:var(--s5);flex:none;fill:none;stroke:currentColor;stroke-width:2}
+.privacy-check.good{color:var(--brand)}.privacy-check.bad{color:var(--danger)}
+@media(max-width:760px){
+ .user-checks{grid-template-columns:1fr;gap:var(--s1);padding:var(--s2) var(--s4)}
+ .user-checks .eyebrow{display:none}
+ .user-checks .field{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);font-size:var(--text-xs);line-height:1.3}
+ .user-checks .field span{flex:1;min-width:0}
+ .user-checks .field select{width:7.5rem;flex:none;margin:0;min-height:var(--s10);padding:var(--s2);font-size:var(--text-sm)}
+ .shape-value,.shape-row select{font-size:var(--text-sm)}
+ .shape-value{overflow-wrap:anywhere}
+}
+
+.source-line{margin-top:var(--s3);font-size:var(--text-xs)}
+.source-line a{color:inherit;text-decoration:underline}

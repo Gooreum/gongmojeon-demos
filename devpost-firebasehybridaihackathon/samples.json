@@ -139,5 +139,35 @@
       }
     ],
     "fictional": true
+  },
+  {
+    "scene": 5,
+    "file": "samples/message-5.png",
+    "width": 760,
+    "height": 520,
+    "personalDetails": [
+      {
+        "type": "phone",
+        "x": 249,
+        "y": 158,
+        "width": 85,
+        "height": 18
+      },
+      {
+        "type": "name",
+        "x": 395,
+        "y": 219,
+        "width": 121,
+        "height": 25
+      },
+      {
+        "type": "plate",
+        "x": 233,
+        "y": 248,
+        "width": 89,
+        "height": 25
+      }
+    ],
+    "fictional": true
   }
 ]

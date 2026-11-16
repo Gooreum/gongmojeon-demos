@@ -17,6 +17,10 @@ window.SHAPE_DATA = {
       "링크 주소",
       "Link domain"
     ],
+    "linkMatch": [
+      "링크가 보낸 쪽 이름과 맞음",
+      "Link matches the sender's name"
+    ],
     "pressure": [
       "재촉하는 말",
       "Pressure words"
@@ -26,12 +30,12 @@ window.SHAPE_DATA = {
       "Money or data asked"
     ],
     "customer": [
-      "거래 여부",
-      "Use this company"
+      "이 회사나 서비스를 실제로 쓰나요?",
+      "Do you actually use this company / service?"
     ],
     "usual": [
-      "평소 수신 경로",
-      "Usual channel"
+      "보통 이 방식으로 연락하나요?",
+      "Do they usually contact you this way?"
     ]
   },
   "options": {
@@ -185,6 +189,24 @@ window.SHAPE_DATA = {
         "Nothing requested"
       ]
     },
+    "linkMatch": {
+      "match": [
+        "맞음",
+        "Matches"
+      ],
+      "mismatch": [
+        "다름",
+        "Does not match"
+      ],
+      "nolink": [
+        "링크 없음",
+        "No link"
+      ],
+      "unclear": [
+        "알 수 없음",
+        "Unclear"
+      ]
+    },
     "customer": {
       "yes": [
         "예",
@@ -259,6 +281,7 @@ window.SHAPE_DATA = {
         "sender": "delivery",
         "ask": "pay",
         "domain": "usps-redelivery-help.example",
+        "linkMatch": "mismatch",
         "pressure": "urgent",
         "money": "fee",
         "customer": "unknown",
@@ -305,6 +328,7 @@ window.SHAPE_DATA = {
         "sender": "shop",
         "ask": "track",
         "domain": "northwindmarket.example",
+        "linkMatch": "match",
         "pressure": "none",
         "money": "none",
         "customer": "yes",
@@ -349,10 +373,11 @@ window.SHAPE_DATA = {
         "sender": "family",
         "ask": "gift",
         "domain": "none",
+        "linkMatch": "nolink",
         "pressure": "new-phone",
         "money": "gift",
         "customer": "unknown",
-        "usual": "no"
+        "usual": "unknown"
       }
     },
     {
@@ -399,8 +424,56 @@ window.SHAPE_DATA = {
         "sender": "bank",
         "ask": "login",
         "domain": "account-verify.example",
+        "linkMatch": "mismatch",
         "pressure": "suspended",
         "money": "credentials",
+        "customer": "unknown",
+        "usual": "unknown"
+      }
+    },
+    {
+      "id": 5,
+      "title": [
+        "새로 나온 수법",
+        "A brand-new scam shape"
+      ],
+      "headline": [
+        "목록에 없는 수법은\n모른다고 말해요.",
+        "Not on the list yet.\nSo it says so."
+      ],
+      "story": [
+        "통행료 미납을 알리는 문자가 왔어요. 수법 카드에 아직 없는 모양이라 처음엔 판단하지 못해요. 클라우드 목록이 갱신되면 같은 캡처가 빨강으로 바뀌어요.",
+        "A text claims an unpaid toll fee. The pattern list does not know this shape yet, so the first check is yellow. After the cloud list updates, the same capture turns red."
+      ],
+      "task": [
+        "확인 → 목록 갱신 → 다시 확인",
+        "Check, update the list, then check again"
+      ],
+      "success": [
+        "노랑이 빨강으로 바뀜, 앱 업데이트 없음",
+        "Yellow turns red with no app update"
+      ],
+      "personal": 3,
+      "types": [
+        [
+          "이름",
+          "전화번호",
+          "차량번호"
+        ],
+        [
+          "Name",
+          "Phone",
+          "Plate"
+        ]
+      ],
+      "shape": {
+        "channel": "sms-forward",
+        "sender": "government",
+        "ask": "pay",
+        "domain": "tollbalance-pay.example",
+        "linkMatch": "mismatch",
+        "pressure": "urgent",
+        "money": "fee",
         "customer": "unknown",
         "usual": "unknown"
       }
@@ -437,6 +510,7 @@ window.SHAPE_DATA = {
         "sender": "unknown",
         "ask": "none",
         "domain": "none",
+        "linkMatch": "unclear",
         "pressure": "none",
         "money": "none",
         "customer": "unknown",
@@ -460,7 +534,12 @@ window.SHAPE_DATA = {
         "택배사 공식 앱이나 usps.com을 직접 열어 조회하세요.",
         "Open the carrier’s official app or type usps.com yourself."
       ],
-      "source": "https://consumer.ftc.gov/articles/how-recognize-avoid-phishing-scams"
+      "source": "https://consumer.ftc.gov/consumer-alerts/2020/09/heard-about-waiting-package-phishing-scam",
+      "shape": "A text or email claims to be a delivery service holding a package and asks you to click a link to reschedule or pay a small fee.",
+      "channel": [
+        "text",
+        "email"
+      ]
     },
     {
       "id": "family",
@@ -477,7 +556,13 @@ window.SHAPE_DATA = {
         "가족의 원래 전화번호로 먼저 전화하세요.",
         "Call your family member’s old number before doing anything."
       ],
-      "source": "https://consumer.ftc.gov/articles/scammers-use-fake-emergencies-steal-your-money"
+      "source": "https://consumer.ftc.gov/articles/scammers-use-fake-emergencies-steal-your-money",
+      "shape": "A caller or message claims to be a relative or friend in an emergency, possibly with a cloned voice, and urgently asks for money while asking for secrecy.",
+      "channel": [
+        "phone",
+        "text",
+        "messenger"
+      ]
     },
     {
       "id": "bank",
@@ -494,7 +579,12 @@ window.SHAPE_DATA = {
         "은행 공식 앱을 직접 열어 확인하세요.",
         "Open your bank’s official app yourself."
       ],
-      "source": "https://consumer.ftc.gov/articles/how-recognize-avoid-phishing-scams"
+      "source": "https://consumer.ftc.gov/articles/how-recognize-avoid-phishing-scams",
+      "shape": "A message posing as a bank or known company says your account is on hold or has a problem and asks you to log in or confirm details through a link.",
+      "channel": [
+        "email",
+        "text"
+      ]
     },
     {
       "id": "government",
@@ -511,7 +601,13 @@ window.SHAPE_DATA = {
         "기관의 공식 홈페이지에서 전화번호를 찾아 확인하세요.",
         "Find the agency’s number on its official website and call."
       ],
-      "source": "https://consumer.ftc.gov/articles/how-avoid-government-impersonation-scam"
+      "source": "https://consumer.ftc.gov/articles/how-avoid-government-impersonation-scam",
+      "shape": "A caller or message posing as a government agency threatens arrest or lost benefits and demands immediate payment or sensitive numbers.",
+      "channel": [
+        "phone",
+        "email",
+        "text"
+      ]
     },
     {
       "id": "prize",
@@ -528,7 +624,14 @@ window.SHAPE_DATA = {
         "경품을 받기 위한 돈은 보내지 마세요.",
         "Do not pay to claim a prize."
       ],
-      "source": "https://consumer.ftc.gov/articles/fake-prize-sweepstakes-and-lottery-scams"
+      "source": "https://consumer.ftc.gov/articles/fake-prize-sweepstakes-and-lottery-scams",
+      "shape": "An unexpected message says you won a prize or lottery and asks you to pay taxes, shipping or fees first.",
+      "channel": [
+        "email",
+        "text",
+        "phone",
+        "messenger"
+      ]
     },
     {
       "id": "job",
@@ -545,7 +648,13 @@ window.SHAPE_DATA = {
         "일을 시작하기 위한 선입금은 하지 마세요.",
         "Do not pay upfront to start a job."
       ],
-      "source": "https://consumer.ftc.gov/articles/job-scams"
+      "source": "https://consumer.ftc.gov/articles/job-scams",
+      "shape": "A recruiter or employer offers easy high-paid work and asks you to pay for kits, training or certification before starting.",
+      "channel": [
+        "email",
+        "text",
+        "messenger"
+      ]
     },
     {
       "id": "tech",
@@ -562,7 +671,13 @@ window.SHAPE_DATA = {
         "원격 접속을 허용하지 말고 공식 지원 창구를 찾으세요.",
         "Do not grant remote access. Contact official support."
       ],
-      "source": "https://consumer.ftc.gov/articles/how-spot-avoid-and-report-tech-support-scams"
+      "source": "https://consumer.ftc.gov/articles/how-spot-avoid-and-report-tech-support-scams",
+      "shape": "A pop-up, call or text claims your computer has a problem or a renewal was charged, and asks for remote access or a call to a number.",
+      "channel": [
+        "email",
+        "text",
+        "phone"
+      ]
     },
     {
       "id": "investment",
@@ -579,7 +694,298 @@ window.SHAPE_DATA = {
         "온라인에서 만난 사람이 알려 준 곳으로 돈을 보내지 마세요.",
         "Do not send money to an investment introduced by an online acquaintance."
       ],
-      "source": "https://consumer.ftc.gov/articles/what-know-about-cryptocurrency-scams"
+      "source": "https://consumer.ftc.gov/articles/what-know-about-cryptocurrency-scams",
+      "shape": "A person met online steers the chat toward a guaranteed-return crypto investment on a fake platform and asks you to send money.",
+      "channel": [
+        "messenger",
+        "text"
+      ]
+    },
+    {
+      "id": "toll",
+      "name": [
+        "통행료 미납 사칭",
+        "Unpaid toll text"
+      ],
+      "features": [
+        "toll",
+        "pay",
+        "link"
+      ],
+      "action": [
+        "통행료 기관의 공식 사이트나 알고 있는 번호로 직접 확인하세요.",
+        "Check with the toll agency using its official website or number."
+      ],
+      "source": "https://consumer.ftc.gov/consumer-alerts/2024/05/text-about-overdue-toll-charges-probably-scam",
+      "shape": "A text claiming to be a toll agency says you owe a small overdue toll and urges you to pay through a link to avoid late fees.",
+      "channel": [
+        "text"
+      ],
+      "since": 2
+    },
+    {
+      "id": "safe-account",
+      "name": [
+        "돈을 안전계좌로 옮기라는 요구",
+        "Move-your-money-to-protect-it"
+      ],
+      "features": [
+        "transfer",
+        "safe-account",
+        "secret"
+      ],
+      "action": [
+        "안전을 위해 돈을 옮기라는 요구에는 응하지 말고 전화를 끊으세요.",
+        "Hang up. Never move money to protect it."
+      ],
+      "source": "https://consumer.ftc.gov/consumer-alerts/2024/01/did-someone-tell-you-move-or-transfer-your-money-it-could-be-scam",
+      "shape": "A caller posing as an agency or company says your identity is being misused and tells you to move your savings to a safe account and keep it secret.",
+      "channel": [
+        "phone",
+        "text"
+      ]
+    },
+    {
+      "id": "romance",
+      "name": [
+        "온라인 연인의 송금 요구",
+        "Romance scam"
+      ],
+      "features": [
+        "romance",
+        "money",
+        "overseas"
+      ],
+      "action": [
+        "직접 만난 적 없는 사람에게 돈이나 선물을 보내지 마세요.",
+        "Never send money to someone you have not met in person."
+      ],
+      "source": "https://consumer.ftc.gov/articles/what-know-about-romance-scams",
+      "shape": "Someone you only met online builds a close bond, cannot meet in person, and invents urgent needs that require you to send money or gift cards.",
+      "channel": [
+        "messenger",
+        "text"
+      ]
+    },
+    {
+      "id": "utility",
+      "name": [
+        "공과금 정지 협박 사칭",
+        "Utility shut-off threat"
+      ],
+      "features": [
+        "utility",
+        "shutoff",
+        "pay"
+      ],
+      "action": [
+        "고지서에 적힌 번호로 직접 업체에 전화해 확인하세요.",
+        "Call the utility using the number on your bill."
+      ],
+      "source": "https://consumer.ftc.gov/articles/scammers-pretend-be-your-utility-company",
+      "shape": "A caller or text posing as your gas, electric or water company threatens an immediate shut-off unless you pay by gift card, crypto or wire.",
+      "channel": [
+        "phone",
+        "text",
+        "email"
+      ]
+    },
+    {
+      "id": "rental",
+      "name": [
+        "허위 임대 매물",
+        "Fake rental listing"
+      ],
+      "features": [
+        "rental",
+        "deposit",
+        "listing"
+      ],
+      "action": [
+        "집을 보기 전에는 보증금이나 월세를 보내지 마세요.",
+        "Do not send a deposit before seeing the home."
+      ],
+      "source": "https://consumer.ftc.gov/articles/rental-listing-scams",
+      "shape": "A too-cheap rental listing, often copied from a real one, has an unavailable owner who pressures you to pay a deposit or first month before viewing.",
+      "channel": [
+        "messenger",
+        "email"
+      ]
+    },
+    {
+      "id": "student-loan",
+      "name": [
+        "학자금 대출 탕감 사칭",
+        "Student loan relief scam"
+      ],
+      "features": [
+        "student-loan",
+        "fee",
+        "login-id"
+      ],
+      "action": [
+        "학자금 도움을 받는다며 선불 수수료를 내지 마세요.",
+        "Do not pay upfront fees for student loan help."
+      ],
+      "source": "https://consumer.ftc.gov/consumer-alerts/2025/06/student-loan-scammers-wont-offer-relief",
+      "shape": "A caller or message offers to erase your student loans fast for an upfront fee and may ask for your federal student aid login ID.",
+      "channel": [
+        "phone",
+        "text",
+        "email"
+      ]
+    },
+    {
+      "id": "fake-check",
+      "name": [
+        "가짜 수표 초과분 환불 요구",
+        "Fake check overpayment"
+      ],
+      "features": [
+        "check",
+        "overpay",
+        "refund"
+      ],
+      "action": [
+        "수표를 받았다면 차액을 돌려보내거나 다른 곳에 송금하지 마세요.",
+        "Never send money back to someone who sent you a check."
+      ],
+      "source": "https://consumer.ftc.gov/fakechecks",
+      "shape": "A stranger sends a check for more than owed and asks you to send part of the money back or forward it, before the bank discovers the check is fake.",
+      "channel": [
+        "email",
+        "messenger"
+      ]
+    },
+    {
+      "id": "charity",
+      "name": [
+        "가짜 자선단체 모금",
+        "Fake charity appeal"
+      ],
+      "features": [
+        "charity",
+        "donation",
+        "pressure"
+      ],
+      "action": [
+        "후원하기 전에 단체를 직접 검색해 확인하고 카드로 내세요.",
+        "Research the charity first and pay by credit card."
+      ],
+      "source": "https://consumer.ftc.gov/consumer-alerts/2024/11/give-charity-not-scam",
+      "shape": "A caller or social post using a charity-like name pressures you to donate quickly, stays vague about its work, and wants crypto, wire or gift cards.",
+      "channel": [
+        "phone",
+        "messenger"
+      ]
+    },
+    {
+      "id": "phantom-hacker",
+      "name": [
+        "해킹당했다며 단계별로 접근",
+        "Phantom hacker"
+      ],
+      "features": [
+        "tech",
+        "bank",
+        "safe-account"
+      ],
+      "action": [
+        "컴퓨터 원격 접속을 허용하지 말고 은행에 직접 전화하세요.",
+        "Do not allow remote access. Call your bank directly."
+      ],
+      "source": "https://www.ic3.gov/PSA/2023/PSA230929",
+      "shape": "A fake tech-support agent, then a fake bank agent, then a fake government official say hackers hit your accounts and tell you to move money to a safe account.",
+      "channel": [
+        "phone",
+        "email"
+      ]
+    },
+    {
+      "id": "virtual-kidnapping",
+      "name": [
+        "가짜 납치 협박",
+        "Virtual kidnapping"
+      ],
+      "features": [
+        "family",
+        "ransom",
+        "photo"
+      ],
+      "action": [
+        "가족에게 직접 연락해 안전을 확인하기 전에는 송금하지 마세요.",
+        "Contact your loved one directly before paying anything."
+      ],
+      "source": "https://www.ic3.gov/PSA/2025/PSA251205",
+      "shape": "A text claims a loved one is kidnapped, sends an altered photo as proof, and demands an immediate ransom payment under threat.",
+      "channel": [
+        "text",
+        "phone"
+      ]
+    },
+    {
+      "id": "amazon-purchase",
+      "name": [
+        "쇼핑몰 의심 결제 사칭",
+        "Fake store purchase alert"
+      ],
+      "features": [
+        "store",
+        "purchase",
+        "fraud"
+      ],
+      "action": [
+        "링크를 누르지 말고 쇼핑몰 앱에 직접 로그인해 확인하세요.",
+        "Log in to the store’s app yourself instead of using the link."
+      ],
+      "source": "https://consumer.ftc.gov/consumer-alerts/2024/03/did-you-get-call-or-text-about-suspicious-purchase-amazon-its-scam",
+      "shape": "A call or text from a fake online retailer reports a suspicious charge or recalled item and offers a refund via a link or asks you to move money.",
+      "channel": [
+        "phone",
+        "text"
+      ]
+    },
+    {
+      "id": "package-qr",
+      "name": [
+        "주문하지 않은 소포의 QR 코드",
+        "Unexpected package QR code"
+      ],
+      "features": [
+        "package",
+        "qr",
+        "unordered"
+      ],
+      "action": [
+        "주문하지 않은 소포의 QR 코드는 스캔하지 마세요.",
+        "Do not scan a QR code from an unexpected package."
+      ],
+      "source": "https://consumer.ftc.gov/consumer-alerts/2025/01/scam-alert-qr-code-unexpected-package",
+      "shape": "An unordered package arrives with a note urging you to scan a QR code to find the sender, leading to a phishing site.",
+      "channel": [
+        "text"
+      ]
+    },
+    {
+      "id": "crypto-atm",
+      "name": [
+        "암호화폐 ATM 입금 요구",
+        "Crypto ATM payment demand"
+      ],
+      "features": [
+        "crypto",
+        "atm",
+        "qr"
+      ],
+      "action": [
+        "누가 암호화폐로 내라고 하면 바로 멈추고 끊으세요.",
+        "Stop and hang up if anyone asks for payment in crypto."
+      ],
+      "source": "https://consumer.ftc.gov/new-crypto-payment-scam-alert",
+      "shape": "A caller posing as an official or utility keeps you on the phone and sends you to a crypto ATM to deposit cash and scan their QR code.",
+      "channel": [
+        "phone"
+      ]
     }
   ],
   "sources": {
@@ -726,6 +1132,36 @@ window.SHAPE_SAMPLES = [
         "y": 372,
         "width": 95,
         "height": 19
+      }
+    ],
+    "fictional": true
+  },
+  {
+    "scene": 5,
+    "file": "samples/message-5.png",
+    "width": 760,
+    "height": 520,
+    "personalDetails": [
+      {
+        "type": "phone",
+        "x": 249,
+        "y": 158,
+        "width": 85,
+        "height": 18
+      },
+      {
+        "type": "name",
+        "x": 395,
+        "y": 219,
+        "width": 121,
+        "height": 25
+      },
+      {
+        "type": "plate",
+        "x": 233,
+        "y": 248,
+        "width": 89,
+        "height": 25
       }
     ],
     "fictional": true

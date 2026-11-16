@@ -1,3 +1,37 @@
+# 5차 자체 검사
+
+Codex 실패 — 대체: 화면 디자인도 Sonnet이 `codex-design.md` 기준으로 기존 색·글꼴·배치 체계를 유지하며 맡았습니다.
+
+## 장면 순서 (PLAN 1~6)
+
+1 택배 사칭, 2 진짜 배송, 3 가족 사칭, 4 은행 사칭(+모양 카드), 5 새 수법(목록 v1→v2), 6 로컬 AI 없음.
+
+## 5차 수정 범위
+
+- `app.js`·`hybrid.js`·`data.js`: 첫 화면 문구, 사용자 체크 2개, 모양 카드, 장면 5, 장면 6 이동, `loadPatterns()`.
+- `samples/message-5.*`: 가상 통행료 문자(555-01xx, 가상 도메인, 로고 없음). `render-samples.mjs`가 5장을 렌더합니다.
+- `style.css`: 사용자 체크·패턴 칩·개인정보 검사 줄. 모바일에서 Check 버튼이 탭 막대 위에 남도록 미리보기 줄을 줄였습니다.
+- `patterns.json`(21장, `toll` 카드 `since: 2`)은 다른 담당 파일이라 읽기만 합니다. `data.js` 번들 사본은 `node poc/web/sync-patterns.mjs` 로 똑같이 맞춥니다. 시험·스크린샷의 임시 toll 카드 주입은 없앴고 장면 5 는 실제 카드로 노랑(v1)에서 빨강(v2)이 됩니다.
+
+## 실행한 검사
+
+```text
+PW_ROOT=$ROOT/worker node poc/web/test-web.mjs   -> WEB: 385 assertions passed; zero external requests
+PW_ROOT=$ROOT/worker node poc/web/shot.mjs       -> 41 captures (_codex/shots/)
+node --check poc/web/app.js hybrid.js
+```
+
+새 단언: 사용자 체크가 전송 문자열에 들어감, 모양 카드 개인정보 0개(영어·한국어)와 탐지기 양성 대조, 복사 차단 시 선택 상태, 복사 성공 시 카드 전체 기록, 장면 5 v1 노랑→v2 빨강, 장면 6 전송 0, 외부 요청 0.
+
+## 완료하지 못한 검사
+
+- `test-dom.mjs`는 jsdom이 이 환경에 없어 실행하지 못했습니다. 장면 6 이동과 모양 카드 문구에 맞춰 고쳤으나 실행은 미확인입니다.
+- Live(Firebase AI Logic·Firestore)는 설정과 SDK가 없어 검증하지 않았습니다.
+
+---
+
+(아래는 4차 기록)
+
 # 4차 자체 검사
 
 ## 수정 범위
