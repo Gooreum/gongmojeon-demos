@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "networks": {
+    "maple_street_billing_help": {
+      "aca_appeal_rules": "https://cdn.jsdelivr.net/gh/Gooreum/gongmojeon-demos@ad-v1/ad/aca/aca_appeal_rules"
+    }
+  }
+}

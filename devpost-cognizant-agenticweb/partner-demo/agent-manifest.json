@@ -1,0 +1,70 @@
+{
+  "brand": "Maple Street Community Clinic (example)",
+  "networks": [
+    {
+      "name": "maple_street_billing_help",
+      "front_man": "maple_street_billing_help",
+      "hocon": "./maple_street_billing_help.network.json",
+      "description": "Example integration: a made-up clinic's billing help that asks the ACA appeal rules published by Appeal Desk. Not a real clinic.",
+      "tags": [
+        "example",
+        "unofficial"
+      ],
+      "sample_queries": [
+        "How long do I have to appeal a denied claim?"
+      ]
+    }
+  ],
+  "llm_router": {
+    "base_url": "https://api.otari.ai/api/v1",
+    "mock": false,
+    "byok_router": "https://api.otari.ai/api/v1"
+  },
+  "allowed_peers": [
+    "https://cdn.jsdelivr.net"
+  ],
+  "peer_policy": {
+    "mode": "closed",
+    "deny_origins": [],
+    "note": "Calls only the ACA appeal rule network listed in links.json, after the visitor agrees on a card."
+  },
+  "agent_mcp": {
+    "protocol": "appeal-rules-agent-mcp/v1",
+    "network": "maple_street_billing_help",
+    "front_man": "maple_street_billing_help",
+    "available": false,
+    "reason": "This is a static bundle; a public MCP facade requires an application host."
+  },
+  "theme": {
+    "primary": "#1b4f8f"
+  },
+  "linking": {
+    "protocol": "appeal-rules-link/v1",
+    "exports": [
+      {
+        "network": "maple_street_billing_help",
+        "front_man": "maple_street_billing_help",
+        "aliases": [
+          "maple_street_billing_help"
+        ],
+        "url": "maple_street_billing_help"
+      }
+    ],
+    "imports": [],
+    "link_updates": {
+      "mode": "browser-local"
+    }
+  },
+  "deployment": {
+    "mode": "static",
+    "self_contained_runtime": false,
+    "browser_mock": false,
+    "direct_byok": false,
+    "direct_mcp_requires_cors": false,
+    "public_mcp_facade": false
+  },
+  "publisher": {
+    "name": "Appeal Desk (example page)",
+    "note": "A made-up clinic for demonstration. Not a real clinic."
+  }
+}

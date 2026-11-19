@@ -1,0 +1,41 @@
+{
+  "_about": "The one place that names where rule networks live. build.mjs reads it to write the HOCON tools, link_labels, allowed_peers, both links.json files and the deploy-root/ folder. The deployed set uses jsDelivr with a release tag: replace @TAG in every URL with the real tag before building (build.mjs refuses to build the deployed set while @TAG is left). The rule networks sit in a short folder ad/ at the repository root so the runtime's 60-character tool names stay distinct. See README-deploy.md.",
+  "active": "deployed",
+  "sets": {
+    "local": {
+      "aca_appeal_rules": "http://localhost:8081/aca_appeal_rules/aca_appeal_rules",
+      "erisa_claims_rules": "http://localhost:8081/erisa_claims_rules/erisa_claims_rules",
+      "tampered": "http://localhost:8081/aca_appeal_rules_tampered/aca_appeal_rules_tampered",
+      "broken": "http://localhost:8081/broken_rules/broken_rules",
+      "medicare_advantage_rules": "http://localhost:8081/medicare_advantage_rules/medicare_advantage_rules",
+      "partner": "http://localhost:8082/partner-demo/"
+    },
+    "deployed": {
+      "aca_appeal_rules": "https://cdn.jsdelivr.net/gh/Gooreum/gongmojeon-demos@ad-v1/ad/aca/aca_appeal_rules",
+      "erisa_claims_rules": "https://cdn.jsdelivr.net/gh/Gooreum/gongmojeon-demos@ad-v1/ad/erisa/erisa_claims_rules",
+      "tampered": "https://cdn.jsdelivr.net/gh/Gooreum/gongmojeon-demos@ad-v1/ad/tam/aca_appeal_rules_tampered",
+      "broken": "https://cdn.jsdelivr.net/gh/Gooreum/gongmojeon-demos@ad-v1/ad/brk/broken_rules",
+      "medicare_advantage_rules": "https://cdn.jsdelivr.net/gh/Gooreum/gongmojeon-demos@ad-v1/ad/ma/medicare_advantage_rules",
+      "partner": "partner-demo/"
+    }
+  },
+  "labels": {
+    "aca_appeal_rules": "ACA appeal rules, published by Appeal Desk",
+    "erisa_claims_rules": "ERISA claims rules, published by Appeal Desk",
+    "medicare_advantage_rules": "Medicare Advantage rules, published by Appeal Desk"
+  },
+  "test_only": [
+    "tampered",
+    "broken"
+  ],
+  "deploy_folders": {
+    "aca": "aca_appeal_rules",
+    "erisa": "erisa_claims_rules",
+    "ma": "medicare_advantage_rules",
+    "tam": "aca_appeal_rules_tampered",
+    "brk": "broken_rules"
+  },
+  "not_a_rule_network": [
+    "partner"
+  ]
+}

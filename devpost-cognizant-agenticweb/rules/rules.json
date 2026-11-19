@@ -1,0 +1,160 @@
+{
+  "_about": "Single source for every regulation number in Appeal Desk. Numbers come from docs/FACTS.md (eCFR text read 2026-11-17). build.mjs copies each ruleset into the matching peer network, so the peers and the built-in fallback never disagree. Set verified to false to make the screen show 'check'. medicare_advantage_rules was added 2026-11-17 from 42 CFR 422.582, 422.590 and 422.592 (eCFR 2026-11-01 edition, read by the owner).",
+  "rulesets": {
+    "aca_appeal_rules": {
+      "rule_id": "aca_appeal_rules",
+      "title": "Health plan appeal rules (ACA, non-grandfathered plans)",
+      "cfr_cite": "45 CFR 147.136",
+      "ecfr_url": "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-B/part-147/section-147.136",
+      "internal_appeal_filing_days": 180,
+      "internal_appeal_filing_cite": "29 CFR 2560.503-1(h)(3)(i), required by 45 CFR 147.136(b)(2)(i)",
+      "internal_appeal_filing_url": "https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XXV/part-2560/section-2560.503-1",
+      "decision_days_preservice": 30,
+      "decision_days_postservice": 60,
+      "decision_days_cite": "29 CFR 2560.503-1(i)(2)(ii)-(iii), required by 45 CFR 147.136(b)(2)(i)",
+      "urgent_decision_hours": 72,
+      "urgent_decision_cite": "45 CFR 147.136(b)(2)(ii)(B)",
+      "external_review_request_months": 4,
+      "external_review_cite": "45 CFR 147.136(d)(2)(i)",
+      "external_review_path": "Insured plans follow the State external review process when the State has a qualifying one, and the Federal process otherwise. A State process must allow at least four months to file. Federal review: preliminary review in 5 business days, decision within 45 days, 72 hours when expedited.",
+      "after_appeal_note": "If the plan does not follow the internal process, you are deemed to have exhausted it and may go straight to external review.",
+      "after_appeal_cite": "45 CFR 147.136(b)(2)(ii)(F)(1)",
+      "documents_you_can_request": [
+        {
+          "id": "claim_file",
+          "label": "The full claim file",
+          "cite": "45 CFR 147.136(b)(2)(ii)(C)",
+          "ecfr_url": "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-B/part-147/section-147.136"
+        },
+        {
+          "id": "new_evidence",
+          "label": "Any new or additional evidence the plan considered, free of charge",
+          "cite": "45 CFR 147.136(b)(2)(ii)(C)(1)",
+          "ecfr_url": "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-B/part-147/section-147.136"
+        },
+        {
+          "id": "codes",
+          "label": "The diagnosis code, the treatment code, and what each one means",
+          "cite": "45 CFR 147.136(b)(2)(ii)(E)",
+          "ecfr_url": "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-B/part-147/section-147.136"
+        },
+        {
+          "id": "relevant_docs",
+          "label": "Documents relevant to your claim, upon request and free of charge",
+          "cite": "29 CFR 2560.503-1(h)(2)(iii)",
+          "ecfr_url": "https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XXV/part-2560/section-2560.503-1"
+        }
+      ],
+      "other_cites": {
+        "continued_coverage": {
+          "text": "Coverage continues while the appeal is decided.",
+          "cite": "45 CFR 147.136(b)(2)(iii)"
+        },
+        "full_review": {
+          "text": "The appeal review does not defer to the first denial.",
+          "cite": "29 CFR 2560.503-1(h)(3)(ii)"
+        },
+        "urgent_path": {
+          "text": "An urgent care claim must be decided as soon as possible and no later than 72 hours after receipt.",
+          "cite": "45 CFR 147.136(b)(2)(ii)(B)"
+        }
+      },
+      "verified": true,
+      "recheck": [
+        "Sub-paragraph numbers of 147.136(b)(2)(ii)(E) were read from a summarised eCFR page; confirm the anchor before relying on the cite.",
+        "The 180-day figure is confirmed in 29 CFR 2560.503-1(h)(3)(i); 147.136 points to it."
+      ]
+    },
+    "erisa_claims_rules": {
+      "rule_id": "erisa_claims_rules",
+      "title": "Employer health plan claims rules (ERISA)",
+      "cfr_cite": "29 CFR 2560.503-1",
+      "ecfr_url": "https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XXV/part-2560/section-2560.503-1",
+      "internal_appeal_filing_days": 180,
+      "internal_appeal_filing_cite": "29 CFR 2560.503-1(h)(3)(i)",
+      "internal_appeal_filing_url": "https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XXV/part-2560/section-2560.503-1",
+      "decision_days_preservice": 30,
+      "decision_days_postservice": 60,
+      "decision_days_cite": "29 CFR 2560.503-1(i)(2)(ii)-(iii)",
+      "urgent_decision_hours": 72,
+      "urgent_decision_cite": "29 CFR 2560.503-1(f)(2)(i)",
+      "external_review_request_months": 4,
+      "external_review_cite": "29 CFR 2590.715-2719(d)(2)(i)",
+      "external_review_path": "Self-insured plans without an applicable State process use the Federal external review process, with an independent review organization accredited by URAC or a similar body. Same dates: four months to request, 5 business days preliminary review, 45 days standard, 72 hours expedited.",
+      "after_appeal_note": "If the plan does not follow its claims procedures, you are deemed to have exhausted the plan's remedies and may bring a civil action under ERISA section 502(a).",
+      "after_appeal_cite": "29 CFR 2560.503-1(l)(1)",
+      "documents_you_can_request": [
+        {
+          "id": "relevant_docs",
+          "label": "Copies of every document relevant to your claim, free of charge",
+          "cite": "29 CFR 2560.503-1(h)(2)(iii)",
+          "ecfr_url": "https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XXV/part-2560/section-2560.503-1"
+        }
+      ],
+      "other_cites": {
+        "full_review": {
+          "text": "The appeal review does not defer to the first denial.",
+          "cite": "29 CFR 2560.503-1(h)(3)(ii)"
+        },
+        "urgent_path": {
+          "text": "An urgent care claim must be decided no later than 72 hours after receipt.",
+          "cite": "29 CFR 2560.503-1(f)(2)(i)"
+        }
+      },
+      "verified": true,
+      "recheck": [
+        "The urgent appeal decision time ((i)(2)(i)) was not read; only the 72-hour initial decision is cited."
+      ]
+    },
+    "medicare_advantage_rules": {
+      "rule_id": "medicare_advantage_rules",
+      "title": "Medicare Advantage plan appeal rules (reconsideration)",
+      "appeal_name": "reconsideration",
+      "notice_name": "organization determination",
+      "cfr_cite": "42 CFR 422.582",
+      "ecfr_url": "https://www.ecfr.gov/current/title-42/section-422.582",
+      "internal_appeal_filing_days": 60,
+      "receipt_presumed_days_after_notice": 5,
+      "internal_appeal_filing_cite": "42 CFR 422.582(b)",
+      "internal_appeal_filing_url": "https://www.ecfr.gov/current/title-42/section-422.582",
+      "decision_days_preservice": 30,
+      "decision_days_postservice": 60,
+      "decision_days_part_b_drug": 7,
+      "decision_days_cite": "42 CFR 422.590(a)(1), (b)(1), (c)(1)",
+      "decision_days_url": "https://www.ecfr.gov/current/title-42/section-422.590",
+      "urgent_decision_hours": 72,
+      "urgent_decision_cite": "42 CFR 422.590(e)(1)",
+      "urgent_decision_url": "https://www.ecfr.gov/current/title-42/section-422.590",
+      "external_review_automatic": true,
+      "external_review_request_months": null,
+      "external_review_cite": "42 CFR 422.592(a)",
+      "external_review_url": "https://www.ecfr.gov/current/title-42/section-422.592",
+      "external_review_path": "If the plan upholds its denial, it must send your case to an independent outside entity that has a contract with CMS. You do not file a separate request for outside review.",
+      "after_appeal_note": "If the plan misses its decision deadline, that counts as upholding the denial, and the plan must still send your case to the independent entity.",
+      "after_appeal_cite": "42 CFR 422.590(a)(2), (b)(2)",
+      "documents_you_can_request": [
+        {
+          "id": "ire_case_file",
+          "label": "Confirmation of the date the plan sent your case file to the independent reviewer",
+          "cite": "42 CFR 422.590(a)(2), (b)(2)",
+          "ecfr_url": "https://www.ecfr.gov/current/title-42/section-422.590"
+        }
+      ],
+      "other_cites": {
+        "urgent_path": {
+          "text": "An expedited reconsideration is decided no later than 72 hours after the plan receives the request.",
+          "cite": "42 CFR 422.590(e)(1)"
+        },
+        "expedited_grant": {
+          "text": "The plan must grant an expedited reconsideration when the standard time could seriously jeopardize the life or health of the enrollee.",
+          "cite": "42 CFR 422.584(c)(2)(i)"
+        }
+      },
+      "verified": true,
+      "recheck": [
+        "Part B drug 7 calendar days (422.590(c)(1)) was read from a summarised eCFR page.",
+        "No document-request right for Medicare Advantage enrollees was verified, so the list holds one item tied to 422.590."
+      ]
+    }
+  }
+}

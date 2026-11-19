@@ -1,0 +1,10 @@
+{
+  "networks": [
+    {
+      "name": "appeal_desk"
+    }
+  ],
+  "actions": {
+    "version": 1
+  }
+}

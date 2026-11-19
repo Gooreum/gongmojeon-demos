@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maple Street Billing Help (example integration)</title>
+<style>
+:root{--p:#1b4f8f;--ink:#1b1b1b;--g:#454545;--l:#d3d6da;--bg:#f6f7f9}
+*{box-sizing:border-box}body{margin:0;font:17px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);overflow-x:hidden}
+.note{background:#1b1b1b;color:#fff;font-size:14px;padding:8px 16px}
+main{max-width:640px;margin:0 auto;padding:24px 16px}
+.card{background:#fff;border:1px solid var(--l);border-radius:10px;padding:24px;margin-bottom:16px}
+h1{font-size:28px;margin:0 0 12px}h2{font-size:20px;margin:0 0 12px}
+button{font:inherit;font-weight:600;min-height:48px;padding:0 16px;border-radius:6px;border:2px solid var(--p);background:var(--p);color:#fff;cursor:pointer}
+button.ghost{background:#fff;color:var(--p)}input{font:inherit;min-height:48px;padding:8px 12px;border:2px solid #6b6b6b;border-radius:6px;max-width:100%}
+.big{font-size:24px;font-weight:700;color:#123a6b}.hint{color:var(--g);font-size:14px}
+code{background:#eceef1;padding:1px 6px;border-radius:4px;word-break:break-all}
+.err{border:2px solid #a3231c;background:#fbe9e7}
+</style>
+</head>
+<body>
+<div class="note">Example integration: a made-up clinic page showing how a site can use someone else's rule network. This is not a real hospital.</div>
+<main>
+  <div class="card">
+    <h1>Maple Street Community Clinic: billing help</h1>
+    <p>Questions about a bill your plan did not pay? Our front desk is open weekdays. (Fictional clinic.)</p>
+  </div>
+  <div class="card" id="ask">
+    <h2>How long do I have to appeal a denied claim?</h2>
+    <p class="hint">This answer comes from the ACA appeal rules published by Appeal Desk, on another website. Your date stays on this page.</p>
+    <label for="d">Date on your denial letter</label><br>
+    <input id="d" type="date" value=""> <button id="go">Show my appeal deadline</button>
+  </div>
+  <details class="card" id="how"><summary><strong>How this page gets the rules</strong></summary>
+    <p class="hint">This page is a small agent site: it has its own <code>agent-manifest.json</code> and network, and it lists the one rule network it uses in its own <code>links.json</code>. It loads nothing else.</p>
+    <pre id="linkjson" style="background:#eceef1;padding:12px;border-radius:6px;overflow-x:auto;font-size:14px;margin:0">Loading links.json...</pre>
+  </details>
+  <div id="consent"></div>
+  <div id="answer"></div>
+</main>
+<script>
+(function(){ // sample date: 14 days before today (or before ?today=, used by tests)
+  var q=new URLSearchParams(location.search).get("today"),n=new Date(),
+      b=/^\d{4}-\d{2}-\d{2}$/.test(q||"")?q.split("-").map(Number):[n.getFullYear(),n.getMonth()+1,n.getDate()],
+      t=new Date(Date.UTC(b[0],b[1]-1,b[2]-14));
+  document.getElementById("d").value=t.toISOString().slice(0,10);
+})();
+</script>
+<script type="module">
+// This page is a small agent site of its own: agent-manifest.json + maple_street_billing_help.network.json.
+// It loads the ACA appeal rules with the same official runtime and the same checks as Appeal Desk:
+// consent card, allowed_peers, exact address from links.json, scan of the instructions, rule table check.
+import { Engine } from "../runtime/engine.js";
+import { scanPeer, validateRuleTable } from "../js/scan.js";
+const here = new URL("./", location.href).href;
+const $ = (s)=>document.querySelector(s);
+const mk=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e;};
+const linksText = await (await fetch("links.json")).text();
+const links = JSON.parse(linksText);
+// links.json follows the spec: {"version":1,"networks":{"<this site's network>":{"<symbol>":"<url>"}}}
+const bound = Object.values(links.networks || {})[0] || {};
+const url = bound.aca_appeal_rules;
+if (!url) throw new Error("links.json has no aca_appeal_rules binding");
+$("#linkjson").textContent = linksText.trim();
+const host = new URL(url).host;
+const engine = new Engine({ originUrl: here, sandboxWorkerUrl: new URL("../runtime/sandbox-worker.js", here).href });
+const ready = engine.loadTop().then(() => { window.__partnerEngine = engine; return true; }, (e) => { console.warn(e); return false; });
+const exact = new Set(Object.values(bound).map((u) => new URL(u).href));
+function consent(){return new Promise((res)=>{
+  const card=mk("div","card");card.setAttribute("role","group");
+  card.append(mk("h2",null,"Load rules from another website?"),mk("p",null,"This page wants the ACA appeal rules from "+host+". Your browser asks for the rule file only. Your date is not sent."));
+  const a=mk("button",null,"Allow"),b=mk("button","ghost","Decline");a.id="allow";b.style.marginLeft="8px";
+  a.onclick=()=>{card.remove();res(true)};b.onclick=()=>{card.remove();res(false)};
+  card.append(a,b);$("#consent").append(card);});}
+function add(iso,n){const [y,m,d]=iso.split("-").map(Number);const t=new Date(Date.UTC(y,m-1,d+n));return t.toLocaleDateString("en-US",{timeZone:"UTC",weekday:"long",year:"numeric",month:"long",day:"numeric"});}
+async function loadRules(){
+  if(!(await ready)) throw new Error("The rule loader did not start.");
+  if(!exact.has(new URL(url).href)) throw new Error("Not listed in links.json.");
+  const session = await engine.resolveRemote(url, [`${engine.top.base}::maple_street_billing_help`], null, engine.top.manifest);
+  const scan = scanPeer(session);
+  if(!scan.ok) throw new Error("Blocked: "+scan.findings[0].why);
+  const r = session.network?.config?.metadata?.appeal_rules;
+  const v = validateRuleTable(r);
+  if(!v.ok) throw new Error("Blocked: "+v.problems[0]);
+  return r;
+}
+$("#go").onclick=async()=>{
+  const out=$("#answer");out.textContent="";
+  if(!(await consent())){out.append(mk("div","card","You declined, so no rules were loaded. The usual time limit is on your plan documents."));return;}
+  try{
+    const r=await loadRules();
+    const iso=$("#d").value;
+    const card=mk("div","card");
+    card.append(mk("h2",null,"Your appeal deadline"),mk("p","big",add(iso,r.internal_appeal_filing_days)),
+      mk("p",null,r.internal_appeal_filing_days+" days from the date on the letter. Source: "+r.cfr_cite+". File early."),
+      mk("p","hint","Rules loaded from "+host+" (ACA appeal rules), checked before use. Not legal advice."));
+    out.append(card);
+  }catch(e){const c=mk("div","card err");c.append(mk("h2",null,"The rules could not be loaded"),mk("p",null,"The rule file was missing or not readable, so no deadline is shown. Check your plan documents."));out.append(c);}
+};
+</script>
+</body>
+</html>

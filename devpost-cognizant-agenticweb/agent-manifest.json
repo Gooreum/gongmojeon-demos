@@ -1,0 +1,80 @@
+{
+  "brand": "Appeal Desk",
+  "networks": [
+    {
+      "name": "appeal_desk",
+      "front_man": "appeal_desk",
+      "hocon": "./appeal_desk.network.json",
+      "description": "Paste a health insurance denial notice. Appeal Desk lists your deadlines and the documents you can ask for, and drafts an appeal letter. Your notice stays in this browser.",
+      "tags": [
+        "agentified-website",
+        "health-insurance",
+        "appeals"
+      ],
+      "sample_queries": [
+        "What is my deadline to appeal this denial?",
+        "Which documents can I ask my plan for?",
+        "Put the standard appeal paragraph into my letter.",
+        "Can you file the appeal for me?"
+      ]
+    }
+  ],
+  "llm_router": {
+    "base_url": "https://api.otari.ai/api/v1",
+    "mock": false,
+    "byok_router": "https://api.otari.ai/api/v1"
+  },
+  "allowed_peers": [
+    "https://cdn.jsdelivr.net"
+  ],
+  "peer_policy": {
+    "mode": "closed",
+    "deny_origins": [],
+    "note": "This site calls only the rule networks listed in allowed_peers, after the visitor agrees on a card."
+  },
+  "agent_mcp": {
+    "protocol": "appeal-desk-agent-mcp/v1",
+    "network": "appeal_desk",
+    "front_man": "appeal_desk",
+    "available": false,
+    "reason": "This is a static bundle; a public MCP facade requires an application host."
+  },
+  "theme": {
+    "primary": "#1b4f8f"
+  },
+  "linking": {
+    "protocol": "appeal-desk-link/v1",
+    "exports": [
+      {
+        "network": "appeal_desk",
+        "front_man": "appeal_desk",
+        "aliases": [
+          "appeal_desk"
+        ],
+        "url": "appeal_desk"
+      }
+    ],
+    "imports": [],
+    "link_updates": {
+      "mode": "browser-local"
+    }
+  },
+  "deployment": {
+    "mode": "static",
+    "self_contained_runtime": true,
+    "browser_mock": false,
+    "direct_byok": true,
+    "direct_mcp_requires_cors": true,
+    "public_mcp_facade": false
+  },
+  "actions": {
+    "version": 1,
+    "module": "./site-actions.js",
+    "bridge": "./bridge/action-bridge.html",
+    "agentTools": [
+      "get_appeal_state",
+      "insert_letter_paragraph",
+      "check_document"
+    ]
+  }
+}

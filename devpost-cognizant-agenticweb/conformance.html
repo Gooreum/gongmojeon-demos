@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Appeal Desk compliance checks</title>
+<link rel="stylesheet" href="css/style.css">
+<style>.cl{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}.cl li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 16px}.res{font-weight:700;white-space:nowrap}.res.pass{color:var(--ok)}.res.fail{color:var(--bad)}.res.none{color:var(--gray-70)}.where{grid-column:1/-1;font-size:var(--fs-sm);color:var(--gray-70);margin:0}</style>
+</head>
+<body>
+<header class="appbar"><div class="appbar-in"><a class="brand" href="index.html">Appeal Desk</a><a href="index.html">Back to the app</a></div></header>
+<div class="layout" style="grid-template-columns:minmax(0,1fr)">
+<main>
+  <section class="card">
+    <h1>Compliance checks</h1>
+    <p class="lead">The seven interoperability checks of the Open Agentic Web MVP Profile 0.2 (section 6), with where you can see each one and the latest result. Five are checked automatically on a local machine with three origins. Two (an ordinary HTTPS web host, and a run with the published default router and model) are checked on the live site after deployment.</p>
+    <p class="hint" id="meta">Reading results...</p>
+    <p class="hint" id="origin-note">Rule networks on a shared host: the runtime allows a whole origin, not one path. On jsDelivr that is every repository on the host. Appeal Desk therefore also requires each address to match a binding in links.json exactly. See README-deploy.md.</p>
+    <ol class="cl" id="list"></ol>
+  </section>
+</main>
+</div>
+<footer class="foot"><p>Results come from <code>conformance-results.json</code>, written by <code>test-web.mjs</code>.</p></footer>
+<script>
+const CHECKS = [
+  ["c1", "Publish a two-agent network and a manifest from an ordinary web host.", "agent-manifest.json, appeal_desk.network.json (agents: appeal_desk, notice_reader, letter_writer)"],
+  ["c2", "Run it in a browser with the published default router; BYOK path also works.", "Scene 3 and 4: the model card and the settings panel under Assistant and AI model settings"],
+  ["c3", "Call an internal agent and a grounded capability (registered site actions).", "Assistant panel: get_appeal_state, check_document, insert_letter_paragraph"],
+  ["c4", "After approval, load an exact named network from a second origin and run it locally.", "Scene 1 and 2: the consent card, then the rules from the rule host ({host})"],
+  ["c5", "With a user key active, the second site never receives it and cannot change the router.", "Scene 4 and the panel 'What was sent'"],
+  ["c6", "Private context is absent at the peer unless a named field is allowed.", "Scene 5: 0 fields shared; the panel shows 0 bytes of your notice"],
+  ["c7", "Stop an invalid network, a cycle, an over-budget request and a denied origin with visible errors.", "Scene 5: the five buttons under 'Rule networks are checked before use'"],
+];
+(async () => {
+  const list = document.getElementById("list"); let data = null, host = "the second origin";
+  try { data = await (await fetch("conformance-results.json", { cache: "no-store" })).json(); } catch (e) { /* no results yet */ }
+  try { const cfg = await (await fetch("peers.config.json")).json(); host = new URL(cfg.sets[cfg.active].aca_appeal_rules).host; } catch (e) { /* keep the generic words */ }
+  const meta = document.getElementById("meta");
+  if (data) {
+    const auto = data.checks.filter((c) => c.scope !== "live"), live = data.checks.filter((c) => c.scope === "live");
+    meta.textContent = `Last run: ${data.ran_at}. ${auto.filter((c) => c.pass).length} of ${data.checks.length} checked automatically; ${live.length} checked on the live site.`;
+  } else meta.textContent = "No test results found yet. Run test-web.mjs to write them.";
+  for (const [id, text, where] of CHECKS) {
+    const r = data?.checks?.find((c) => c.id === id);
+    const live = r?.scope === "live";
+    const li = document.createElement("li");
+    const p = document.createElement("span"); p.textContent = text;
+    const s = document.createElement("span");
+    s.className = "res " + (live ? "none" : r ? (r.pass ? "pass" : "fail") : "none");
+    s.textContent = live ? "Checked on the live site" : r ? (r.pass ? "Passed (automatic)" : "Failed") : "Not run";
+    const w = document.createElement("p"); w.className = "where"; w.append("Where to see it: ", where.replace("{host}", host));
+    if (r?.detail) w.append(" | " + (live ? "Local pre-check: " : "Test: ") + r.detail + (live && r.pass ? " passed. The live check runs after deployment." : ""));
+    li.append(p, s, w); list.append(li);
+  }
+})();
+</script>
+</body>
+</html>

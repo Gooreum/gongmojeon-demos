@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Appeal Desk</title>
+<meta name="description" content="Paste a health insurance denial notice. Appeal Desk lists your deadlines and the documents you can ask for, and drafts an appeal letter. Your notice stays in this browser.">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/netlog.js"></script>
+</head>
+<body data-scene="1">
+<div class="demo-band" id="demo-band" role="region" aria-label="Walkthrough">
+  <span class="demo-tag">Demo &middot; Scene <b id="band-n">1</b>/6</span>
+  <span class="demo-text" id="band-text"></span>
+  <span class="demo-nav"><button type="button" id="band-back" class="mini" aria-label="Previous scene">Back</button><button type="button" id="band-next" class="mini primary">Next</button></span>
+</div>
+
+<header class="appbar">
+  <div class="appbar-in">
+    <a class="brand" href="#scene-1" aria-label="Appeal Desk home">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><path d="M14 2v6h6"/><path d="M9 13h6"/><path d="M9 17h6"/></svg>
+      <span>Appeal Desk</span>
+    </a>
+    <button type="button" id="wipe" class="mini ghost"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>Leave nothing on this device</button>
+  </div>
+</header>
+
+<div class="layout">
+<main id="main">
+  <section class="card hero" id="step-notice" aria-labelledby="h-notice">
+    <h1 id="h-notice">Got a health insurance denial? Start here.</h1>
+    <p class="lead">Paste the notice. You get your deadlines, the documents you can ask for, and a draft appeal letter.</p>
+    <label for="notice" class="label">Your denial notice</label>
+    <textarea id="notice" rows="9" placeholder="Paste the text of your notice here. Or try a sample below." spellcheck="false"></textarea>
+    <div class="samples" role="group" aria-label="Try a sample notice">
+      <span class="label">Try a sample notice</span>
+      <div class="sample-row" id="sample-row"></div>
+    </div>
+    <div class="actions"><button type="button" id="analyze" class="primary big">Check this notice</button><button type="button" id="clear" class="ghost big">Clear</button></div>
+    <p class="promise"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Your letter stays in this browser. Rule networks come to it.</p>
+  </section>
+
+  <div id="status-slot" role="status" aria-live="polite"></div>
+  <div id="consent-slot"></div>
+  <div id="error-slot"></div>
+  <section class="card" id="step-questions" hidden aria-labelledby="h-q"></section>
+
+  <section id="results" hidden aria-label="Your results">
+    <div class="card summary" id="summary"></div>
+    <div class="banner urgent" id="urgent" hidden role="note"></div>
+    <div class="card" id="date-card" hidden></div>
+    <div class="compare card" id="compare" hidden></div>
+    <div id="rule-columns"></div>
+    <section class="card" id="letter-card" aria-labelledby="h-letter">
+      <div class="card-head"><h2 id="h-letter">Your appeal letter</h2>
+        <div class="row"><button type="button" id="copy-letter" class="mini">Copy letter</button><button type="button" id="plain-view" class="mini ghost" aria-pressed="false">Plain view</button></div></div>
+      <p class="hint" id="letter-hint"></p>
+      <div id="letter" class="letter"></div>
+      <div id="add-paras" class="add-paras"></div>
+    </section>
+    <section class="card" id="model-card" aria-labelledby="h-model">
+      <div class="card-head"><h2 id="h-model">Polish the wording (optional)</h2><span class="badge" id="model-badge">No model used</span></div>
+      <p class="hint">Nothing here needs a model. If you want help with wording, you choose where the text goes, and you see exactly what is sent first. Only the letter draft is sent, never your notice.</p>
+      <div class="row" id="model-paths"></div>
+      <div id="model-preview" hidden></div>
+      <div id="model-result" hidden></div>
+    </section>
+  </section>
+
+  <section class="card" id="safety" aria-labelledby="h-safety">
+    <h2 id="h-safety">Rule networks are checked before use</h2>
+    <p class="hint">Each rule network is read for hidden instructions before any number from it is used. Try what happens when one goes wrong.</p>
+    <div class="grid-btns">
+      <button type="button" data-try="tampered" class="mini">Load a changed copy of the rules</button>
+      <button type="button" data-try="broken" class="mini">Load a damaged rule file</button>
+      <button type="button" data-try="cycle" class="mini">Load rules that link back to us</button>
+      <button type="button" data-try="budget" class="mini">Ask for too many rule networks</button>
+      <button type="button" data-try="unlisted" class="mini">Load another page from the same host</button>
+      <button type="button" data-try="denied" class="mini">Load rules from an unlisted website</button>
+    </div>
+    <div id="safety-out"></div>
+  </section>
+
+  <section class="card" id="partner" aria-labelledby="h-partner">
+    <h2 id="h-partner">Other websites can use these rules</h2>
+    <p>Any website can point to the same rule networks. An example page, a small agent site of its own, answers the question "How long do I have to appeal this bill?" from the ACA rule network. It is an example of how a site can connect, not a real hospital.</p>
+    <p><a class="button-link" id="partner-link" href="partner-demo/" target="_blank" rel="noopener">Open the example page</a></p>
+  </section>
+
+  <details class="card assistant-wrap" id="assistant-wrap">
+    <summary><span class="sum-title">Assistant and AI model settings</span><span class="sum-line" id="assistant-line">No model. Everything above works without one.</span></summary>
+    <section id="assistant" class="assistant" aria-labelledby="assistant-heading">
+      <h2 id="assistant-heading">Ask Appeal Desk</h2>
+      <p>The assistant can read your deadlines, tick documents on your checklist, and add a standard paragraph to your letter after you confirm.</p>
+      <p class="assistant-note">Your messages and this page's data go to the AI provider you choose in the settings below. You confirm anything that cannot be undone before it happens.</p>
+      <p id="assistant-status" role="status">Connecting the assistant&hellip; If this message stays, the assistant could not load. You can still use the page directly.</p>
+      <div id="agent-app">
+        <div data-ns-slot="header"></div>
+        <div class="assistant-panels">
+          <div data-ns-slot="chat"></div>
+          <div data-ns-slot="agents"></div>
+        </div>
+        <div data-ns-slot="settings"></div>
+      </div>
+    </section>
+  </details>
+</main>
+
+<aside class="trace card" id="trace" aria-labelledby="h-trace">
+  <h2 id="h-trace">What was sent</h2>
+  <dl class="counters">
+    <div><dt>Requests to a model</dt><dd id="c-model">0</dd></div>
+    <div><dt>Bytes of your notice sent to rule publishers</dt><dd id="c-peer">0</dd></div>
+  </dl>
+  <ol class="log" id="log" aria-live="polite"></ol>
+</aside>
+</div>
+
+<footer class="foot">
+  <p>Sample notices are fictional.</p>
+  <p>Not legal advice. Check your plan documents; state rules can differ.</p>
+  <p class="credit">Type: Public Sans (SIL OFL 1.1). Icons: Lucide (ISC). Runtime: Open Agentic Web, Apache-2.0. <a href="conformance.html">Compliance checks</a></p>
+</footer>
+
+<script type="module" src="site.js"></script>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

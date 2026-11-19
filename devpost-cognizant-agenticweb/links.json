@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "networks": {
+    "appeal_desk": {
+      "aca_appeal_rules": "https://cdn.jsdelivr.net/gh/Gooreum/gongmojeon-demos@ad-v1/ad/aca/aca_appeal_rules",
+      "erisa_claims_rules": "https://cdn.jsdelivr.net/gh/Gooreum/gongmojeon-demos@ad-v1/ad/erisa/erisa_claims_rules",
+      "medicare_advantage_rules": "https://cdn.jsdelivr.net/gh/Gooreum/gongmojeon-demos@ad-v1/ad/ma/medicare_advantage_rules"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "protocol": "appeal-desk-agent-mcp/v1",
+  "network": "appeal_desk",
+  "front_man": "appeal_desk",
+  "available": false,
+  "reason": "This is a static bundle; a public MCP facade requires an application host."
+}

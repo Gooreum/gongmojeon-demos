@@ -1,0 +1,434 @@
+{
+  "ran_at": "2026-11-16 18:15 UTC",
+  "checks": [
+    {
+      "id": "c1",
+      "scope": "live",
+      "pass": true,
+      "detail": "1/1 tests"
+    },
+    {
+      "id": "c2",
+      "scope": "live",
+      "pass": true,
+      "detail": "1/1 tests"
+    },
+    {
+      "id": "c3",
+      "scope": "local",
+      "pass": true,
+      "detail": "5/5 tests"
+    },
+    {
+      "id": "c4",
+      "scope": "local",
+      "pass": true,
+      "detail": "3/3 tests"
+    },
+    {
+      "id": "c5",
+      "scope": "local",
+      "pass": true,
+      "detail": "3/3 tests"
+    },
+    {
+      "id": "c6",
+      "scope": "local",
+      "pass": true,
+      "detail": "4/4 tests"
+    },
+    {
+      "id": "c7",
+      "scope": "local",
+      "pass": true,
+      "detail": "5/5 tests"
+    }
+  ],
+  "tests": [
+    {
+      "name": "unit: 2026-03-04 + 180 days = 2026-08-31",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unit: leap day, 2028-02-29 + 365 days = 2029-02-28",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unit: Oct 31 + 4 months = Feb 28 (non-leap)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unit: Oct 31 + 4 months = Feb 29 (leap)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unit: year rollover, Dec 15 + 4 months = Apr 15",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unit: samples are dated relative to the fixed today (-14, -21, -10 days)",
+      "pass": true,
+      "detail": "2026-11-03 2026-10-27 2026-11-07"
+    },
+    {
+      "name": "unit: sample 1 reads ACA, medical necessity",
+      "pass": true,
+      "detail": "{\"plan_type\":\"aca\",\"notice_date\":\"2026-11-03\",\"reason_category\":\"medical_necessity\",\"urgent\":false,\"plan_name\":\"Evergreen Silver 2026 (Marketplace individual plan)\",\"signals\":{\"erisaText\":false,\"selfFunded\":false,\"employer\":false,\"marketplace\":true,\"medicareAdvantage\":false}}"
+    },
+    {
+      "name": "unit: sample 2 reads ERISA, no prior auth",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unit: sample 3 reads Medicare Advantage from 'organization determination', medical necessity",
+      "pass": true,
+      "detail": "{\"plan_type\":\"ma\",\"notice_date\":\"2026-11-07\",\"reason_category\":\"medical_necessity\",\"urgent\":false,\"plan_name\":\"Riverbend Advantage Plus (HMO)\",\"signals\":{\"erisaText\":false,\"selfFunded\":false,\"employer\":false,\"marketplace\":false,\"medicareAdvantage\":true}}"
+    },
+    {
+      "name": "unit: sample 4 has no plan type or date, urgent, out of network",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unit: each Medicare Advantage cue alone reads as ma",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unit: redaction removes name, member ID, claim number, birth date, ICD code, address, phone",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unit: redaction also covers the Medicare Advantage sample",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "config: deployed peers use jsDelivr gh URLs with a tag slot and the short ad/ folder",
+      "pass": true,
+      "detail": "{\"aca_appeal_rules\":\"https://cdn.jsdelivr.net/gh/Gooreum/gongmojeon-demos@TAG/ad/aca/aca_appeal_rules\",\"erisa_claims_rules\":\"https://cdn.jsdelivr.net/gh/Gooreum/gongmojeon-demos@TAG/ad/erisa/erisa_claims_rules\",\"tampered\":\"https://cdn.jsdelivr.net/gh/Gooreum/gongmojeon-demos@TAG/ad/tam/aca_appeal_ru"
+    },
+    {
+      "name": "config: the three deployed peer tool names stay distinct (tag @ad-v1)",
+      "pass": true,
+      "detail": "gh_Gooreum_gongmojeon_demos_ad_v1_ad_aca_aca_appeal_rules | gh_Gooreum_gongmojeon_demos_ad_v1_ad_erisa_erisa_claims_rule | gh_Gooreum_gongmojeon_demos_ad_v1_ad_ma_medicare_advantage_r"
+    },
+    {
+      "name": "deploy-root/ad holds the short-named copies of all rule networks",
+      "pass": true,
+      "detail": "aca,erisa,ma,tam,brk"
+    },
+    {
+      "name": "links.json: spec format, binds the three rule networks of the active set, no test-only copy",
+      "pass": true,
+      "detail": "{\"version\":1,\"networks\":{\"appeal_desk\":{\"aca_appeal_rules\":\"http://localhost:8081/aca_appeal_rules/aca_appeal_rules\",\"erisa_claims_rules\":\"http://localhost:8081/erisa_claims_rules/erisa_claims_rules\",\"medicare_advantage_rules\":\"http://localhost:8081/medicare_advantage_rules/medicare_advantage_rules\""
+    },
+    {
+      "name": "partner-demo/links.json: spec format {version, networks:{<network>:{<symbol>:<url>}}}",
+      "pass": true,
+      "detail": "{\"version\":1,\"networks\":{\"maple_street_billing_help\":{\"aca_appeal_rules\":\"http://localhost:8081/aca_appeal_rules/aca_appeal_rules\"}}}"
+    },
+    {
+      "name": "rules: Medicare Advantage values (60 days, 30/60/7 days, 72 hours, automatic outside review), section anchors, verified",
+      "pass": true,
+      "detail": "{\"rule_id\":\"medicare_advantage_rules\",\"title\":\"Medicare Advantage plan appeal rules (reconsideration)\",\"appeal_name\":\"reconsideration\",\"notice_name\":\"organization determination\",\"cfr_cite\":\"42 CFR 422"
+    },
+    {
+      "name": "scene 1: ACA deadline (notice + 180 days) shown, and it is still ahead of today",
+      "pass": true,
+      "detail": "Sunday, May 2, 2027"
+    },
+    {
+      "name": "scene 1: no reference-date footnote",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "scene 1: deadlines, documents and letter are all filled",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "scene 1: rules came from the second origin",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "scene 1: consent card named the publisher before loading",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "privacy: 0 bytes of the notice sent to rule publishers",
+      "pass": true,
+      "detail": "bytes=0"
+    },
+    {
+      "name": "privacy: no private value appears in any peer request URL or header",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "letter: every sentence has a rule chip or a grey 'no rule cited' chip",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "letter: verified numbers show no 'check' mark",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "scene 2: Medicare Advantage deadline is notice + 60 days + 5 days presumed receipt",
+      "pass": true,
+      "detail": "Monday, January 11, 2027"
+    },
+    {
+      "name": "scene 2: compared with ACA, rules came from the Medicare Advantage publisher",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "scene 2: big numbers show 180 then 60",
+      "pass": true,
+      "detail": "Days to file\n180\n→\n60\ndays\nOutside review\nYou ask\n→\nAutomatic"
+    },
+    {
+      "name": "scene 2: Days to file 180 days -> 60 days is Changed, and outside review (you ask -> automatic) is Changed",
+      "pass": true,
+      "detail": "Days to file 180 days 60 days Changed | Outside review You ask, within 4 months Automatic. The plan sends it Changed | Where an outside review goes Insured plans follow the State external review process when the State has a qualifying one, and the Federal process otherwise. If the plan upholds its d"
+    },
+    {
+      "name": "scene 2: Changed rows come before Same rows",
+      "pass": true,
+      "detail": "Days to file 180 days 60 days Changed | Outside review You ask, within 4 months Automatic. The plan sends it Changed | Where an outside review goes Insured plans follow the State external review process when the State has a qualifying one, and the Federal process otherwise. If the plan upholds its d"
+    },
+    {
+      "name": "scene 2: the table works for another pair (Medicare Advantage then ERISA)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "scene 2: the table works for another pair (ERISA then ACA)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "scene 3: settings card shows a one-line summary while collapsed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "scene 3: badge says No model used, no key set",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "scene 3: no model request was made",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "scene 4: preview is the letter draft with placeholders, no private value, no notice text",
+      "pass": true,
+      "detail": "Polish the wording of this appeal letter. Keep every bracketed placeholder and do not add facts.\n\nContext: plan_type: aca; reason_category: medical_necessity\n\nLetter draft:\n[Your name]\n[Your address]\n[Phone or email]\n[Today's date]\n\nAppeals Department\n[Plan name]\n[Plan address from the notice]\n\nRe: "
+    },
+    {
+      "name": "scene 4: the only facts beside the letter are plan type and reason category",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "scene 4: nothing sent before the confirm button",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "scene 4: no-key send is labelled 'Simulated response' and makes no request",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "check 5: with a key the model request is made after confirm",
+      "pass": true,
+      "detail": "Your model\n\nPolished wording.\n\nCopy wording"
+    },
+    {
+      "name": "scene 4: model request body has no name, member ID, claim number, birth date, ICD code",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "scene 4: model request body has no notice text, only the letter draft",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "check 5: the key reached only the router, never a rule publisher",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "check 5: loading a peer did not change the caller's router",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "privacy: the trace panel has no private value",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "scene 5: changed rules blocked with the member-ID card and 0 fields shared",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "check 7: broken shows a readable error card",
+      "pass": true,
+      "detail": "This rule file is damaged\nWhat happened\nThe file could not be read as a rule network, so its rules cannot be trusted.\nWhat Appeal Desk did\nIt was not used. Your notice was not sent anywhere."
+    },
+    {
+      "name": "check 7: cycle shows a readable error card",
+      "pass": true,
+      "detail": "This rule network points back to a network already in use\nWhat happened\nFollowing it would loop forever, so the runtime stopped at the first repeat.\nWhat Appeal Desk did\nNothing was loaded and nothing"
+    },
+    {
+      "name": "check 7: budget shows a readable error card",
+      "pass": true,
+      "detail": "Too many rule networks for one question\nWhat happened\nOne question may use up to 4 outside networks, once each, within 90 seconds. Request 5 went past the limit: the per-query limit of 4 third-party c"
+    },
+    {
+      "name": "check 7: denied shows a readable error card",
+      "pass": true,
+      "detail": "This website is not on the list this site may contact\nWhat happened\nAppeal Desk only contacts the rule publishers it lists in its public manifest (allowed_peers). This address is not listed.\nWhat Appe"
+    },
+    {
+      "name": "check 7: another path on the allowed host, not in links.json, is refused",
+      "pass": true,
+      "detail": "This address is not one of the listed rule networks\nWhat happened\nAppeal Desk loads a rule network only from an exact address that it lists. Other pages on the same website are refused, even when the "
+    },
+    {
+      "name": "check 4: the exact-URL gate refuses a look-alike path with the same last segment prefix",
+      "pass": true,
+      "detail": "NOT_LISTED"
+    },
+    {
+      "name": "scene 6: the partner page (other origin) answers from the rule network, date 14 days before today + 180",
+      "pass": true,
+      "detail": "Your appeal deadline\n\nSunday, May 2, 2027\n\n180 days from the date on the letter. Source: 45 CFR 147.136. File early.\n\nRules loaded from localhost:8081 (ACA appeal rules). Not legal advice."
+    },
+    {
+      "name": "scene 6: the 'How this page gets the rules' box shows the real links.json and the clinic is Maple Street",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "check 1: two or more agents, instructions under 5,000 characters, manifest with peer_policy and allowed_peers, links.json",
+      "pass": true,
+      "detail": "appeal_desk,notice_reader,letter_writer"
+    },
+    {
+      "name": "check 2: default router comes from the manifest; BYOK settings exist",
+      "pass": true,
+      "detail": "{\"router\":\"https://api.otari.ai/api/v1\",\"hasKeyBox\":true,\"apply\":true}"
+    },
+    {
+      "name": "check 3: site actions are registered with effect classes",
+      "pass": true,
+      "detail": "get_appeal_state:read,insert_letter_paragraph:irreversible,check_document:irreversible"
+    },
+    {
+      "name": "check 3: actions run through the page's own rules and refuse bad input",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "check 3: check_document opens a confirmation card showing the document and the change",
+      "pass": true,
+      "detail": "Change your document checklist?\n\nThe assistant wants to tick or untick one document on the list of papers you will ask your plan for.\n\nDocument\nThe full claim file\nChange\nTick it\nTechnical details\nCha"
+    },
+    {
+      "name": "check 3: declining the card leaves the checklist unchanged",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "check 3: confirming the card ticks the document",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "check 4: exact named network from a second origin, run in the caller's browser",
+      "pass": true,
+      "detail": "{\"name\":\"aca_appeal_rules\",\"origin\":\"http://localhost:8081\",\"top\":\"http://127.0.0.1:8080\"}"
+    },
+    {
+      "name": "check 6: peers only received body-less GET requests (no private context)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "same tab: three runs in a row work without reload",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "back button returns to the previous scene",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "trace: without a key it says the assistant needs a model key, not 'ready'",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "conformance page: '5 of 7 checked automatically; 2 checked on the live site', checks 1 and 2 not shown as passed",
+      "pass": true,
+      "detail": "Last run: 2026-11-16 18:14 UTC. 5 of 7 checked automatically; 2 checked on the live site."
+    },
+    {
+      "name": "layout 390px: no horizontal scroll",
+      "pass": true,
+      "detail": "390>390"
+    },
+    {
+      "name": "layout 390px: body text 17px, main buttons at least 48px",
+      "pass": true,
+      "detail": "17px 48"
+    },
+    {
+      "name": "layout 390px: no undefined, null, NaN or object dump on screen",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "layout 1280px: no horizontal scroll",
+      "pass": true,
+      "detail": "1280>1280"
+    },
+    {
+      "name": "layout 1280px: body text 17px, main buttons at least 48px",
+      "pass": true,
+      "detail": "17px 48"
+    },
+    {
+      "name": "layout 1280px: no undefined, null, NaN or object dump on screen",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no uncaught page errors",
+      "pass": true,
+      "detail": ""
+    }
+  ]
+}

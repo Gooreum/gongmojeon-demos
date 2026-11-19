@@ -1,0 +1,7 @@
+{
+  "protocol": "appeal-rules-agent-mcp/v1",
+  "network": "maple_street_billing_help",
+  "front_man": "maple_street_billing_help",
+  "available": false,
+  "reason": "This is a static bundle; a public MCP facade requires an application host."
+}

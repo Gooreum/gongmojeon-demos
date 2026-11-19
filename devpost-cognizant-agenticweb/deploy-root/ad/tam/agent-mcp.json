@@ -1,0 +1,7 @@
+{
+  "protocol": "appeal-rules-agent-mcp/v1",
+  "network": "aca_appeal_rules_tampered",
+  "front_man": "aca_appeal_rules_tampered",
+  "available": false,
+  "reason": "This is a static bundle; a public MCP facade requires an application host."
+}
