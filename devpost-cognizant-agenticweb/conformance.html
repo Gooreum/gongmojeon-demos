@@ -13,7 +13,7 @@
 <main>
   <section class="card">
     <h1>Compliance checks</h1>
-    <p class="lead">The seven interoperability checks of the Open Agentic Web MVP Profile 0.2 (section 6), with where you can see each one and the latest result. Five are checked automatically on a local machine with three origins. Two (an ordinary HTTPS web host, and a run with the published default router and model) are checked on the live site after deployment.</p>
+    <p class="lead">The seven interoperability checks of the Open Agentic Web MVP Profile 0.2 (section 6), with where you can see each one and the latest result. Most are checked automatically by test-web.mjs, on a local machine with three origins or against the deployed site (the ordinary HTTPS web host check). A run with the published default router and model needs the router's own key, so it is checked by hand on the live site and is not shown as passed here.</p>
     <p class="hint" id="meta">Reading results...</p>
     <p class="hint" id="origin-note">Rule networks on a shared host: the runtime allows a whole origin, not one path. On jsDelivr that is every repository on the host. Appeal Desk therefore also requires each address to match a binding in links.json exactly. See README-deploy.md.</p>
     <ol class="cl" id="list"></ol>
@@ -49,7 +49,7 @@ const CHECKS = [
     s.className = "res " + (live ? "none" : r ? (r.pass ? "pass" : "fail") : "none");
     s.textContent = live ? "Checked on the live site" : r ? (r.pass ? "Passed (automatic)" : "Failed") : "Not run";
     const w = document.createElement("p"); w.className = "where"; w.append("Where to see it: ", where.replace("{host}", host));
-    if (r?.detail) w.append(" | " + (live ? "Local pre-check: " : "Test: ") + r.detail + (live && r.pass ? " passed. The live check runs after deployment." : ""));
+    if (r?.detail) w.append(" | " + (live ? "Local pre-check: " : "Test: ") + r.detail + (live && r.pass ? " passed. The check with the published default router needs its key and is run by hand on the live site." : ""));
     li.append(p, s, w); list.append(li);
   }
 })();

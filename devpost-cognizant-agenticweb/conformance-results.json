@@ -1,9 +1,9 @@
 {
-  "ran_at": "2026-11-16 18:15 UTC",
+  "ran_at": "2026-11-19 21:45 UTC",
   "checks": [
     {
       "id": "c1",
-      "scope": "live",
+      "scope": "local",
       "pass": true,
       "detail": "1/1 tests"
     },
@@ -113,7 +113,7 @@
     {
       "name": "config: deployed peers use jsDelivr gh URLs with a tag slot and the short ad/ folder",
       "pass": true,
-      "detail": "{\"aca_appeal_rules\":\"https://cdn.jsdelivr.net/gh/Gooreum/gongmojeon-demos@TAG/ad/aca/aca_appeal_rules\",\"erisa_claims_rules\":\"https://cdn.jsdelivr.net/gh/Gooreum/gongmojeon-demos@TAG/ad/erisa/erisa_claims_rules\",\"tampered\":\"https://cdn.jsdelivr.net/gh/Gooreum/gongmojeon-demos@TAG/ad/tam/aca_appeal_ru"
+      "detail": "{\"aca_appeal_rules\":\"https://cdn.jsdelivr.net/gh/Gooreum/gongmojeon-demos@ad-v1/ad/aca/aca_appeal_rules\",\"erisa_claims_rules\":\"https://cdn.jsdelivr.net/gh/Gooreum/gongmojeon-demos@ad-v1/ad/erisa/erisa_claims_rules\",\"tampered\":\"https://cdn.jsdelivr.net/gh/Gooreum/gongmojeon-demos@ad-v1/ad/tam/aca_app"
     },
     {
       "name": "config: the three deployed peer tool names stay distinct (tag @ad-v1)",
@@ -128,12 +128,12 @@
     {
       "name": "links.json: spec format, binds the three rule networks of the active set, no test-only copy",
       "pass": true,
-      "detail": "{\"version\":1,\"networks\":{\"appeal_desk\":{\"aca_appeal_rules\":\"http://localhost:8081/aca_appeal_rules/aca_appeal_rules\",\"erisa_claims_rules\":\"http://localhost:8081/erisa_claims_rules/erisa_claims_rules\",\"medicare_advantage_rules\":\"http://localhost:8081/medicare_advantage_rules/medicare_advantage_rules\""
+      "detail": "{\"version\":1,\"networks\":{\"appeal_desk\":{\"aca_appeal_rules\":\"https://cdn.jsdelivr.net/gh/Gooreum/gongmojeon-demos@ad-v1/ad/aca/aca_appeal_rules\",\"erisa_claims_rules\":\"https://cdn.jsdelivr.net/gh/Gooreum/gongmojeon-demos@ad-v1/ad/erisa/erisa_claims_rules\",\"medicare_advantage_rules\":\"https://cdn.jsdeli"
     },
     {
       "name": "partner-demo/links.json: spec format {version, networks:{<network>:{<symbol>:<url>}}}",
       "pass": true,
-      "detail": "{\"version\":1,\"networks\":{\"maple_street_billing_help\":{\"aca_appeal_rules\":\"http://localhost:8081/aca_appeal_rules/aca_appeal_rules\"}}}"
+      "detail": "{\"version\":1,\"networks\":{\"maple_street_billing_help\":{\"aca_appeal_rules\":\"https://cdn.jsdelivr.net/gh/Gooreum/gongmojeon-demos@ad-v1/ad/aca/aca_appeal_rules\"}}}"
     },
     {
       "name": "rules: Medicare Advantage values (60 days, 30/60/7 days, 72 hours, automatic outside review), section anchors, verified",
@@ -159,6 +159,11 @@
       "name": "scene 1: rules came from the second origin",
       "pass": true,
       "detail": ""
+    },
+    {
+      "name": "scene 1: rule files were fetched from the configured rule origin https://cdn.jsdelivr.net",
+      "pass": true,
+      "detail": "https://cdn.jsdelivr.net/gh/Gooreum/gongmojeon-demos@ad-v1/ad/aca/agent-manifest.json https://cdn.jsdelivr.net/gh/Gooreum/gongmojeon-demos@ad-v1/ad/aca/aca_appeal_rules.network.json https://cdn.jsdelivr.net/gh/Gooreum/gongmojeon-demos@ad-v1/ad/aca/links.json"
     },
     {
       "name": "scene 1: consent card named the publisher before loading",
@@ -323,12 +328,27 @@
     {
       "name": "scene 6: the partner page (other origin) answers from the rule network, date 14 days before today + 180",
       "pass": true,
-      "detail": "Your appeal deadline\n\nSunday, May 2, 2027\n\n180 days from the date on the letter. Source: 45 CFR 147.136. File early.\n\nRules loaded from localhost:8081 (ACA appeal rules). Not legal advice."
+      "detail": "Your appeal deadline\n\nSunday, May 2, 2027\n\n180 days from the date on the letter. Source: 45 CFR 147.136. File early.\n\nRules loaded from cdn.jsdelivr.net (ACA appeal rules), checked before use. Not legal advice."
     },
     {
       "name": "scene 6: the 'How this page gets the rules' box shows the real links.json and the clinic is Maple Street",
       "pass": true,
       "detail": ""
+    },
+    {
+      "name": "scene 6: the partner page runs the official runtime and loaded its own network",
+      "pass": true,
+      "detail": "{\"net\":\"maple_street_billing_help\",\"peers\":[\"https://cdn.jsdelivr.net\"],\"cached\":true}"
+    },
+    {
+      "name": "partner-demo: valid manifest (peer_policy, allowed_peers is the rule origin) and a 1-agent network",
+      "pass": true,
+      "detail": "[\"https://cdn.jsdelivr.net\"]"
+    },
+    {
+      "name": "partner-demo: the network's peer reference is the same address as its links.json binding",
+      "pass": true,
+      "detail": "[\"https://cdn.jsdelivr.net/gh/Gooreum/gongmojeon-demos@ad-v1/ad/aca/aca_appeal_rules\"]"
     },
     {
       "name": "check 1: two or more agents, instructions under 5,000 characters, manifest with peer_policy and allowed_peers, links.json",
@@ -368,7 +388,7 @@
     {
       "name": "check 4: exact named network from a second origin, run in the caller's browser",
       "pass": true,
-      "detail": "{\"name\":\"aca_appeal_rules\",\"origin\":\"http://localhost:8081\",\"top\":\"http://127.0.0.1:8080\"}"
+      "detail": "{\"name\":\"aca_appeal_rules\",\"origin\":\"https://cdn.jsdelivr.net\",\"top\":\"https://gooreum.github.io\"}"
     },
     {
       "name": "check 6: peers only received body-less GET requests (no private context)",
@@ -391,9 +411,9 @@
       "detail": ""
     },
     {
-      "name": "conformance page: '5 of 7 checked automatically; 2 checked on the live site', checks 1 and 2 not shown as passed",
+      "name": "conformance page: '6 of 7 checked automatically; 1 checked on the live site'",
       "pass": true,
-      "detail": "Last run: 2026-11-16 18:14 UTC. 5 of 7 checked automatically; 2 checked on the live site."
+      "detail": "Last run: 2026-11-19 21:45 UTC. 6 of 7 checked automatically; 1 checked on the live site."
     },
     {
       "name": "layout 390px: no horizontal scroll",
