@@ -1,0 +1,68 @@
+{
+  "brand": "ACA appeal rules, published by Appeal Desk",
+  "networks": [
+    {
+      "name": "aca_appeal_rules",
+      "front_man": "aca_appeal_rules",
+      "hocon": "./aca_appeal_rules.network.json",
+      "description": "Published by Appeal Desk from https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-B/part-147/section-147.136. The rule owner or a state consumer assistance program can publish a replacement and Appeal Desk will load it by changing one line in peers.config.json.",
+      "tags": [
+        "appeal-rules",
+        "unofficial"
+      ],
+      "sample_queries": [
+        "What is the appeal deadline for a medical necessity denial?"
+      ]
+    }
+  ],
+  "llm_router": {
+    "base_url": "https://api.otari.ai/api/v1",
+    "mock": false,
+    "byok_router": "https://api.otari.ai/api/v1"
+  },
+  "allowed_peers": [],
+  "peer_policy": {
+    "mode": "closed",
+    "deny_origins": [],
+    "note": "Local agents only. This rule network calls no other site."
+  },
+  "agent_mcp": {
+    "protocol": "appeal-rules-agent-mcp/v1",
+    "network": "aca_appeal_rules",
+    "front_man": "aca_appeal_rules",
+    "available": false,
+    "reason": "This is a static bundle; a public MCP facade requires an application host."
+  },
+  "theme": {
+    "primary": "#1b4f8f"
+  },
+  "linking": {
+    "protocol": "appeal-rules-link/v1",
+    "exports": [
+      {
+        "network": "aca_appeal_rules",
+        "front_man": "aca_appeal_rules",
+        "aliases": [
+          "aca_appeal_rules"
+        ],
+        "url": "aca_appeal_rules"
+      }
+    ],
+    "imports": [],
+    "link_updates": {
+      "mode": "browser-local"
+    }
+  },
+  "deployment": {
+    "mode": "static",
+    "self_contained_runtime": false,
+    "browser_mock": false,
+    "direct_byok": false,
+    "direct_mcp_requires_cors": false,
+    "public_mcp_facade": false
+  },
+  "publisher": {
+    "name": "Appeal Desk",
+    "note": "Unofficial. Not published by HHS, the Department of Labor or any insurer. Check the eCFR text."
+  }
+}

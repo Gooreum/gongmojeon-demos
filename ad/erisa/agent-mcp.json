@@ -1,0 +1,7 @@
+{
+  "protocol": "appeal-rules-agent-mcp/v1",
+  "network": "erisa_claims_rules",
+  "front_man": "erisa_claims_rules",
+  "available": false,
+  "reason": "This is a static bundle; a public MCP facade requires an application host."
+}
